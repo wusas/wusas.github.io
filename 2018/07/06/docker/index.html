@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="docker," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="沙沙的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker安装和使用">
+<meta property="og:url" content="http://yoursite.com/2018/07/06/docker/index.html">
+<meta property="og:site_name" content="沙沙的博客">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://chuantu.biz/t6/338/1530634640x-1404817868.jpg">
+<meta property="og:image" content="http://chuantu.biz/t6/338/1530633564x-1404817862.png">
+<meta property="og:image" content="http://chuantu.biz/t6/338/1530633646x-1404817862.png">
+<meta property="og:image" content="http://chuantu.biz/t6/338/1530633700x-1404817862.png">
+<meta property="og:image" content="http://chuantu.biz/t6/338/1530634252x-1404817868.png">
+<meta property="og:image" content="http://chuantu.biz/t6/338/1530634299x-1404817862.png">
+<meta property="og:image" content="http://chuantu.biz/t6/338/1530634403x-1404817862.png">
+<meta property="og:image" content="http://chuantu.biz/t6/338/1530634503x-1404817862.png">
+<meta property="og:image" content="http://chuantu.biz/t6/338/1530634684x-1404817862.png">
+<meta property="og:updated_time" content="2018-07-05T16:56:17.089Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="docker安装和使用">
+<meta name="twitter:image" content="http://chuantu.biz/t6/338/1530634640x-1404817868.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/06/docker/"/>
+
+
+
+
+
+
+  <title>docker安装和使用 | 沙沙的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a7af505fec0721f2d93dbbaaad431d35";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">沙沙的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你的努力，终将有所回报</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/06/docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wusha">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沙沙的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">docker安装和使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T00:55:38+08:00">
+                2018-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/07/06/docker/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/07/06/docker/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/07/06/docker/" class="leancloud_visitors" data-flag-title="docker安装和使用">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span:>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://chuantu.biz/t6/338/1530634640x-1404817868.jpg" alt="image"><br><a id="more"></a></p>
+<h1 id="docker是什么"><a href="#docker是什么" class="headerlink" title="docker是什么"></a>docker是什么</h1><p>Docker：是一个开源的引擎，可以轻松的为任何应用创建一个轻量级的，可移植的，自给自足的容器。</p>
+<p>Docker的核心概念：镜像、仓库、容器</p>
+<p>Docker镜像：是一个特殊的文件系统，提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。</p>
+<p>Docker 容器（Container）：来运行应用。容器是从镜像创建的运行实例。它可以被启动、开始、停止、删除。每个容器都是相互隔离的、保证安全的平台。</p>
+<p>仓库（Repository）：是集中存放镜像文件的场所</p>
+<h2 id="一次完整docker的操作流程"><a href="#一次完整docker的操作流程" class="headerlink" title="一次完整docker的操作流程"></a>一次完整docker的操作流程</h2><p>一般的流程中,client发pull命令从仓库把image拉到docker host，然后通过run命令指挥image到host上面弄一个container来跑这个image。<br>当然也可以是相反的流程，client 通过build命令在host上面创建一个自己的image，然后通过push命令把image推到仓库。之后这个image可以被别的人或者自己pull。<br>DOCKER在windows上的安装<br>检查电脑环境<br>检查版本，为了运行docker，你的机器必须是windows7或以上的64bit系统。</p>
+<p><img src="http://chuantu.biz/t6/338/1530633564x-1404817862.png" alt="image"></p>
+<p>另外，你的机器必须支持硬件虚拟化技术(Hardware Virtualization Technology)并且已被启用。对于windows10系统来说，你可以在 任务管理器-&gt;性能 中查看到你的电脑是否开启了虚拟化</p>
+<p><img src="http://chuantu.biz/t6/338/1530633646x-1404817862.png" alt="image"></p>
+<p><img src="http://chuantu.biz/t6/338/1530633700x-1404817862.png" alt="image"></p>
+<p>怎么开启虚拟化，因为电脑型号不一样，所以每台电脑进入BOIS的方式不一样，重启电脑，我的电脑是Lenovo的ThinkPad，所以我按的是F1，进入BOIS页面，找到Security，把Security下面的Virtualization里面的Intel(R) Virtualization Technology的状态改为Enable</p>
+<p><img src="http://chuantu.biz/t6/338/1530634252x-1404817868.png" alt="image"></p>
+<p>然后再重启就好了。</p>
+<p>下载dockerToolbox<br><a href="https://get.daocloud.io/toolbox/,下载新版本" target="_blank" rel="noopener">https://get.daocloud.io/toolbox/,下载新版本</a></p>
+<p>全部next就可以了</p>
+<p>安装完成</p>
+<p> <img src="http://chuantu.biz/t6/338/1530634299x-1404817862.png" alt="image"></p>
+<p>安转成功之后桌面会多三个图标</p>
+<p> <img src="http://chuantu.biz/t6/338/1530634403x-1404817862.png" alt="image"></p>
+<p>如果安装完成之后桌面少了一个Oracle VM VirtualBox 的话，找到你的dockertoolbox<br>安装目录下面的installers下面的virtualbox，双击virtualbox.msi进行安装。</p>
+<p>双击Docker Quickstart Terminal图标，启动一个终端，第一次运行会比较就，一般会报下载对应的镜像iso到对C：下的docker路径的错误，把dockertoolbox下的boot2docker.iso复制放到你docker运行下载镜像的位置，再重新启动就可以了。</p>
+<p>启动成功会出现这样的界面</p>
+<p> <img src="http://chuantu.biz/t6/338/1530634503x-1404817862.png" alt="image"></p>
+<h1 id="docker在linux上的安装"><a href="#docker在linux上的安装" class="headerlink" title="docker在linux上的安装"></a>docker在linux上的安装</h1><p>1.安装docker<br>yum install docker.x86_64 </p>
+<ol start="2">
+<li>启动Docker<br>service docker start<h1 id="linux常用命令"><a href="#linux常用命令" class="headerlink" title="linux常用命令"></a>linux常用命令</h1>　<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">ls</span> 　 -a(同时列出隐含文件),　　-<span class="hljs-keyword">l</span>（输出一个比较完整的格式，除每个文件名外，增加显示文件<br><br>　　　　　类型、权限、硬链接数、所有者名、组名、大小（byte）、及时间信息-----简化为 ll）<br><br>　　<span class="hljs-keyword">mkdir</span> 　　 新建目录　例：<span class="hljs-keyword">mkdir</span> <span class="hljs-keyword">test</span> 命令会在当前目录下建立一个名为“<span class="hljs-keyword">test</span>”的新目录　　 <br><br>　　touch 　　创建文件    例：touch <span class="hljs-keyword">test</span>/readme.txt 在 <span class="hljs-keyword">test</span> 目录下创建 readme.txt文件<br><br>　　<span class="hljs-keyword">cd</span> 　　切换目录  <span class="hljs-keyword">cd</span> /.  到根目录    <span class="hljs-keyword">cd</span> .. 上一级目录   <span class="hljs-keyword">cd</span> /hahaha/hahaha  到指定目录<br><br>　　<span class="hljs-keyword">pwd</span> 　　显示当前目录<br><br>　　mv 　　移动/重命名（加上 -i 参数询问是否覆盖）  　mv hello rock/ 移动到rock目录下   <br><br>　　　　　　 mv hello rock 重命名为rock<br><br>　　cp 　　拷贝 （加上 -i 参数询问是否覆盖，-r 参数递归调用） 　<br><br>　　　　    cp -<span class="hljs-keyword">ir</span> <span class="hljs-keyword">test</span>/  workspace＂（递归复制 <span class="hljs-keyword">test</span> 目录到 workpace 目录下并在覆盖时提示）<br><br>　　<span class="hljs-keyword">rm</span> 　　删除 （加上 -i 参数确认提示，-r 参数递归调用）　　<br><br>　　　　　 <span class="hljs-keyword">rm</span> -<span class="hljs-keyword">ir</span> <span class="hljs-keyword">test</span>/  递归删除<span class="hljs-keyword">test</span>目录及其子目录并询问<br><br>　　wget url　　下载文件到当前目录<br><br>　　sudo  暂时获取超级用户权限（有默认时长）加上 -i 参数 没有时间限制,输入 <span class="hljs-keyword">exit</span>或logout 退出<br><br>　　<span class="hljs-keyword">su</span>  账户名  　　切换到某某用户模式，没有时间限制<br><br>　　<span class="hljs-keyword">ZIP</span> 工具：<br><br>　　　　压缩文件　　<span class="hljs-keyword">zip</span> target.<span class="hljs-keyword">zip</span> filename<br><br>　　　　压缩文件夹　　<span class="hljs-keyword">zip</span> -r target.<span class="hljs-keyword">zip</span> <span class="hljs-keyword">dir</span>　　 -r 参数表示递归压缩子目录<br><br>　　　　解压　　unzip target.<span class="hljs-keyword">zip</span><br><br>　　tar 工具：<br><br>　　　　-c: 建立压缩档案<br><br>　　　　-x：解压<br>　　　　-t：查看内容<br>　　　　-r：向压缩归档文件末尾追加文件<br>　　　　-<span class="hljs-keyword">u</span>：更新原压缩包中的文件<br><br>　　　　这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用<br><br>　　　　其中一个。下面的参数是根据需要在压缩或解压档案时可选的。<br>　　　　-z：有gzip属性的<br>　　　　-j：有bz2属性的<br>　　　　-Z：有<span class="hljs-keyword">compress</span>属性的<br>　　　　-v：显示所有过程<br>　　　　-O：将文件解开到标准输出<br><br>　　　　下面的参数-f是必须的<br><br>　　　　-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名<br><br>　　　　例：tar -xvf <span class="hljs-keyword">file</span>.tar <span class="hljs-comment">//解压 tar包</span><br><br>　　　　　　tar -xzvf jdk-8u131-linux-x64.tar.gz -C /usr/<span class="hljs-keyword">local</span>/java <span class="hljs-comment">//解压jdk到指定文件夹　　</span><br><br>　　　　　　tar -cZf  jpg.tar.Z  *.jpg  <span class="hljs-comment">//将目录里所有jpg文件打包成jpg.tar后，并且将其用</span><br><br>　　　　　　　　<span class="hljs-keyword">compress</span>压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z<br><br>　　vim 编辑器：　　vim <span class="hljs-keyword">test</span>.cpp<br><br>　　　　vim 有两种模式，一种是普通模式，另一种是插入模式。执行上述命令以后进入普通模式。<br><br>　　　　按下字母键“i”进入插入模式，使用方向键移动光标到需要插入的位置，然后输入想要插入<br><br>　　　　的内容。编辑完成后按键“Esc”退出回到普通模式,在普通模式下输入冒号“:”，然后输入<br><br>　　　　w 回车，保存更改。接着输入“:q”退出。也可以直接输入“:wq”保存并退出（注意 w 一定要<br><br>　　　　在 q之前，先保存再退出）。<br><br>　　　　查找：在普通模式下输入“/查找内容”，回车，即可定位到第一个匹配项。接着按下字母<br><br>　　　　　　　键“<span class="hljs-keyword">n</span>”可以查找下一个。<br><br>　　　　撤销：普通模式下输入“:<span class="hljs-keyword">u</span>”并回车，实现撤销<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="docker常用命令"><a href="#docker常用命令" class="headerlink" title="docker常用命令"></a>docker常用命令</h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker search(-s) nginx  搜索相关镜像　<br>加上-s 参数 选出至少start数范围的镜像<br>docker push <span class="hljs-number">192.168</span>.<span class="hljs-number">0.100</span>:<span class="hljs-number">5000</span>/ubuntu 　　   推送镜像库到私有源<br>docker rmi（-f） 镜像名：版本号/镜像ID 删除镜像 （加上 -f 参数 强制删除）<br>docker rmi $(docker images -q)　　删除所有镜像<br>docker save docker.io/tomcat:<span class="hljs-number">7.0</span>.<span class="hljs-number">77</span>-jre7 &gt;/root/mytomcat7<span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span> 导出镜像<br>docker load &lt; /root/mytomcat7<span class="hljs-selector-class">.tar</span><span class="hljs-selector-class">.gz</span>　　导入镜像<br>如果你想要去查看一个镜像的运行效果，你需要先下载一个镜像，直接运行命令docker pull 镜像名<br></code></pre></td></tr></table></figure>
+<p>　<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs undefined">docker ps 查看当前正在运行的容器<br><br>　docker inspect <span class="hljs-built_in">name</span>/<span class="hljs-built_in">image</span>[<span class="hljs-built_in">name</span>/<span class="hljs-built_in">image</span>...] 查看详细<br><br>　docker ps -a 查看所有容器的状态<br><br>　docker start/<span class="hljs-built_in">stop</span>(-t) id/<span class="hljs-built_in">name</span>[<span class="hljs-built_in">name</span>...] 启动/停止某个（多个）容器 -t 指定时间<br><br>　docker kill (-s) <span class="hljs-built_in">name</span>[<span class="hljs-built_in">name</span>...] 强制中断 -s指定SIGINT信号类型，默认“kill”<br><br>　docker restart (-t) <span class="hljs-built_in">name</span>[<span class="hljs-built_in">name</span>...]  重启 -t 指定时间<br><br>　　　　docker pause <span class="hljs-built_in">name</span>　暂停　　docker unpause <span class="hljs-built_in">name</span> 继续<br><br>　　　　docker rm(-$) <span class="hljs-built_in">name</span>[<span class="hljs-built_in">name</span>...] 移除 <br><br>　　　　　　-f　　--force=<span class="hljs-literal">false</span>　　强制移除运行中容器<br><br>　　　　　　-l　　--link=<span class="hljs-literal">false</span>　　   移除指定链接，保留底层容器<br><br>　　　　　　-v　  --volumes=<span class="hljs-literal">false</span>   移除容器关联卷<br></code></pre></td></tr></table></figure></p>
+<h2 id="指令指南"><a href="#指令指南" class="headerlink" title="指令指南"></a>指令指南</h2><figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined">容器生命周期管理 — docker [run|<span class="hljs-type">start</span>|<span class="hljs-type">stop</span>|<span class="hljs-type">restart</span>|<span class="hljs-type">kill</span>|<span class="hljs-type">rm</span>|<span class="hljs-type">pause</span>|<span class="hljs-type">unpause</span>]<br>容器操作运维 — docker [ps|<span class="hljs-type">inspect</span>|<span class="hljs-type">top</span>|<span class="hljs-type">attach</span>|<span class="hljs-type">events</span>|<span class="hljs-type">logs</span>|<span class="hljs-type">wait</span>|<span class="hljs-type">export</span>|<span class="hljs-type">port</span>]<br>镜像仓库 — docker [login|<span class="hljs-type">pull</span>|<span class="hljs-type">push</span>|<span class="hljs-type">search</span>]<br>本地镜像管理 — docker [images|<span class="hljs-type">rmi</span>|<span class="hljs-type">tag</span>|<span class="hljs-type">build</span>|<span class="hljs-type">history</span>|<span class="hljs-type">save</span>|<span class="hljs-type">import</span>]<br>其他命令 — docker [info|<span class="hljs-type">version</span>]<br></code></pre></td></tr></table></figure>
+<h1 id="使用dockerfile制作镜像"><a href="#使用dockerfile制作镜像" class="headerlink" title="使用dockerfile制作镜像"></a>使用dockerfile制作镜像</h1><p>Docker与微服务-使用Maven插件构建Docker镜像（可以参照<a href="http://blog.csdn.net/qq_22841811/article/details/67369530）" target="_blank" rel="noopener">http://blog.csdn.net/qq_22841811/article/details/67369530）</a></p>
+<p>打开我们的项目，在我们项目的src/main下面新建一个docker文件，在docker文件里面新建Dockerfile文本</p>
+<p>FROM java:8  #From是from那个镜像，最好现在docker里面pull下来，不然构建的时候会在再下一遍</p>
+<p>VOLUME /tmp                           #指定挂载点，该指令使容器中的一个目录具有持久化存储的功能，该目录可被容器本身使用，也可以共享给其他容器</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">ADD</span><span class="bash"> microservice-discovery-eureka-0.0.1-SNAPSHOT.jar app.jar  <span class="hljs-comment">#复制文件</span><br></span><br><span class="hljs-keyword">RUN</span><span class="bash"> bash -c <span class="hljs-string">'touch /app.jar'</span>      <span class="hljs-comment">#run是启动容器后执行的命令</span><br></span><br><span class="hljs-keyword">EXPOSE</span> <span class="hljs-number">9000</span>                           <span class="hljs-comment">#声明暴露的端口</span><br><br><span class="hljs-keyword">ENTRYPOINT</span><span class="bash"> [<span class="hljs-string">"java"</span>,<span class="hljs-string">"-Djava.security.egd=file:/dev/./urandom"</span>,<span class="hljs-string">"-jar"</span>,<span class="hljs-string">"/app.jar"</span>]</span><br></code></pre></td></tr></table></figure>
+<h2 id="Dockerfile文件"><a href="#Dockerfile文件" class="headerlink" title="Dockerfile文件"></a>Dockerfile文件</h2><p>修改pom.xml</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">FROM</span> Jjava:<span class="hljs-number">8</span> //来自那个基础镜像<br><span class="hljs-keyword">VOLUME</span><span class="bash"> /tmp //指定临时挂载点<br></span><span class="hljs-keyword">ADD</span><span class="bash"> microservice-discovery-eur.jar app.jar //把项目jar添加到app.jar里<br></span><span class="hljs-keyword">RUN</span><span class="bash"> bash -c <span class="hljs-string">'touch/app.jar'</span> //镜像运行后执行该命令<br></span><span class="hljs-keyword">EXPOSE</span>:<span class="hljs-number">9000</span> //暴露出来访问的端口<br><span class="hljs-keyword">ENTRYPOINT</span><span class="bash"> [<span class="hljs-string">"java"</span>,<span class="hljs-string">"-Djava.security.egd=file:/dev/./urandom"</span>,<span class="hljs-string">"-jar"</span>,<span class="hljs-string">"/app.jar"</span>] //运行后执行的命令<br></span>在maven的配置文件里面增加配置<br></code></pre></td></tr></table></figure>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">build</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">plugins</span>&gt;</span><br><br>            <span class="hljs-comment">&lt;!-- docker的maven插件，官网：https://github.com/spotify/docker-maven-plugin --&gt;</span><br><br>            <span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.spotify<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>docker-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.4.12<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br><br>                    <span class="hljs-comment">&lt;!-- 注意imageName一定要是符合正则[a-z0-9-_.]的，否则构建不会成功 --&gt;</span><br><br>                    <span class="hljs-comment">&lt;!-- 详见：https://github.com/spotify/docker-maven-plugin Invalid repository<br><br>                        name ... only [a-z0-9-_.] are allowed --&gt;</span><br><br>                    <span class="hljs-comment">&lt;!-- 如果要将docker镜像push到DockerHub上去的话，这边的路径要和repo路径一致 --&gt;</span><br><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">imageName</span>&gt;</span>eacdy/test<span class="hljs-tag">&lt;/<span class="hljs-name">imageName</span>&gt;</span><br><br>                    <span class="hljs-comment">&lt;!-- 指定Dockerfile所在的路径 --&gt;</span><br><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">dockerDirectory</span>&gt;</span>$</span><span class="hljs-template-variable">&#123;project.basedir&#125;</span><span class="xml">/src/main/docker<span class="hljs-tag">&lt;/<span class="hljs-name">dockerDirectory</span>&gt;</span><br><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">resources</span>&gt;</span><br><br>                        <span class="hljs-tag">&lt;<span class="hljs-name">resource</span>&gt;</span><br><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">targetPath</span>&gt;</span>/<span class="hljs-tag">&lt;/<span class="hljs-name">targetPath</span>&gt;</span><br><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>$</span><span class="hljs-template-variable">&#123;project.build.directory&#125;</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span><br><br>                            <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>$</span><span class="hljs-template-variable">&#123;project.build.finalName&#125;</span><span class="xml">.jar<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span><br><br>                        <span class="hljs-tag">&lt;/<span class="hljs-name">resource</span>&gt;</span><br><br>                    <span class="hljs-tag">&lt;/<span class="hljs-name">resources</span>&gt;</span><br><br>                    <span class="hljs-comment">&lt;!-- 以下两行是为了docker push到DockerHub使用的。 --&gt;</span><br><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">serverId</span>&gt;</span>docker-hub<span class="hljs-tag">&lt;/<span class="hljs-name">serverId</span>&gt;</span><br><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">registryUrl</span>&gt;</span>https://index.docker.io/v1/<span class="hljs-tag">&lt;/<span class="hljs-name">registryUrl</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">plugins</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">build</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<p>照上面修改后build之后的项目会报找不到2375端口的错误</p>
+<p>需要我们去修改dockerhost的端口</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">在控制台中输入 docker-machine env<br> <br><span class="hljs-variable">$Env</span><span class="hljs-symbol">:DOCKER_TLS_VERIFY</span> = <span class="hljs-string">"1"</span><br><br><span class="hljs-variable">$Env</span><span class="hljs-symbol">:DOCKER_HOST</span> = <span class="hljs-string">"tcp://192.168.99.100:2376"</span><br><br><span class="hljs-variable">$Env</span><span class="hljs-symbol">:DOCKER_CERT_PATH=<span class="hljs-string">"C:\Users\Administrator\.docker\machine\machines\default（每个人的路径都不一样）</span></span><br></code></pre></td></tr></table></figure>
+<p> 再去修改pom.xml</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">plugin</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.spotify<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>docker-maven-plugin<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>0.4.12<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">imageName</span>&gt;</span>eacdy/test<span class="hljs-tag">&lt;/<span class="hljs-name">imageName</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dockerDirectory</span>&gt;</span>$</span><span class="hljs-template-variable">&#123;project.basedir&#125;</span><span class="xml">/src/main/docker<span class="hljs-tag">&lt;/<span class="hljs-name">dockerDirectory</span>&gt;</span><br><br> <br><br>        <span class="hljs-comment">&lt;!-- 解决Connect to localhost:2375的问题的其中一种方式，注意要跟docker-machine env相一致 --&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dockerHost</span>&gt;</span>https://192.168.99.100:2376<span class="hljs-tag">&lt;/<span class="hljs-name">dockerHost</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">dockerCertPath</span>&gt;</span>C:\Users\Administrator\.docker\machine\machines\default<span class="hljs-tag">&lt;/<span class="hljs-name">dockerCertPath</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">resources</span>&gt;</span><br><br>            <span class="hljs-tag">&lt;<span class="hljs-name">resource</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">targetPath</span>&gt;</span>/<span class="hljs-tag">&lt;/<span class="hljs-name">targetPath</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">directory</span>&gt;</span>$</span><span class="hljs-template-variable">&#123;project.build.directory&#125;</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">directory</span>&gt;</span><br><br>                <span class="hljs-tag">&lt;<span class="hljs-name">include</span>&gt;</span>$</span><span class="hljs-template-variable">&#123;project.build.finalName&#125;</span><span class="xml">.jar<span class="hljs-tag">&lt;/<span class="hljs-name">include</span>&gt;</span><br><br>            <span class="hljs-tag">&lt;/<span class="hljs-name">resource</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">resources</span>&gt;</span><br><br>        <span class="hljs-comment">&lt;!-- 以下两行是为了docker push到DockerHub使用的。 --&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">serverId</span>&gt;</span>docker-hub<span class="hljs-tag">&lt;/<span class="hljs-name">serverId</span>&gt;</span><br><br>        <span class="hljs-tag">&lt;<span class="hljs-name">registryUrl</span>&gt;</span>https://index.docker.io/v1/<span class="hljs-tag">&lt;/<span class="hljs-name">registryUrl</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">plugin</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<p>这样build的项目就不会报错了</p>
+<p> <img src="http://chuantu.biz/t6/338/1530634684x-1404817862.png" alt="image"></p>
+<p>完美打包构建build项目。</p>
+
+      
+    </div>
+    
+    
+    
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="wusha wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wusha 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wusha 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"><i class="fa fa-tag"></i> docker</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/03/FirstBlog/" rel="next" title="五分钟搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 五分钟搭建个人博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/12/tomcat/" rel="prev" title="在服务器的tomcat上部署多个项目">
+                在服务器的tomcat上部署多个项目 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+ 
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzc1Ni8xNDI4Nw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="wusha" />
+            
+              <p class="site-author-name" itemprop="name">wusha</p>
+              <p class="site-description motion-element" itemprop="description">你的努力，终将有所回报</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uisdc.com/" title="个人简历" target="_blank">个人简历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="csdn" target="_blank">csdn</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="博客园" target="_blank">博客园</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="简书" target="_blank">简书</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker是什么"><span class="nav-number">1.</span> <span class="nav-text">docker是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一次完整docker的操作流程"><span class="nav-number">1.1.</span> <span class="nav-text">一次完整docker的操作流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker在linux上的安装"><span class="nav-number">2.</span> <span class="nav-text">docker在linux上的安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux常用命令"><span class="nav-number">3.</span> <span class="nav-text">linux常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker常用命令"><span class="nav-number">4.</span> <span class="nav-text">docker常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指令指南"><span class="nav-number">4.1.</span> <span class="nav-text">指令指南</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用dockerfile制作镜像"><span class="nav-number">5.</span> <span class="nav-text">使用dockerfile制作镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile文件"><span class="nav-number">5.1.</span> <span class="nav-text">Dockerfile文件</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wusha</span>
+
+  
+</div>
+
+
+  <div class="powered-by">  个人专属</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">IT原创   因为热爱所以专注  </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+ 
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytH9K9lD';
+      var conf = 'c8a38acb7e2a30278f87488542dfc0bc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("p7qmsjjKNxNoT9Tu7Xab9DOU-gzGzoHsz", "COi8vpjU93nghYJnFRDkmmhy");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+  <!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+</body>
+
+</html>

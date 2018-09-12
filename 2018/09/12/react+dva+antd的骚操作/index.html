@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="react," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="沙沙的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react+dva+antd的骚操作">
+<meta property="og:url" content="http://yoursite.com/2018/09/12/react+dva+antd的骚操作/index.html">
+<meta property="og:site_name" content="沙沙的博客">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/react+dva+antd的骚操作/20180702095537924.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/react+dva+antd的骚操作/20180628230423859.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/react+dva+antd的骚操作/20180628230449112.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/react+dva+antd的骚操作/20180628232050391.png">
+<meta property="og:updated_time" content="2018-09-12T11:29:07.664Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react+dva+antd的骚操作">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/12/react+dva+antd的骚操作/20180702095537924.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/12/react+dva+antd的骚操作/"/>
+
+
+
+
+
+
+  <title>react+dva+antd的骚操作 | 沙沙的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a7af505fec0721f2d93dbbaaad431d35";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">沙沙的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你的努力，终将有所回报</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/react+dva+antd的骚操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wusha">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沙沙的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">react+dva+antd的骚操作</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-12T15:56:00+08:00">
+                2018-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/09/12/react+dva+antd的骚操作/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/09/12/react+dva+antd的骚操作/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/09/12/react+dva+antd的骚操作/" class="leancloud_visitors" data-flag-title="react+dva+antd的骚操作">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span:>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2018/09/12/react+dva+antd的骚操作/20180702095537924.jpg" alt=""><br><a id="more"></a></p>
+<h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>原谅我直接跳过react的基础，直接就讲react+dva的实际应用，因为直接从项目结构来讲，我觉得学习的成本更低，开发的速度更快，当然有时间的话还是建议冲react的基础学起。</p>
+<p><strong>react的参考资料：</strong><br>建议先从<a href="http://www.ruanyifeng.com/blog/2015/03/react.html" target="_blank" rel="noopener">React 入门实例教程</a>开始学<br><a href="https://blog.csdn.net/awaw00/article/details/54706052" target="_blank" rel="noopener">react的全家桶系列也不错</a></p>
+<p><strong>dva的参考资料：</strong><br><a href="https://dvajs.com/guide/examples-and-boilerplates.html#%E5%AE%98%E6%96%B9" target="_blank" rel="noopener">dva的官方指南</a>有很多不错的脚手架<br><a href="https://ant.design/docs/react/introduce-cn" target="_blank" rel="noopener">ant design</a>组合ant design UI可以说非常方便</p>
+<p><strong>例子</strong><br>实现效果</p>
+<p><img src="/2018/09/12/react+dva+antd的骚操作/20180628230423859.png" alt="image"><br><img src="/2018/09/12/react+dva+antd的骚操作/20180628230449112.png" alt="image"></p>
+<p>前提条件</p>
+<ul>
+<li>确保 node 版本是 6.5 +</li>
+<li>用 cnpm 或 yarn 能节约你安装依赖的时间</li>
+</ul>
+<h2 id="第一步："><a href="#第一步：" class="headerlink" title="第一步："></a>第一步：</h2><p>打开cmd，切换到你要安装的目录，使用npm安装dva-cli<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">$</span><span class="bash"> npm i dva-cli@0.7 -g</span><br><span class="hljs-meta">$</span><span class="bash"> dva -v</span><br>0.7.0<br></code></pre></td></tr></table></figure></p>
+<p>然后可以在命令行输入命令创建应用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">$</span><span class="bash"> dva new user-dashboard</span><br><span class="hljs-meta">$</span><span class="bash"> <span class="hljs-built_in">cd</span> user-dashboard</span><br></code></pre></td></tr></table></figure>
+<h2 id="第二步，"><a href="#第二步，" class="headerlink" title="第二步，"></a>第二步，</h2><p>配置 antd 和 babel-plugin-import<br>babel-plugin-import 主要是用于按需引入 antd 的 JavaScript 和 CSS，这样打包出来的文件不至于太大。详情请看<a href="%28https://dvajs.com/guide/examples-and-boilerplates.html#%E5%AE%98%E6%96%B9">dva</a></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ npm i antd <span class="hljs-comment">--save</span><br>$ npm i babel-plugin-<span class="hljs-keyword">import</span> <span class="hljs-comment">--save-dev</span><br></code></pre></td></tr></table></figure>
+<p>如果dva的版本是在0.7一下的话是没有.roadhogrc文件，修改 .roadhogrc，在 “extraBabelPlugins” 里加上，0.7一下的话是修改.webpackrc文件：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">[<span class="hljs-string">"import"</span>, &#123; <span class="hljs-attr">"libraryName"</span>: <span class="hljs-string">"antd"</span>, <span class="hljs-attr">"style"</span>: <span class="hljs-string">"css"</span> &#125;]<br></code></pre></td></tr></table></figure>
+<h2 id="第三步，"><a href="#第三步，" class="headerlink" title="第三步，"></a>第三步，</h2><p>配置代理，能通过 RESTFul 的方式访问<br>修改 .roadhogrc，加上 “proxy” 配置，或者修改.webpackrc文件也可：<br>可以通过<a href="http://localhost:8000/api/users来查看json数据" target="_blank" rel="noopener">http://localhost:8000/api/users来查看json数据</a><br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-string">"proxy"</span>: &#123;<br>  <span class="hljs-string">"/api"</span>: &#123;<br>    <span class="hljs-string">"target"</span>: <span class="hljs-string">"http://jsonplaceholder.typicode.com/"</span>,<br>    <span class="hljs-string">"changeOrigin"</span>: true,<br>    <span class="hljs-string">"pathRewrite"</span>: &#123; <span class="hljs-string">"^/api"</span> : <span class="hljs-string">""</span> &#125;<br>  &#125;<br>&#125;,<br></code></pre></td></tr></table></figure></p>
+<p>然后启动应用：可以新开一个命令行窗口</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">$</span><span class="bash"> npm start</span><br></code></pre></td></tr></table></figure>
+<p>然后系统就会自动在浏览器中打开页面，也可以访问<a href="http://localhost:8000/" target="_blank" rel="noopener">http://localhost:8000/</a><br><img src="/2018/09/12/react+dva+antd的骚操作/20180628232050391.png" alt="看到这个图片就可以下一步了"></p>
+<h2 id="第四步，"><a href="#第四步，" class="headerlink" title="第四步，"></a>第四步，</h2><p>生成 users 路由</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">dva g<span class="hljs-built_in"> route </span>users<br></code></pre></td></tr></table></figure>
+<p>输入这个命令就会在src的routes生成两个文件，一个User.js,一个是User.css，然后访问 <a href="http://localhost:8000/#/users" target="_blank" rel="noopener">http://localhost:8000/#/users</a> 。</p>
+<h2 id="第五步，"><a href="#第五步，" class="headerlink" title="第五步，"></a>第五步，</h2><p>构造 users model 和 service<br>同上，用dva的命令生成文件</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-attribute">dva g model users</span><br></code></pre></td></tr></table></figure>
+<p>然后修改 src/models/users.js ：</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> usersService from <span class="hljs-string">'../services/users'</span>;<br><br>export <span class="hljs-keyword">default</span> &#123;<br>  namespace: <span class="hljs-string">'users'</span>,<br>  state: &#123;<br>    list: [],<br>    total: null,<br>  &#125;,<br>  reducers: &#123;<br>    save(state, &#123; payload: &#123; data: list, total &#125; &#125;) &#123;<br>      return &#123; ...state, list, total &#125;;<br>    &#125;,<br>  &#125;,<br>  effects: &#123;<br>    *fetch(&#123; payload: &#123; page &#125; &#125;, &#123; call, put &#125;) &#123;<br>      const &#123; data, headers &#125; = yield call(usersService.fetch, &#123; page &#125;);<br>      yield put(&#123; type: <span class="hljs-string">'save'</span>, payload: &#123; data, total: headers[<span class="hljs-string">'x-total-count'</span>] &#125; &#125;);<br>    &#125;,<br>  &#125;,<br>  subscriptions: &#123;<br>    setup(&#123; dispatch, history &#125;) &#123;<br>      return history.listen((&#123; pathname, query &#125;) =&gt; &#123;<br>        if (pathname === <span class="hljs-string">'/users'</span>) &#123;<br>          dispatch(&#123; type: <span class="hljs-string">'fetch'</span>, payload: query &#125;);<br>        &#125;<br>      &#125;);<br>    &#125;,<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure>
+<p>在目标文件夹中新增 src/services/users.js：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">import</span> request <span class="hljs-keyword">from</span> <span class="hljs-string">'../utils/request'</span>;<br><br><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetch</span>(<span class="hljs-params">&#123; page = <span class="hljs-number">1</span> &#125;</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/api/users?_page=<span class="hljs-subst">$&#123;page&#125;</span>&amp;_limit=5`</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>由于我们需要从 response headers 中获取 total users 数量，所以需要改造下 src/utils/request.js：</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs undefined">import fetch from <span class="hljs-comment">'dva/fetch';</span><br><br><span class="hljs-keyword">function</span> checkStatus(<span class="hljs-built_in">response</span>) &#123;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">response</span>.status &gt;= <span class="hljs-number">200</span> &amp;&amp; <span class="hljs-built_in">response</span>.status &lt; <span class="hljs-number">300</span>) &#123;<br>    return <span class="hljs-built_in">response</span>;<br>  &#125;<br><br>  <span class="hljs-keyword">const</span> <span class="hljs-keyword">error</span> = <span class="hljs-keyword">new</span> <span class="hljs-keyword">Error</span>(<span class="hljs-built_in">response</span>.statusText);<br>  <span class="hljs-keyword">error</span>.<span class="hljs-built_in">response</span> = <span class="hljs-built_in">response</span>;<br>  throw <span class="hljs-keyword">error</span>;<br>&#125;<br><br>/**<br> * Requests a URL, returning a promise.<br> *<br> * @param  &#123;<span class="hljs-built_in">string</span>&#125; url       The URL we want <span class="hljs-keyword">to</span> <span class="hljs-built_in">request</span><br> * @param  &#123;object&#125; [options] The options we want <span class="hljs-keyword">to</span> pass <span class="hljs-keyword">to</span> <span class="hljs-string">"fetch"</span><br> * @return &#123;object&#125;           An object containing either <span class="hljs-string">"data"</span> <span class="hljs-keyword">or</span> <span class="hljs-string">"err"</span><br> */<br>export <span class="hljs-keyword">default</span> async <span class="hljs-keyword">function</span> <span class="hljs-built_in">request</span>(url, options) &#123;<br>  <span class="hljs-keyword">const</span> <span class="hljs-built_in">response</span> = await fetch(url, options);<br><br>  checkStatus(<span class="hljs-built_in">response</span>);<br><br>  <span class="hljs-keyword">const</span> data = await <span class="hljs-built_in">response</span>.json();<br><br>  <span class="hljs-keyword">const</span> ret = &#123;<br>    data,<br>    headers: &#123;&#125;,<br>  &#125;;<br><br>  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">response</span>.headers.<span class="hljs-keyword">get</span>(<span class="hljs-comment">'x-total-count')) &#123;</span><br>    ret.headers[<span class="hljs-comment">'x-total-count'] = response.headers.get('x-total-count');</span><br>  &#125;<br><br>  return ret;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="第六步，"><a href="#第六步，" class="headerlink" title="第六步，"></a>第六步，</h2><p>添加界面，让用户列表展现出来<br>用 dva-cli 生成 component：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">$</span><span class="bash"> dva g component Users/Users</span><br></code></pre></td></tr></table></figure>
+<p>然后修改生成出来的 src/components/Users/Users.js 和 src/components/Users/Users.css，并在 src/routes/Users.js 中引用他。<br>User.js</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">import</span> React from <span class="hljs-string">'react'</span>;<br><span class="hljs-keyword">import</span> &#123; connect &#125; from <span class="hljs-string">'dva'</span>;<br><span class="hljs-keyword">import</span> &#123; Table, Pagination, Popconfirm, Button &#125; from <span class="hljs-string">'antd'</span>;<br><span class="hljs-keyword">import</span> &#123; routerRedux &#125; from <span class="hljs-string">'dva/router'</span>;<br><span class="hljs-keyword">import</span> styles from <span class="hljs-string">'./Users.css'</span>;<br><span class="hljs-keyword">import</span> &#123; PAGE_SIZE &#125; from <span class="hljs-string">'../../constants'</span>;<br><span class="hljs-keyword">import</span> UserModal from <span class="hljs-string">'./UserModal'</span>;<br><br><span class="hljs-keyword">function</span> Users(&#123; dispatch, list: dataSource, loading, total, page: current &#125;) &#123;<br><br>  function deleteHandler(id) &#123;<br>    dispatch(&#123;<br>      type: <span class="hljs-string">'users/remove'</span>,<br>      payload: id,<br>    &#125;);<br>  &#125;<br><br>  function editHandler(id, values) &#123;<br>        dispatch(&#123;<br>            type: <span class="hljs-string">'users/patch'</span>,<br>            payload: &#123; id, values &#125;,<br>        &#125;);<br>      &#125;<br><br>  function pageChangeHandler(page) &#123;<br>    dispatch(routerRedux.push(&#123;<br>	pathname: <span class="hljs-string">'/users'</span>,<br>    query: &#123; page &#125;,<br>	 &#125;));<br>  &#125;<br><br>  function createHandler(values) &#123;<br>        dispatch(&#123;<br>            type: <span class="hljs-string">'users/create'</span>,<br>            payload: values,<br>          &#125;);<br>     &#125;<br><br>  const columns = [<br>    &#123;<br>      title: <span class="hljs-string">'姓名'</span>,<br>      dataIndex: <span class="hljs-string">'name'</span>,<br>      key: <span class="hljs-string">'name'</span>,<br>      render: text =&gt; &lt;a href=<span class="hljs-string">""</span>&gt;&#123;text&#125;&lt;/a&gt;,<br>    &#125;,<br>    &#123;<br>      title: <span class="hljs-string">'邮箱'</span>,<br>      dataIndex: <span class="hljs-string">'email'</span>,<br>      key: <span class="hljs-string">'email'</span>,<br>    &#125;,<br>    &#123;<br>      title: <span class="hljs-string">'地址'</span>,<br>      dataIndex: <span class="hljs-string">'website'</span>,<br>      key: <span class="hljs-string">'website'</span>,<br>    &#125;,<br>    &#123;<br>      title: <span class="hljs-string">'操作'</span>,<br>      key: <span class="hljs-string">'operation'</span>,<br>      render: (text, record) =&gt; (<br>        &lt;span className=&#123;styles.operation&#125;&gt;<br>            &lt;UserModal record=&#123;record&#125; onOk=&#123;editHandler.bind(null, record.id)&#125;&gt;<br>            &lt;a&gt;修改&lt;/a&gt;<br>              &lt;/UserModal&gt;<br>            &lt;Popconfirm title=<span class="hljs-string">"Confirm to delete?"</span> onConfirm=&#123;deleteHandler.bind(null, record.id)&#125;&gt;<br>            &lt;a href=<span class="hljs-string">""</span>&gt;删除&lt;/a&gt;<br>          &lt;/Popconfirm&gt;<br>        &lt;/span&gt;<br>      ),<br>    &#125;,<br>  ];<br><br>  return (<br>    &lt;div className=&#123;styles.normal&#125;&gt;<br>      &lt;div&gt;<br>          &lt;div className=&#123;styles.create&#125;&gt;<br>            &lt;UserModal record=&#123;&#123;&#125;&#125; onOk=&#123;createHandler&#125;&gt;<br>                &lt;Button type=<span class="hljs-string">"primary"</span>&gt;增加用户&lt;/Button&gt;<br>            &lt;/UserModal&gt;<br>          &lt;/div&gt;<br>        &lt;Table<br>          columns=&#123;columns&#125;<br>          dataSource=&#123;dataSource&#125;<br>		  loading=&#123;loading&#125;<br>          rowKey=&#123;record =&gt; record.id&#125;<br>          pagination=&#123;false&#125;<br>        /&gt;<br>        &lt;Pagination<br>          className=<span class="hljs-string">"ant-table-pagination"</span><br>          total=&#123;total&#125;<br>          current=&#123;current&#125;<br>          pageSize=&#123;PAGE_SIZE&#125;<br>		  onChange=&#123;pageChangeHandler&#125;<br>        /&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">function</span> mapStateToProps(state) &#123;<br>  const &#123; list, total, page &#125; = state.users;<br>  return &#123;<br>	loading: state.loading.models.users,<br>    list,<br>    total,<br>    page,<br>  &#125;;<br>&#125;<br><br>export <span class="hljs-keyword">default</span> connect(mapStateToProps)(Users);<br></code></pre></td></tr></table></figure>
+<p>User.css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-class">.normal</span> &#123;<br>&#125;<br><span class="hljs-selector-class">.create</span> &#123;<br>  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">1.5em</span>;<br>&#125;<br><br><span class="hljs-selector-class">.operation</span> <span class="hljs-selector-tag">a</span> &#123;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> .<span class="hljs-number">5em</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这边主要是对 model 进行了微调，加入了 page 表示当前页<br>由于 components 和 services 中都用到了 pageSize，所以提取到 src/constants.js<br>改完后，切换到浏览器，应该能看到带分页的用户列表</p>
+<h2 id="第七步，"><a href="#第七步，" class="headerlink" title="第七步，"></a>第七步，</h2><p>添加 layout</p>
+<ol>
+<li>添加 layout 布局，使得我们可以在首页和用户列表页之间来回切换。<br>2.添加布局，src/components/MainLayout/MainLayout.js 和 CSS 文件<br>在 src/routes 文件夹下的文件中引用这个布局</li>
+</ol>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;<br><span class="hljs-keyword">import</span> &#123; Router, Route &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'dva/router'</span>;<br><span class="hljs-keyword">import</span> IndexPage <span class="hljs-keyword">from</span> <span class="hljs-string">'./routes/IndexPage'</span>;<br><br><span class="hljs-keyword">import</span> Users <span class="hljs-keyword">from</span> <span class="hljs-string">"./routes/Users.js"</span>;<br><br><span class="hljs-keyword">function</span> RouterConfig(&#123; history &#125;) &#123;<br>  <span class="hljs-keyword">return</span> (<br>    &lt;Router history=&#123;history&#125;&gt;<br>      &lt;Route path=<span class="hljs-string">"/"</span> component=&#123;IndexPage&#125; /&gt;<br>      &lt;Route path=<span class="hljs-string">"/users"</span> component=&#123;Users&#125; /&gt;<br>    &lt;/Router&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> RouterConfig;<br></code></pre></td></tr></table></figure>
+<h2 id="第八步，"><a href="#第八步，" class="headerlink" title="第八步，"></a>第八步，</h2><p>通过 dva-loading 处理 loading 状态<br>dva 有一个管理 effects 执行的 hook，并基于此封装了 dva-loading 插件。通过这个插件，我们可以不必一遍遍地写 showLoading 和 hideLoading，当发起请求时，插件会自动设置数据里的 loading 状态为 true 或 false 。然后我们在渲染 components 时绑定并根据这个数据进行渲染。</p>
+<p>先安装 dva-loading ：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">npm <span class="hljs-selector-tag">i</span> dva-loading --save<br></code></pre></td></tr></table></figure>
+<p>修改 src/index.js 加载插件，在对应的地方加入下面两句：</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">import</span> createLoading <span class="hljs-keyword">from</span> <span class="hljs-string">'dva-loading'</span>;<br>app.use(createLoading());<br></code></pre></td></tr></table></figure>
+<p>然后在 src/components/Users/Users.js 里绑定 loading 数据：</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">loading: <span class="hljs-keyword">state</span>.loading.models.users,<br></code></pre></td></tr></table></figure>
+<p>具体参考这个 <a href="https://github.com/dvajs/dva-example-user-dashboard/commit/e256165312e5fe0e63c29cc1cba96909b66b5092" target="_blank" rel="noopener">例子</a>。</p>
+<h2 id="第九步，"><a href="#第九步，" class="headerlink" title="第九步，"></a>第九步，</h2><p>处理分页<br>只改一个文件 src/components/Users/Users.js 就好。</p>
+<p>处理分页有两个思路：</p>
+<ol>
+<li>发 action，请求新的分页数据，保存到 model，然后自动更新页面</li>
+<li>切换路由 (由于之前监听了路由变化，所以后续的事情会自动处理)<br>我们用的是思路 2 的方式，好处是用户可以直接访问到 page 2 或其他页面。</li>
+</ol>
+<p>参考这个 <a href="https://github.com/dvajs/dva-example-user-dashboard/commit/b6203eae7000225ae1d0954841c93aeec66df1d5" target="_blank" rel="noopener">例子</a>。</p>
+<h2 id="第10步，"><a href="#第10步，" class="headerlink" title="第10步，"></a>第10步，</h2><p>用户的修改，删除，增加都是对三个文件的操作</p>
+<ol>
+<li>service, 修改 src/services/users.js：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">import</span> request <span class="hljs-keyword">from</span> <span class="hljs-string">'../utils/request'</span>;<br><span class="hljs-keyword">import</span> &#123; PAGE_SIZE &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">'../constants'</span>;<br><br><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetch</span>(<span class="hljs-params">&#123; page &#125;</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/api/users?_page=<span class="hljs-subst">$&#123;page&#125;</span>&amp;_limit=<span class="hljs-subst">$&#123;PAGE_SIZE&#125;</span>`</span>);<br> &#125;<br> <span class="hljs-comment">//删除</span><br><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">remove</span>(<span class="hljs-params">id</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/api/users/<span class="hljs-subst">$&#123;id&#125;</span>`</span>, &#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">'DELETE'</span>,<br>  &#125;);<br>&#125;<br><span class="hljs-comment">//修改</span><br><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">patch</span>(<span class="hljs-params">id, values</span>) </span>&#123;<br>  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/api/users/<span class="hljs-subst">$&#123;id&#125;</span>`</span>, &#123;<br>    <span class="hljs-attr">method</span>: <span class="hljs-string">'PATCH'</span>,<br>    <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify(values),<br>    <span class="hljs-attr">headers</span>: &#123;<br>    <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">'application/json'</span>,<br>      <span class="hljs-string">'Accept'</span>: <span class="hljs-string">'application/json'</span>,<br>  &#125;,<br>  &#125;);<br>&#125;<br><span class="hljs-comment">//新增</span><br><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>(<span class="hljs-params">values</span>) </span>&#123;<br>   <span class="hljs-keyword">return</span> request(<span class="hljs-string">'/api/users'</span>, &#123;<br>       <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,<br>        <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify(values),<br>      &#125;);<br>  &#125;<br></code></pre></td></tr></table></figure>
+<ol start="2">
+<li>model, 修改 src/models/users.js：</li>
+</ol>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> usersService from <span class="hljs-string">'../services/users'</span>;<br><br>export <span class="hljs-keyword">default</span> &#123;<br>  namespace: <span class="hljs-string">'users'</span>,<br>  state: &#123;<br>    list: [],<br>    total: null,<br>    page: null,<br>  &#125;,<br>  reducers: &#123;<br>    save(state, &#123; payload: &#123; data: list, total, page &#125; &#125;) &#123;<br>      return &#123; ...state, list, total, page &#125;;<br>    &#125;,<br>  &#125;,<br>  effects: &#123;<br>	  //分页<br>    *fetch(&#123; payload: &#123; page = <span class="hljs-number">1</span> &#125; &#125;, &#123; call, put &#125;) &#123;<br>      const &#123; data, headers &#125; = yield call(usersService.fetch, &#123; page &#125;);<br>      yield put(&#123;<br>        type: <span class="hljs-string">'save'</span>,<br>        payload: &#123;<br>          data,<br>          total: parseInt(headers[<span class="hljs-string">'x-total-count'</span>], <span class="hljs-number">10</span>),<br>          page: parseInt(page, <span class="hljs-number">10</span>),<br>        &#125;,<br>      &#125;);<br>    &#125;,<br>	//删除<br>  *remove(&#123; payload: id &#125;, &#123; call, put &#125;) &#123;<br>      yield call(usersService.remove, id);<br>       yield put(&#123; type: <span class="hljs-string">'reload'</span> &#125;);<br>  &#125;,<br>  //修改<br>*patch(&#123; payload: &#123; id, values &#125; &#125;, &#123; call, put &#125;) &#123;<br>    yield call(usersService.patch, id, values);<br>    yield put(&#123; type: <span class="hljs-string">'reload'</span> &#125;);<br>&#125;,<br>//新增<br>*create(&#123; payload: values &#125;, &#123; call, put &#125;) &#123;<br>        yield call(usersService.create, values);<br>       yield put(&#123; type: <span class="hljs-string">'reload'</span> &#125;);<br>      &#125;,<br>  *reload(action, &#123; put, select &#125;) &#123;<br>      const page = yield select(state =&gt; state.users.page);<br>       yield put(&#123; type: <span class="hljs-string">'fetch'</span>, payload: &#123; page &#125; &#125;);<br>  &#125;,<br><br>  &#125;,<br>  subscriptions: &#123;<br>    setup(&#123; dispatch, history &#125;) &#123;<br>      return history.listen((&#123; pathname, query &#125;) =&gt; &#123;<br>        if (pathname === <span class="hljs-string">'/users'</span>) &#123;<br>          dispatch(&#123; type: <span class="hljs-string">'fetch'</span>, payload: query &#125;);<br>        &#125;<br>      &#125;);<br>    &#125;,<br>  &#125;,<br>&#125;;<br></code></pre></td></tr></table></figure>
+<ol start="3">
+<li>component, 修改 src/components/Users/Users.js，替换 deleteHandler 内容：</li>
+</ol>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">import</span> React from <span class="hljs-string">'react'</span>;<br><span class="hljs-keyword">import</span> &#123; connect &#125; from <span class="hljs-string">'dva'</span>;<br><span class="hljs-keyword">import</span> &#123; Table, Pagination, Popconfirm, Button &#125; from <span class="hljs-string">'antd'</span>;<br><span class="hljs-keyword">import</span> &#123; routerRedux &#125; from <span class="hljs-string">'dva/router'</span>;<br><span class="hljs-keyword">import</span> styles from <span class="hljs-string">'./Users.css'</span>;<br><span class="hljs-keyword">import</span> &#123; PAGE_SIZE &#125; from <span class="hljs-string">'../../constants'</span>;<br><span class="hljs-keyword">import</span> UserModal from <span class="hljs-string">'./UserModal'</span>;<br><br><span class="hljs-keyword">function</span> Users(&#123; dispatch, list: dataSource, loading, total, page: current &#125;) &#123;<br>//删除<br>  function deleteHandler(id) &#123;<br>    dispatch(&#123;<br>      type: <span class="hljs-string">'users/remove'</span>,<br>      payload: id,<br>    &#125;);<br>  &#125;<br>//修改<br>  function editHandler(id, values) &#123;<br>        dispatch(&#123;<br>            type: <span class="hljs-string">'users/patch'</span>,<br>            payload: &#123; id, values &#125;,<br>        &#125;);<br>      &#125;<br>//分页<br>  function pageChangeHandler(page) &#123;<br>    dispatch(routerRedux.push(&#123;<br>	pathname: <span class="hljs-string">'/users'</span>,<br>    query: &#123; page &#125;,<br>	 &#125;));<br>  &#125;<br>//新增<br>  function createHandler(values) &#123;<br>        dispatch(&#123;<br>            type: <span class="hljs-string">'users/create'</span>,<br>            payload: values,<br>          &#125;);<br>     &#125;<br><br>  const columns = [<br>    &#123;<br>      title: <span class="hljs-string">'姓名'</span>,<br>      dataIndex: <span class="hljs-string">'name'</span>,<br>      key: <span class="hljs-string">'name'</span>,<br>      render: text =&gt; &lt;a href=<span class="hljs-string">""</span>&gt;&#123;text&#125;&lt;/a&gt;,<br>    &#125;,<br>    &#123;<br>      title: <span class="hljs-string">'邮箱'</span>,<br>      dataIndex: <span class="hljs-string">'email'</span>,<br>      key: <span class="hljs-string">'email'</span>,<br>    &#125;,<br>    &#123;<br>      title: <span class="hljs-string">'地址'</span>,<br>      dataIndex: <span class="hljs-string">'website'</span>,<br>      key: <span class="hljs-string">'website'</span>,<br>    &#125;,<br>    &#123;<br>      title: <span class="hljs-string">'操作'</span>,<br>      key: <span class="hljs-string">'operation'</span>,<br>      render: (text, record) =&gt; (<br>        &lt;span className=&#123;styles.operation&#125;&gt;<br>            &lt;UserModal record=&#123;record&#125; onOk=&#123;editHandler.bind(null, record.id)&#125;&gt;<br>            &lt;a&gt;修改&lt;/a&gt;<br>              &lt;/UserModal&gt;<br>            &lt;Popconfirm title=<span class="hljs-string">"Confirm to delete?"</span> onConfirm=&#123;deleteHandler.bind(null, record.id)&#125;&gt;<br>            &lt;a href=<span class="hljs-string">""</span>&gt;删除&lt;/a&gt;<br>          &lt;/Popconfirm&gt;<br>        &lt;/span&gt;<br>      ),<br>    &#125;,<br>  ];<br><br>  return (<br>    &lt;div className=&#123;styles.normal&#125;&gt;<br>      &lt;div&gt;<br>          &lt;div className=&#123;styles.create&#125;&gt;<br>            &lt;UserModal record=&#123;&#123;&#125;&#125; onOk=&#123;createHandler&#125;&gt;<br>                &lt;Button type=<span class="hljs-string">"primary"</span>&gt;增加用户&lt;/Button&gt;<br>            &lt;/UserModal&gt;<br>          &lt;/div&gt;<br>        &lt;Table<br>          columns=&#123;columns&#125;<br>          dataSource=&#123;dataSource&#125;<br>		  loading=&#123;loading&#125;<br>          rowKey=&#123;record =&gt; record.id&#125;<br>          pagination=&#123;false&#125;<br>        /&gt;<br>        &lt;Pagination<br>          className=<span class="hljs-string">"ant-table-pagination"</span><br>          total=&#123;total&#125;<br>          current=&#123;current&#125;<br>          pageSize=&#123;PAGE_SIZE&#125;<br>		  onChange=&#123;pageChangeHandler&#125;<br>        /&gt;<br>      &lt;/div&gt;<br>    &lt;/div&gt;<br>  );<br>&#125;<br><br><span class="hljs-keyword">function</span> mapStateToProps(state) &#123;<br>  const &#123; list, total, page &#125; = state.users;<br>  return &#123;<br>	loading: state.loading.models.users,<br>    list,<br>    total,<br>    page,<br>  &#125;;<br>&#125;<br><br>export <span class="hljs-keyword">default</span> connect(mapStateToProps)(Users);<br></code></pre></td></tr></table></figure>
+<p>以上就是react+dva+antd实现的一个简单的增删改的操作例子。</p>
+
+      
+    </div>
+    
+    
+    
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="wusha wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wusha 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wusha 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react/" rel="tag"><i class="fa fa-tag"></i> react</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/12/ssh增删改查/" rel="next" title="ssh框架整合之登录以及增删改查">
+                <i class="fa fa-chevron-left"></i> ssh框架整合之登录以及增删改查
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/12/基于highcharts-easui-java生成饼图/" rel="prev" title="基于highcharts+easui+java生成饼图">
+                基于highcharts+easui+java生成饼图 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+ 
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzc1Ni8xNDI4Nw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="wusha" />
+            
+              <p class="site-author-name" itemprop="name">wusha</p>
+              <p class="site-description motion-element" itemprop="description">你的努力，终将有所回报</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uisdc.com/" title="个人简历" target="_blank">个人简历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="csdn" target="_blank">csdn</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="博客园" target="_blank">博客园</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="简书" target="_blank">简书</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言："><span class="nav-number">1.</span> <span class="nav-text">前言：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步："><span class="nav-number">2.</span> <span class="nav-text">第一步：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步，"><span class="nav-number">3.</span> <span class="nav-text">第二步，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步，"><span class="nav-number">4.</span> <span class="nav-text">第三步，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四步，"><span class="nav-number">5.</span> <span class="nav-text">第四步，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第五步，"><span class="nav-number">6.</span> <span class="nav-text">第五步，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六步，"><span class="nav-number">7.</span> <span class="nav-text">第六步，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第七步，"><span class="nav-number">8.</span> <span class="nav-text">第七步，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八步，"><span class="nav-number">9.</span> <span class="nav-text">第八步，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九步，"><span class="nav-number">10.</span> <span class="nav-text">第九步，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第10步，"><span class="nav-number">11.</span> <span class="nav-text">第10步，</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wusha</span>
+
+  
+</div>
+
+
+  <div class="powered-by">  个人专属</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">IT原创   因为热爱所以专注  </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+ 
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytH9K9lD';
+      var conf = 'c8a38acb7e2a30278f87488542dfc0bc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("p7qmsjjKNxNoT9Tu7Xab9DOU-gzGzoHsz", "COi8vpjU93nghYJnFRDkmmhy");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+  <!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+</body>
+
+</html>

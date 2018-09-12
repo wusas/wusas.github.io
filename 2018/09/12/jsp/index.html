@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jsp,servlet," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="沙沙的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="1.DAO+MVC包   2.DAO接口方法定义 123456789101112131415161718192021222324252627282930package com.wanczy.dao;import java.math.BigDecimal;import java.util.List;import com.wanczy.pojo.CustomerResourcePOJO;public">
+<meta name="keywords" content="jsp,servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jsp+servlet实现模糊查询和分页效果">
+<meta property="og:url" content="http://yoursite.com/2018/09/12/jsp/index.html">
+<meta property="og:site_name" content="沙沙的博客">
+<meta property="og:description" content="1.DAO+MVC包   2.DAO接口方法定义 123456789101112131415161718192021222324252627282930package com.wanczy.dao;import java.math.BigDecimal;import java.util.List;import com.wanczy.pojo.CustomerResourcePOJO;public">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/jsp/1143999-20170503164702164-1976520947.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/jsp/1143999-20170503165024664-826049266.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/jsp/1143999-20170503171333414-1740405183.png">
+<meta property="og:updated_time" content="2018-09-12T11:23:37.374Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jsp+servlet实现模糊查询和分页效果">
+<meta name="twitter:description" content="1.DAO+MVC包   2.DAO接口方法定义 123456789101112131415161718192021222324252627282930package com.wanczy.dao;import java.math.BigDecimal;import java.util.List;import com.wanczy.pojo.CustomerResourcePOJO;public">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/12/jsp/1143999-20170503164702164-1976520947.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/12/jsp/"/>
+
+
+
+
+
+
+  <title>jsp+servlet实现模糊查询和分页效果 | 沙沙的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a7af505fec0721f2d93dbbaaad431d35";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">沙沙的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你的努力，终将有所回报</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/jsp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wusha">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沙沙的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jsp+servlet实现模糊查询和分页效果</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-12T15:18:00+08:00">
+                2018-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/原生分页查询/" itemprop="url" rel="index">
+                    <span itemprop="name">原生分页查询</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/09/12/jsp/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/09/12/jsp/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/09/12/jsp/" class="leancloud_visitors" data-flag-title="jsp+servlet实现模糊查询和分页效果">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span:>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>1.DAO+MVC包</p>
+<p><img src="/2018/09/12/jsp/1143999-20170503164702164-1976520947.png" alt=""></p>
+<p><img src="/2018/09/12/jsp/1143999-20170503165024664-826049266.png" alt=""></p>
+<p>2.DAO接口方法定义</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">package</span> com.wanczy.dao;<br><br><span class="hljs-keyword">import</span> java.math.BigDecimal;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-keyword">import</span> com.wanczy.pojo.CustomerResourcePOJO;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">CustomerResourceDAO</span> </span>&#123;<br> <span class="hljs-comment">/**<br>  *<br>  * <span class="hljs-doctag">@param</span> sName学校名称<br>  * <span class="hljs-doctag">@param</span> cLevel合作等级<br>  * <span class="hljs-doctag">@param</span> cState合作状态<br>  * <span class="hljs-doctag">@param</span> pageSize一页显示数据的笔数<br>  * <span class="hljs-doctag">@param</span> pageCurrent显示的页数<br>  * <span class="hljs-doctag">@return</span><br>  */</span><br> <span class="hljs-comment">//根据名字水平状态来查询数据，传入页数及当前页数</span><br> <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;CustomerResourcePOJO&gt; <span class="hljs-title">findByNameLevelState</span> <span class="hljs-params">(String sName,<span class="hljs-keyword">int</span> cLevel,<span class="hljs-keyword">int</span> cState,<span class="hljs-keyword">int</span> pageSize,<span class="hljs-keyword">int</span> pageCurrent)</span></span>;<br> <span class="hljs-comment">//查询数据笔数</span><br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findCountByNameLevelState</span><span class="hljs-params">(String sName,<span class="hljs-keyword">int</span> cLevel,<span class="hljs-keyword">int</span> cState)</span></span>;<br> <span class="hljs-comment">//查询单笔数据</span><br> <span class="hljs-function"><span class="hljs-keyword">public</span>  CustomerResourcePOJO <span class="hljs-title">findByCId</span><span class="hljs-params">(BigDecimal cID)</span></span>;<br> <span class="hljs-comment">//修改</span><br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">doUpd</span><span class="hljs-params">(CustomerResourcePOJO pojo)</span></span>;<br> <span class="hljs-comment">//新增</span><br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">doIns</span><span class="hljs-params">(CustomerResourcePOJO pojo)</span></span>;<br> <span class="hljs-comment">//删除</span><br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">doDel</span><span class="hljs-params">(BigDecimal cID)</span></span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>3.DAO接口方法实现方法</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">package</span> com.wanczy.dao.impl;<br><br><span class="hljs-keyword">import</span> java.math.BigDecimal;<br><span class="hljs-keyword">import</span> java.sql.Connection;<br><span class="hljs-keyword">import</span> java.sql.PreparedStatement;<br><span class="hljs-keyword">import</span> java.sql.ResultSet;<br><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-keyword">import</span> com.wanczy.dao.CustomerResourceDAO;<br><span class="hljs-keyword">import</span> com.wanczy.pojo.CustomerResourcePOJO;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> CustomerResourceDAOImpl <span class="hljs-keyword">implements</span> CustomerResourceDAO &#123;<br> Connection conn ;<br> <span class="hljs-keyword">public</span> CustomerResourceDAOImpl(Connection conn)&#123;<br>  <span class="hljs-keyword">this</span>.conn = conn;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> doDel(BigDecimal cID) &#123;<br>  <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">false</span>;<br>  PreparedStatement pstate = <span class="hljs-keyword">null</span>;<br>  <span class="hljs-keyword">try</span> &#123;<br>   <span class="hljs-keyword">this</span>.conn.setAutoCommit(<span class="hljs-keyword">false</span>);<br>   String sql = <span class="hljs-string">"delete from customer_resource where c_id = ?"</span>;<br>   pstate = <span class="hljs-keyword">this</span>.conn.prepareStatement(sql);<br>   pstate.setBigDecimal(<span class="hljs-number">1</span>, cID);<br>   pstate.execute();<span class="hljs-comment">//执行</span><br>   <span class="hljs-keyword">this</span>.conn.commit();<br>   flag = <span class="hljs-keyword">true</span>;<br>  &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>   e.printStackTrace();<br>   <span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">this</span>.conn.rollback();<br>   &#125; <span class="hljs-keyword">catch</span> (Exception e2) &#123;<br>    e2.printStackTrace();<br>    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>   &#125;<br>   <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>  &#125; <span class="hljs-keyword">finally</span>&#123;<br>   <span class="hljs-keyword">try</span> &#123;<br>    pstate.close();<br>   &#125; <span class="hljs-keyword">catch</span> (Exception e2) &#123;<br>    e2.printStackTrace();<br>    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>   &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> flag;<br> &#125;<br><br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> doIns(CustomerResourcePOJO pojo) &#123;<br>  <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">false</span>;<br>  PreparedStatement pstate = <span class="hljs-keyword">null</span>;<br>  <span class="hljs-keyword">try</span> &#123;<br>   <span class="hljs-keyword">this</span>.conn.setAutoCommit(<span class="hljs-keyword">false</span>);<br>   String sql = <span class="hljs-string">"insert into customer_resource (c_id, s_name, s_add, "</span> +<br>      <span class="hljs-string">"s_link_man, s_link_tel, c_level, c_state ,s_leader, s_leader_tel)"</span> +<br>      <span class="hljs-string">"values(scott_squence.nextval,?,?,?,?,?,?,?,?)"</span>;<br>   pstate = <span class="hljs-keyword">this</span>.conn.prepareStatement(sql);<br>   pstate.setString(<span class="hljs-number">1</span>,pojo.getSname());<br>   pstate.setString(<span class="hljs-number">2</span>,pojo.getSadd());<br>   pstate.setString(<span class="hljs-number">3</span>,pojo.getSlinkMan());<br>   pstate.setString(<span class="hljs-number">4</span>,pojo.getSlinkTel());<br>   pstate.setInt(<span class="hljs-number">5</span>,pojo.getClevel());<br>   pstate.setInt(<span class="hljs-number">6</span>,pojo.getCstate());<br>   pstate.setString(<span class="hljs-number">7</span>,pojo.getSleader());<br>   pstate.setString(<span class="hljs-number">8</span>,pojo.getSleaderTel());<br>   pstate.execute();<span class="hljs-comment">//执行</span><br>   <span class="hljs-keyword">this</span>.conn.commit();<br>   flag = <span class="hljs-keyword">true</span>;<br>  &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>   e.printStackTrace();<br>   <span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">this</span>.conn.rollback();<br>   &#125; <span class="hljs-keyword">catch</span> (Exception e2) &#123;<br>    e2.printStackTrace();<br>    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>   &#125;<br>   <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>  &#125; <span class="hljs-keyword">finally</span>&#123;<br>   <span class="hljs-keyword">try</span> &#123;<br>    pstate.close();<br>   &#125; <span class="hljs-keyword">catch</span> (Exception e2) &#123;<br>    e2.printStackTrace();<br>    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>   &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> flag;<br> &#125;<br><br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> doUpd(CustomerResourcePOJO pojo) &#123;<br>  <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">false</span>;<br>  PreparedStatement pstate = <span class="hljs-keyword">null</span>;<br>  <span class="hljs-keyword">try</span> &#123;<br>   <span class="hljs-keyword">this</span>.conn.setAutoCommit(<span class="hljs-keyword">false</span>);<br>   String sql = <span class="hljs-string">"update  customer_resource set s_name=?, s_add=?, "</span> +<br>      <span class="hljs-string">" s_link_man=?, s_link_tel=?, c_level=?, c_state=? ,s_leader=?, s_leader_tel=? where"</span> +<br>      <span class="hljs-string">" c_id = ?"</span>;<br>   pstate = <span class="hljs-keyword">this</span>.conn.prepareStatement(sql);<br>   pstate.setString(<span class="hljs-number">1</span>,pojo.getSname());<br>   pstate.setString(<span class="hljs-number">2</span>,pojo.getSadd());<br>   pstate.setString(<span class="hljs-number">3</span>,pojo.getSlinkMan());<br>   pstate.setString(<span class="hljs-number">4</span>,pojo.getSlinkTel());<br>   pstate.setInt(<span class="hljs-number">5</span>,pojo.getClevel());<br>   pstate.setInt(<span class="hljs-number">6</span>,pojo.getCstate());<br>   pstate.setString(<span class="hljs-number">7</span>,pojo.getSleader());<br>   pstate.setString(<span class="hljs-number">8</span>,pojo.getSleaderTel());<br>   pstate.setBigDecimal(<span class="hljs-number">9</span>, pojo.getCid());<br>   pstate.execute();<span class="hljs-comment">//执行</span><br>   <span class="hljs-keyword">this</span>.conn.commit();<br>   flag = <span class="hljs-keyword">true</span>;<br>  &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>   e.printStackTrace();<br>   <span class="hljs-keyword">try</span> &#123;<br>    <span class="hljs-keyword">this</span>.conn.rollback();<br>   &#125; <span class="hljs-keyword">catch</span> (Exception e2) &#123;<br>    e2.printStackTrace();<br>    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>   &#125;<br>   <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>  &#125; <span class="hljs-keyword">finally</span>&#123;<br>   <span class="hljs-keyword">try</span> &#123;<br>    pstate.close();<br>   &#125; <span class="hljs-keyword">catch</span> (Exception e2) &#123;<br>    e2.printStackTrace();<br>    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>   &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> flag;<br> &#125;<br><br> <span class="hljs-keyword">public</span> CustomerResourcePOJO findByCId(BigDecimal cID) &#123;<br>  CustomerResourcePOJO pojo = <span class="hljs-keyword">null</span>;<br>  PreparedStatement pstate = <span class="hljs-keyword">null</span>;<br>  ResultSet res = <span class="hljs-keyword">null</span>;<br>  <span class="hljs-keyword">try</span> &#123;<br>   String sql = <span class="hljs-string">"select  s_name, s_add, "</span> +<br>      <span class="hljs-string">"s_link_man, s_link_tel, c_level, c_state ,s_leader, s_leader_tel  from customer_resource where c_id = ?"</span>;<br>   pstate = <span class="hljs-keyword">this</span>.conn.prepareStatement(sql);<br>   pstate.setBigDecimal(<span class="hljs-number">1</span>, cID);<br>   res = pstate.executeQuery();<br>   <span class="hljs-keyword">while</span>(res.<span class="hljs-keyword">next</span>())&#123;<br>    pojo = <span class="hljs-keyword">new</span> CustomerResourcePOJO(cID,res.getString(<span class="hljs-number">1</span>),res.getString(<span class="hljs-number">2</span>),<br>      res.getString(<span class="hljs-number">3</span>),res.getString(<span class="hljs-number">4</span>),res.getInt(<span class="hljs-number">5</span>),res.getInt(<span class="hljs-number">6</span>),<br>      res.getString(<span class="hljs-number">7</span>),res.getString(<span class="hljs-number">8</span>));<br>    <br>   &#125;<br>  &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>   e.printStackTrace();<br>   <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>  &#125; <span class="hljs-keyword">finally</span>&#123;<br>   <span class="hljs-keyword">try</span> &#123;<br>    res.close();<br>    pstate.close();<br>   &#125; <span class="hljs-keyword">catch</span> (Exception e2) &#123;<br>    e2.printStackTrace();<br>   &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> pojo;<br> &#125;<br><br> <span class="hljs-keyword">public</span> List&lt;CustomerResourcePOJO&gt; findByNameLevelState(String sName,<br>  <span class="hljs-keyword">int</span> cLevel, <span class="hljs-keyword">int</span> cState, <span class="hljs-keyword">int</span> pageSize, <span class="hljs-keyword">int</span> pageCurrent) &#123;<br>  List&lt;CustomerResourcePOJO&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;CustomerResourcePOJO&gt;();<br>  PreparedStatement pstate = <span class="hljs-keyword">null</span>;<br>  ResultSet res = <span class="hljs-keyword">null</span>;<br>  <span class="hljs-keyword">try</span> &#123;<br>   StringBuffer sql = <span class="hljs-keyword">new</span> StringBuffer();<br>   sql.<span class="hljs-keyword">append</span>(<span class="hljs-string">"select c_id,s_name, s_add, s_link_man, "</span>+<br>   <span class="hljs-string">" s_link_tel, c_level, c_state ,s_leader,  "</span>+<br>   <span class="hljs-string">" s_leader_tel from (select  c_id,s_name, s_add, s_link_man,  "</span>+<br>   <span class="hljs-string">" s_link_tel, c_level, c_state ,s_leader,  "</span>+<br>   <span class="hljs-string">" s_leader_tel ,rownum abc  "</span>+<br>   <span class="hljs-string">" from customer_resource where s_name like ? "</span>);<br>   <span class="hljs-keyword">if</span>(cLevel != <span class="hljs-number">0</span>)&#123;<br>    sql.<span class="hljs-keyword">append</span>(<span class="hljs-string">" and c_level = "</span>+cLevel);<br>   &#125;<br>   <span class="hljs-keyword">if</span>(cState != <span class="hljs-number">0</span>)&#123;<br>    sql.<span class="hljs-keyword">append</span>(<span class="hljs-string">" and c_state = "</span>+cState);<br>   &#125;<br>   sql.<span class="hljs-keyword">append</span>(<span class="hljs-string">" ) where abc&gt;? and abc&lt;=? order by c_level,c_state"</span>);<br>   pstate = <span class="hljs-keyword">this</span>.conn.prepareStatement(sql.toString());<br>   pstate.setString(<span class="hljs-number">1</span>, <span class="hljs-string">"%"</span>+sName+<span class="hljs-string">"%"</span>);<br>   pstate.setInt(<span class="hljs-number">2</span>, (pageCurrent-<span class="hljs-number">1</span>)*pageSize);<br>   pstate.setInt(<span class="hljs-number">3</span>, pageCurrent*pageSize);<br>   res = pstate.executeQuery();<br>   <span class="hljs-keyword">while</span>(res.<span class="hljs-keyword">next</span>())&#123;<br>    CustomerResourcePOJO pojo = <span class="hljs-keyword">new</span> CustomerResourcePOJO(res.getBigDecimal(<span class="hljs-number">1</span>),res.getString(<span class="hljs-number">2</span>),res.getString(<span class="hljs-number">3</span>),<br>      res.getString(<span class="hljs-number">4</span>),res.getString(<span class="hljs-number">5</span>),res.getInt(<span class="hljs-number">6</span>),res.getInt(<span class="hljs-number">7</span>),<br>      res.getString(<span class="hljs-number">8</span>),res.getString(<span class="hljs-number">9</span>));<br>    list.add(pojo);<br>    <br>   &#125;<br>  &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>   e.printStackTrace();<br>   <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>  &#125; <span class="hljs-keyword">finally</span>&#123;<br>   <span class="hljs-keyword">try</span> &#123;<br>    res.close();<br>    pstate.close();<br>   &#125; <span class="hljs-keyword">catch</span> (Exception e2) &#123;<br>    e2.printStackTrace();<br>   &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> list;<br> &#125;<br><span class="hljs-comment">//查询单笔数据</span><br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> findCountByNameLevelState(String sName, <span class="hljs-keyword">int</span> cLevel, <span class="hljs-keyword">int</span> cState) &#123;<br>  <span class="hljs-keyword">int</span> <span class="hljs-keyword">count</span> = <span class="hljs-number">0</span>;<br>  PreparedStatement pstate = <span class="hljs-keyword">null</span>;<br>  ResultSet res = <span class="hljs-keyword">null</span>;<br>  <span class="hljs-keyword">try</span> &#123;<br>   StringBuffer sql = <span class="hljs-keyword">new</span> StringBuffer();<br>   sql.<span class="hljs-keyword">append</span>(<span class="hljs-string">"select count(c_id) from customer_resource where s_name like ? "</span>);<br>   <span class="hljs-keyword">if</span>(cLevel != <span class="hljs-number">0</span>)&#123;<br>    sql.<span class="hljs-keyword">append</span>(<span class="hljs-string">" and c_level = "</span>+cLevel);<br>   &#125;<br>   <span class="hljs-keyword">if</span>(cState != <span class="hljs-number">0</span>)&#123;<br>    sql.<span class="hljs-keyword">append</span>(<span class="hljs-string">" and c_state = "</span>+cState);<br>   &#125;<br>   pstate = <span class="hljs-keyword">this</span>.conn.prepareStatement(sql.toString());<br>   pstate.setString(<span class="hljs-number">1</span>, <span class="hljs-string">"%"</span>+sName+<span class="hljs-string">"%"</span>);<br>   res = pstate.executeQuery();<br>   <span class="hljs-keyword">while</span>(res.<span class="hljs-keyword">next</span>())&#123;<br>    <span class="hljs-keyword">count</span> = res.getInt(<span class="hljs-number">1</span>);<br>   &#125;<br>  &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>   e.printStackTrace();<br>   <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span><br>  &#125; <span class="hljs-keyword">finally</span>&#123;<br>   <span class="hljs-keyword">try</span> &#123;<br>    res.close();<br>    pstate.close();<br>   &#125; <span class="hljs-keyword">catch</span> (Exception e2) &#123;<br>    e2.printStackTrace();<br>   &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span><br></code></pre></td></tr></table></figure>
+<p>4.Pojo实体类（数据库里的字段）</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">package</span> com.wanczy.pojo;<br><br><span class="hljs-keyword">import</span> java.io.Serializable;<br><span class="hljs-keyword">import</span> java.math.BigDecimal;<br><br><span class="hljs-keyword">public</span> class CustomerResourcePOJO implements Serializable &#123;<br> <span class="hljs-keyword">private</span> BigDecimal cid;<br> <span class="hljs-keyword">private</span> <span class="hljs-keyword">String</span> sname;<br> <span class="hljs-keyword">private</span> <span class="hljs-keyword">String</span> sadd;<br> <span class="hljs-keyword">private</span> <span class="hljs-keyword">String</span> slinkMan;<br> <span class="hljs-keyword">private</span> <span class="hljs-keyword">String</span> slinkTel;<br> <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span> clevel;<br> <span class="hljs-keyword">private</span> <span class="hljs-built_in">int</span> cstate;<br> <span class="hljs-keyword">private</span> <span class="hljs-keyword">String</span> sleader;<br> <span class="hljs-keyword">private</span> <span class="hljs-keyword">String</span> sleaderTel;<br> <span class="hljs-keyword">public</span> BigDecimal getCid() &#123;<br>  <span class="hljs-keyword">return</span> cid;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> setCid(BigDecimal cid) &#123;<br>  <span class="hljs-keyword">this</span>.cid = cid;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">String</span> getSname() &#123;<br>  <span class="hljs-keyword">return</span> sname;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> setSname(<span class="hljs-keyword">String</span> sname) &#123;<br>  <span class="hljs-keyword">this</span>.sname = sname;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">String</span> getSadd() &#123;<br>  <span class="hljs-keyword">return</span> sadd;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> setSadd(<span class="hljs-keyword">String</span> sadd) &#123;<br>  <span class="hljs-keyword">this</span>.sadd = sadd;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">String</span> getSlinkMan() &#123;<br>  <span class="hljs-keyword">return</span> slinkMan;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> setSlinkMan(<span class="hljs-keyword">String</span> slinkMan) &#123;<br>  <span class="hljs-keyword">this</span>.slinkMan = slinkMan;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">String</span> getSlinkTel() &#123;<br>  <span class="hljs-keyword">return</span> slinkTel;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> setSlinkTel(<span class="hljs-keyword">String</span> slinkTel) &#123;<br>  <span class="hljs-keyword">this</span>.slinkTel = slinkTel;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> getClevel() &#123;<br>  <span class="hljs-keyword">return</span> clevel;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> setClevel(<span class="hljs-built_in">int</span> clevel) &#123;<br>  <span class="hljs-keyword">this</span>.clevel = clevel;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> getCstate() &#123;<br>  <span class="hljs-keyword">return</span> cstate;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> setCstate(<span class="hljs-built_in">int</span> cstate) &#123;<br>  <span class="hljs-keyword">this</span>.cstate = cstate;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">String</span> getSleader() &#123;<br>  <span class="hljs-keyword">return</span> sleader;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> setSleader(<span class="hljs-keyword">String</span> sleader) &#123;<br>  <span class="hljs-keyword">this</span>.sleader = sleader;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">String</span> getSleaderTel() &#123;<br>  <span class="hljs-keyword">return</span> sleaderTel;<br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> setSleaderTel(<span class="hljs-keyword">String</span> sleaderTel) &#123;<br>  <span class="hljs-keyword">this</span>.sleaderTel = sleaderTel;<br> &#125;<br> <span class="hljs-comment">//一般构造方法都要写一个带id和一个不带id的，还有一个无参的，方便后面的增删改查以及方法的调用</span><br> <span class="hljs-keyword">public</span> CustomerResourcePOJO(BigDecimal cid, <span class="hljs-keyword">String</span> sname, <span class="hljs-keyword">String</span> sadd,<br>   <span class="hljs-keyword">String</span> slinkMan, <span class="hljs-keyword">String</span> slinkTel, <span class="hljs-built_in">int</span> clevel, <span class="hljs-built_in">int</span> cstate,<br>   <span class="hljs-keyword">String</span> sleader, <span class="hljs-keyword">String</span> sleaderTel) &#123;<br>  <span class="hljs-keyword">super</span>();<br>  <span class="hljs-keyword">this</span>.cid = cid;<br>  <span class="hljs-keyword">this</span>.sname = sname;<br>  <span class="hljs-keyword">this</span>.sadd = sadd;<br>  <span class="hljs-keyword">this</span>.slinkMan = slinkMan;<br>  <span class="hljs-keyword">this</span>.slinkTel = slinkTel;<br>  <span class="hljs-keyword">this</span>.clevel = clevel;<br>  <span class="hljs-keyword">this</span>.cstate = cstate;<br>  <span class="hljs-keyword">this</span>.sleader = sleader;<br>  <span class="hljs-keyword">this</span>.sleaderTel = sleaderTel;<br> &#125;<br> <span class="hljs-keyword">public</span> CustomerResourcePOJO( <span class="hljs-keyword">String</span> sname, <span class="hljs-keyword">String</span> sadd,<br>   <span class="hljs-keyword">String</span> slinkMan, <span class="hljs-keyword">String</span> slinkTel, <span class="hljs-built_in">int</span> clevel, <span class="hljs-built_in">int</span> cstate,<br>   <span class="hljs-keyword">String</span> sleader, <span class="hljs-keyword">String</span> sleaderTel) &#123;<br>  <span class="hljs-keyword">super</span>();<br>  <span class="hljs-keyword">this</span>.sname = sname;<br>  <span class="hljs-keyword">this</span>.sadd = sadd;<br>  <span class="hljs-keyword">this</span>.slinkMan = slinkMan;<br>  <span class="hljs-keyword">this</span>.slinkTel = slinkTel;<br>  <span class="hljs-keyword">this</span>.clevel = clevel;<br>  <span class="hljs-keyword">this</span>.cstate = cstate;<br>  <span class="hljs-keyword">this</span>.sleader = sleader;<br>  <span class="hljs-keyword">this</span>.sleaderTel = sleaderTel;<br> &#125;<br> <span class="hljs-keyword">public</span> CustomerResourcePOJO() &#123;<br>  <span class="hljs-keyword">super</span>();<br> &#125; <br> <br>&#125;<br></code></pre></td></tr></table></figure>
+<p>5.代理类以及工厂类 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">package</span> com.wanczy.dao.proxy;<br><br><span class="hljs-keyword">import</span> java.math.BigDecimal;<br><span class="hljs-keyword">import</span> java.sql.Connection;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-keyword">import</span> com.wanczy.dao.CustomerResourceDAO;<br><span class="hljs-keyword">import</span> com.wanczy.dao.impl.CustomerResourceDAOImpl;<br><span class="hljs-keyword">import</span> com.wanczy.pojo.CustomerResourcePOJO;<br><span class="hljs-keyword">import</span> com.wanczy.pub.GetConnection;<br><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CustomerResourceDAOProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">CustomerResourceDAO</span> </span>&#123;<br> Connection conn = <span class="hljs-keyword">null</span>;<br> CustomerResourceDAOImpl impl = <span class="hljs-keyword">null</span>;<br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CustomerResourceDAOProxy</span><span class="hljs-params">()</span></span>&#123;<br>  <span class="hljs-keyword">try</span> &#123;<br>   <span class="hljs-keyword">this</span>.conn = GetConnection.getConn();<br>  &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>   <span class="hljs-comment">// TODO Auto-generated catch block</span><br>   e.printStackTrace();<br>  &#125;<br>  <span class="hljs-keyword">this</span>.impl = <span class="hljs-keyword">new</span> CustomerResourceDAOImpl(<span class="hljs-keyword">this</span>.conn);<br> &#125;<br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">doDel</span><span class="hljs-params">(BigDecimal cID)</span> </span>&#123;<br>  <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">this</span>.impl.doDel(cID);<br>  <span class="hljs-keyword">this</span>.close();<br>  <span class="hljs-keyword">return</span> flag;<br> &#125;<br><br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">doIns</span><span class="hljs-params">(CustomerResourcePOJO pojo)</span> </span>&#123;<br>  <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">this</span>.impl.doIns(pojo);<br>  <span class="hljs-keyword">this</span>.close();<br>  <span class="hljs-keyword">return</span> flag;<br> &#125;<br><br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">doUpd</span><span class="hljs-params">(CustomerResourcePOJO pojo)</span> </span>&#123;<br>  <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">this</span>.impl.doUpd(pojo);<br>  <span class="hljs-keyword">this</span>.close();<br>  <span class="hljs-keyword">return</span> flag;<br> &#125;<br><br> <span class="hljs-function"><span class="hljs-keyword">public</span> CustomerResourcePOJO <span class="hljs-title">findByCId</span><span class="hljs-params">(BigDecimal cID)</span> </span>&#123;<br>  CustomerResourcePOJO pojo = <span class="hljs-keyword">this</span>.impl.findByCId(cID);<br>  <span class="hljs-keyword">this</span>.close();<br>  <span class="hljs-keyword">return</span> pojo;<br> &#125;<br><br> <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;CustomerResourcePOJO&gt; <span class="hljs-title">findByNameLevelState</span><span class="hljs-params">(String sName,<br>   <span class="hljs-keyword">int</span> cLevel, <span class="hljs-keyword">int</span> cState, <span class="hljs-keyword">int</span> pageSize, <span class="hljs-keyword">int</span> pageCurrent)</span> </span>&#123;<br>  List&lt;CustomerResourcePOJO&gt; list = <span class="hljs-keyword">this</span>.impl.findByNameLevelState(sName, cLevel, cState, pageSize, pageCurrent);<br>  <span class="hljs-keyword">this</span>.close();<br>  <span class="hljs-keyword">return</span> list;<br> &#125;<br><br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findCountByNameLevelState</span><span class="hljs-params">(String sName, <span class="hljs-keyword">int</span> cLevel, <span class="hljs-keyword">int</span> cState)</span> </span>&#123;<br>  <span class="hljs-keyword">int</span> count = <span class="hljs-keyword">this</span>.impl.findCountByNameLevelState(sName, cLevel, cState);<br>  <span class="hljs-keyword">this</span>.close();<br>  <span class="hljs-keyword">return</span> count;<br> &#125;<br> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">close</span><span class="hljs-params">()</span></span>&#123;<br>  <span class="hljs-keyword">try</span> &#123;<br>   <span class="hljs-keyword">this</span>.conn.close();<br>  &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>   e.printStackTrace();<br>  &#125;<br> &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>6.servlet</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">package</span> com.wanczy.servlet.customerResource;<br><br><span class="hljs-keyword">import</span> java.io.IOException;<br><span class="hljs-keyword">import</span> java.io.PrintWriter;<br><span class="hljs-keyword">import</span> java.util.List;<br><br><span class="hljs-keyword">import</span> javax.servlet.ServletException;<br><span class="hljs-keyword">import</span> javax.servlet.http.HttpServlet;<br><span class="hljs-keyword">import</span> javax.servlet.http.HttpServletRequest;<br><span class="hljs-keyword">import</span> javax.servlet.http.HttpServletResponse;<br><br><span class="hljs-keyword">import</span> com.wanczy.dao.factory.CustomerResourceDAOFactory;<br><span class="hljs-keyword">import</span> com.wanczy.pojo.CustomerResourcePOJO;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> CustomerResourceQuery <span class="hljs-keyword">extends</span> HttpServlet &#123;<br><br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> doGet(HttpServletRequest request, HttpServletResponse response)<br>   <span class="hljs-keyword">throws</span> ServletException, IOException &#123;<br>  request.setCharacterEncoding(<span class="hljs-string">"utf-8"</span>);<br>  response.setCharacterEncoding(<span class="hljs-string">"utf-8"</span>);<br>  response.setContentType(<span class="hljs-string">"text/html; charset=utf-8"</span>);<br>  String sName = request.getParameter(<span class="hljs-string">"sName"</span>);<br>  <span class="hljs-keyword">int</span> cLevel = Integer.parseInt(request.getParameter(<span class="hljs-string">"cLevel"</span>));<br>  <span class="hljs-keyword">int</span> cState = Integer.parseInt(request.getParameter(<span class="hljs-string">"cState"</span>));<br>  <span class="hljs-keyword">int</span> pageSize = Integer.parseInt(request.getParameter(<span class="hljs-string">"pageSize"</span>));<br>  <span class="hljs-keyword">int</span> pageCurrent = Integer.parseInt(request.getParameter(<span class="hljs-string">"pageCurrent"</span>));<br>  List&lt;CustomerResourcePOJO&gt; list = CustomerResourceDAOFactory.getDAOInstance().findByNameLevelState(sName, cLevel, cState, pageSize, pageCurrent);<br>  <span class="hljs-keyword">int</span> <span class="hljs-keyword">count</span> = CustomerResourceDAOFactory.getDAOInstance().findCountByNameLevelState(sName, cLevel, cState);<br>  PrintWriter out = response.getWriter();<br>  StringBuffer sb = <span class="hljs-keyword">new</span> StringBuffer();<br>  sb.<span class="hljs-keyword">append</span>(<span class="hljs-string">"&lt;input type='hidden' id='count' value='"</span>+<span class="hljs-keyword">count</span>+<span class="hljs-string">"'/&gt;"</span>);<br>  sb.<span class="hljs-keyword">append</span>(<span class="hljs-string">"&lt;table id='sample_1' class='table table-striped table-bordered table-hover table-checkable order-column'&gt;&lt;tr&gt;&lt;th&gt;学校名称&lt;/th&gt;&lt;th&gt;学校地址&lt;/th&gt;&lt;th&gt;联系人&lt;/th&gt;&lt;th&gt;联系人电话&lt;/th&gt;&lt;th&gt;客户等级&lt;/th&gt;&lt;th&gt;合作状态&lt;/th&gt;&lt;th&gt;院校领导&lt;/th&gt;&lt;th&gt;领导电话&lt;/th&gt;&lt;th&gt;操作&lt;/th&gt;&lt;/tr&gt;"</span>);<br>  <span class="hljs-keyword">for</span>(CustomerResourcePOJO pojo : list)&#123;<br>   String cLevelCode = <span class="hljs-string">""</span>;<br>   <span class="hljs-keyword">if</span>(pojo.getClevel() == <span class="hljs-number">1</span>)&#123;<br>    cLevelCode = <span class="hljs-string">"高"</span>;<br>   &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(pojo.getClevel() == <span class="hljs-number">2</span>)&#123;<br>    cLevelCode = <span class="hljs-string">"中"</span>;<br>   &#125;<span class="hljs-keyword">else</span>&#123;<br>    cLevelCode = <span class="hljs-string">"低"</span>;<br>   &#125;<br>   String cStateCode = <span class="hljs-string">""</span>;<br>   <span class="hljs-keyword">if</span>(pojo.getCstate() == <span class="hljs-number">1</span>)&#123;<br>    cStateCode = <span class="hljs-string">"常年合作"</span>;<br>   &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(pojo.getCstate() == <span class="hljs-number">2</span>)&#123;<br>    cStateCode = <span class="hljs-string">"合作少"</span>;<br>   &#125;<span class="hljs-keyword">else</span>&#123;<br>    cStateCode = <span class="hljs-string">"近年无合作"</span>;<br>   &#125;<br>   sb.<span class="hljs-keyword">append</span>(<span class="hljs-string">"&lt;tr&gt;"</span> +<br>     <span class="hljs-string">"&lt;td&gt;"</span>+pojo.getSname()+<span class="hljs-string">"&lt;/td&gt;"</span> +<br>     <span class="hljs-string">"&lt;td&gt;"</span>+pojo.getSadd()+<span class="hljs-string">"&lt;/td&gt;"</span> +<br>     <span class="hljs-string">"&lt;td&gt;"</span>+pojo.getSlinkMan()+<span class="hljs-string">"&lt;/td&gt;"</span> +<br>     <span class="hljs-string">"&lt;td&gt;"</span>+pojo.getSlinkTel()+<span class="hljs-string">"&lt;/td&gt;"</span> +<br>     <span class="hljs-string">"&lt;td&gt;"</span>+cLevelCode+<span class="hljs-string">"&lt;/td&gt;"</span> +<br>     <span class="hljs-string">"&lt;td&gt;"</span>+cStateCode+<span class="hljs-string">"&lt;/td&gt;"</span> +<br>     <span class="hljs-string">"&lt;td&gt;"</span>+pojo.getSleader()+<span class="hljs-string">"&lt;/td&gt;"</span> +<br>     <span class="hljs-string">"&lt;td&gt;"</span>+pojo.getSleaderTel()+<span class="hljs-string">"&lt;/td&gt;"</span> +<br>     <span class="hljs-string">"&lt;td&gt;&lt;a href='#' onclick='goUpdate("</span>+pojo.getCid()+<span class="hljs-string">")'&gt;修改&lt;/a&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"</span> +<br>       <span class="hljs-string">"&lt;a href='#' onclick='goDelete("</span>+pojo.getCid()+<span class="hljs-string">")'&gt;删除&lt;/a&gt;&lt;/td&gt;"</span> +<br>     <span class="hljs-string">"&lt;/tr&gt;"</span>);<br>  &#125;<br>  sb.<span class="hljs-keyword">append</span>(<span class="hljs-string">"&lt;/table&gt;"</span>);<br>  out.<span class="hljs-keyword">print</span>(sb.toString());<br>  out.close();<br>   <br> &#125;<br> <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> doPost(HttpServletRequest request, HttpServletResponse response)<br>   <span class="hljs-keyword">throws</span> ServletException, IOException &#123;<br>  <span class="hljs-keyword">this</span>.doGet(request, response);<br> &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<p>7.web页面</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><br><br><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">%@page</span> <span class="hljs-attr">contentType</span>=<span class="hljs-string">"text/html; charset=utf-8"</span>  %&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">%</span> <span class="hljs-attr">String</span> <span class="hljs-attr">path</span>=<span class="hljs-string">request.getContextPath();</span> %&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>分页操作<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">name</span> = <span class="hljs-string">"f"</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span> <span class="hljs-attr">title</span>=<span class="hljs-string">"查询"</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"12%"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"25"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"STYLE1"</span><br>        <span class="hljs-attr">style</span>=<span class="hljs-string">"color: black;"</span>&gt;</span>查询条件<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span><br>  学校名称：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"sName"</span>/&gt;</span><br>   合作等级：<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"cLevel"</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">selected</span>=<span class="hljs-string">"selected"</span>&gt;</span>全部<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>高<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>中<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>低<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>   合作状态：<span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"cState"</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">selected</span>=<span class="hljs-string">"selected"</span>&gt;</span>全部<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"1"</span>&gt;</span>常年合作<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"2"</span>&gt;</span>合作少<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span>&gt;</span>近年无合作<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>     <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"查询"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"query(0)"</span>/&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"新增"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"goAdd()"</span>/&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span><br>   <br>  <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>/&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"showTable"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">align</span>=<span class="hljs-string">"right"</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"first"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"|&lt;"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"query(1)"</span>/&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"up"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"&lt;"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"query(2)"</span>/&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"next"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"&gt;"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"query(3)"</span>/&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"end"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"&gt;|"</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">"query(4)"</span>/&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"selectPageCurrent"</span> <span class="hljs-attr">onchange</span>=<span class="hljs-string">"query(5)"</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"3"</span> <span class="hljs-attr">selected</span>=<span class="hljs-string">"selected"</span>&gt;</span>显示3笔<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"5"</span>&gt;</span>显示5笔<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"10"</span>&gt;</span>显示10笔<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br>   <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"showPageMessage"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br> <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="javascript"><br>  <span class="hljs-keyword">var</span> pageSize = <span class="hljs-number">3</span>;<span class="hljs-comment">//一页显示的数据笔数</span><br>  <span class="hljs-keyword">var</span> pageCurrent = <span class="hljs-number">1</span>;<span class="hljs-comment">//显示的页数</span><br>  <span class="hljs-keyword">var</span> allCount = <span class="hljs-number">0</span>;<span class="hljs-comment">//总共的数据笔数</span><br>  <span class="hljs-keyword">var</span> allPage = <span class="hljs-number">0</span>;<span class="hljs-comment">//总共数据页数</span><br>  query(<span class="hljs-number">0</span>);<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">query</span>(<span class="hljs-params">num</span>)</span>&#123;<br>   <span class="hljs-keyword">var</span> sName = f.sName.value;<br>   <span class="hljs-keyword">var</span> cLevel = f.cLevel.value;<br>   <span class="hljs-keyword">var</span> cState = f.cState.value;<br>   <span class="hljs-keyword">if</span>(num == <span class="hljs-number">1</span>)&#123;<br>    pageCurrent = <span class="hljs-number">1</span>;<br>   &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(num == <span class="hljs-number">2</span>)&#123;<br>    pageCurrent = pageCurrent <span class="hljs-number">-1</span>;<br>   &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(num == <span class="hljs-number">3</span>)&#123;<br>    pageCurrent = pageCurrent + <span class="hljs-number">1</span>;<br>   &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(num == <span class="hljs-number">4</span>)&#123;<br>    pageCurrent = allPage;<br>   &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(num == <span class="hljs-number">5</span>)&#123;<br>    pageCurrent = <span class="hljs-number">1</span>;<br>    pageSize = $(<span class="hljs-string">"#selectPageCurrent"</span>).val();<span class="hljs-comment">//取得每页显示的数据笔数</span><br>   &#125;<br>    $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>     <span class="hljs-comment">//设置提交的路径，和参数</span><br>    $.post(<span class="hljs-string">"&lt;%=path %&gt;/CustomerResourceQuery"</span>,&#123;<span class="hljs-string">"sName"</span>:sName,<span class="hljs-string">"cLevel"</span>:cLevel,<span class="hljs-string">"cState"</span>:cState,<span class="hljs-string">"pageSize"</span>:pageSize,<span class="hljs-string">"pageCurrent"</span>:pageCurrent&#125;,<br>    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>&#123;<span class="hljs-comment">//Servlet执行完之后执行方法，data表示的servlet返回数据内容</span><br>      $(<span class="hljs-string">"#showTable"</span>).html(data);<span class="hljs-comment">//显示Servlet返回的内容</span><br>      controlButton();<br>     &#125;);<br>   &#125;);<br>  &#125;<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">controlButton</span>(<span class="hljs-params"></span>)</span>&#123;<br>   allCount = $(<span class="hljs-string">"#count"</span>).val();<br>   <span class="hljs-keyword">if</span>(allCount%pageSize == <span class="hljs-number">0</span>)&#123;<br>    allPage = allCount/pageSize<br>   &#125;<span class="hljs-keyword">else</span>&#123;<br>    allPage = <span class="hljs-built_in">Math</span>.floor(allCount/pageSize) +<span class="hljs-number">1</span>;<br>   &#125;<br>   <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"first"</span>).disabled = <span class="hljs-literal">false</span>;<br>   <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"up"</span>).disabled = <span class="hljs-literal">false</span>;<br>   <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"next"</span>).disabled = <span class="hljs-literal">false</span>;<br>   <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"end"</span>).disabled = <span class="hljs-literal">false</span>;<br>   <span class="hljs-keyword">if</span>(allPage == <span class="hljs-number">1</span>)&#123;<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"first"</span>).disabled = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"up"</span>).disabled = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"next"</span>).disabled = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"end"</span>).disabled = <span class="hljs-literal">true</span>;<br>   &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(pageCurrent == <span class="hljs-number">1</span>)&#123;<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"first"</span>).disabled = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"up"</span>).disabled = <span class="hljs-literal">true</span>;<br>   &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(pageCurrent == allPage)&#123;<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"next"</span>).disabled = <span class="hljs-literal">true</span>;<br>    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">"end"</span>).disabled = <span class="hljs-literal">true</span>;<br>   &#125;<br>   $(<span class="hljs-string">"#showPageMessage"</span>).html(<span class="hljs-string">"总共"</span>+allCount+<span class="hljs-string">"笔数据，当前显示"</span>+pageCurrent+<span class="hljs-string">"页，共"</span>+ allPage+<span class="hljs-string">"页"</span>);<br>   <br>  &#125;<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">goAdd</span>(<span class="hljs-params"></span>)</span>&#123;<br>   <span class="hljs-keyword">var</span> width = <span class="hljs-built_in">window</span>.screen.width ;<br>   <span class="hljs-keyword">var</span> height = <span class="hljs-built_in">window</span>.screen.height ;<br>   <span class="hljs-built_in">window</span>.open(<span class="hljs-string">"add.jsp"</span>,<span class="hljs-string">"新增客户"</span>,<span class="hljs-string">'height=400,width=300,top='</span>+(height<span class="hljs-number">-450</span>)/<span class="hljs-number">2</span>+<span class="hljs-string">',left='</span>+(width<span class="hljs-number">-300</span>)/<span class="hljs-number">2</span>+<span class="hljs-string">',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no'</span>);<br>  &#125;<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">goUpdate</span>(<span class="hljs-params">cID</span>)</span>&#123;<br>   <span class="hljs-keyword">var</span> width = <span class="hljs-built_in">window</span>.screen.width ;<br>   <span class="hljs-keyword">var</span> height = <span class="hljs-built_in">window</span>.screen.height ;<br>   <span class="hljs-built_in">window</span>.open(<span class="hljs-string">"&lt;%=path%&gt;/CustomerResourceFindByCID?cID="</span>+cID,<span class="hljs-string">"修改客户"</span>,<span class="hljs-string">'height=400,width=300,top='</span>+(height<span class="hljs-number">-450</span>)/<span class="hljs-number">2</span>+<span class="hljs-string">',left='</span>+(width<span class="hljs-number">-300</span>)/<span class="hljs-number">2</span>+<span class="hljs-string">',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no'</span>);<br>  &#125;<br>  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">goDelete</span>(<span class="hljs-params">cID</span>)</span>&#123;<br>   <span class="hljs-keyword">if</span>(confirm(<span class="hljs-string">"确认删除？"</span>))&#123;<br>     $(<span class="hljs-built_in">document</span>).ready(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>     <span class="hljs-comment">//设置提交的路径，和参数</span><br>    $.post(<span class="hljs-string">"&lt;%=path %&gt;/CustomerResourceDel"</span>,&#123;<span class="hljs-string">"cId"</span>:cID&#125;,<br>    <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>)</span>&#123;<span class="hljs-comment">//Servlet执行完之后执行方法，data表示的servlet返回数据内容</span><br>      <span class="hljs-keyword">if</span>(data == <span class="hljs-string">"true"</span>)&#123;<br>       alert(<span class="hljs-string">"删除成功"</span>);<br>       query(<span class="hljs-number">0</span>);<br>      &#125;<span class="hljs-keyword">else</span>&#123;<br>       alert(<span class="hljs-string">"删除失败，请联系系统管理员"</span>);<br>      &#125;<br>     &#125;);<br>   &#125;);<br>   &#125;<br>  &#125;<br> </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
+<p>(本人亲测可以）</p>
+<p>8.页面实现效果展示</p>
+<p><img src="/2018/09/12/jsp/1143999-20170503171333414-1740405183.png" alt=""></p>
+<p>　　总结一下吧，mvc+dao设计模式的好处就是实现了java面向对象的思想，接口和方法的实现分开，便于后期的开发和维护，以及功能的增加，通过接口实现类去实现接口中的方法，通过代理类去取得数据库连接池文件及调用方法，有问题可以留言。</p>
+
+      
+    </div>
+    
+    
+    
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="wusha wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wusha 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wusha 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jsp/" rel="tag"><i class="fa fa-tag"></i> jsp</a>
+          
+            <a href="/tags/servlet/" rel="tag"><i class="fa fa-tag"></i> servlet</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/12/tomcat/" rel="next" title="在服务器的tomcat上部署多个项目">
+                <i class="fa fa-chevron-left"></i> 在服务器的tomcat上部署多个项目
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/12/ssh增删改查/" rel="prev" title="ssh框架整合之登录以及增删改查">
+                ssh框架整合之登录以及增删改查 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+ 
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzc1Ni8xNDI4Nw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="wusha" />
+            
+              <p class="site-author-name" itemprop="name">wusha</p>
+              <p class="site-description motion-element" itemprop="description">你的努力，终将有所回报</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uisdc.com/" title="个人简历" target="_blank">个人简历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="csdn" target="_blank">csdn</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="博客园" target="_blank">博客园</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="简书" target="_blank">简书</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wusha</span>
+
+  
+</div>
+
+
+  <div class="powered-by">  个人专属</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">IT原创   因为热爱所以专注  </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+ 
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytH9K9lD';
+      var conf = 'c8a38acb7e2a30278f87488542dfc0bc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("p7qmsjjKNxNoT9Tu7Xab9DOU-gzGzoHsz", "COi8vpjU93nghYJnFRDkmmhy");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+  <!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+  
+</body>
+
+</html>
