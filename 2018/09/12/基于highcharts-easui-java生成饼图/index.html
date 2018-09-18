@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,6 +27,13 @@
 <meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -119,21 +124,19 @@
 
 
 
-<meta name="description" content="前言：第一次接触饼图，刚开始没有思路，后面在网上找了一下对比了一下，发现用highcharts插件去生成图表特别简单，用起来还是非常简单的，只需要后台返回相应的数据前台用json接收一下，就可以完美的实现了。 一、先来个实体展示，让大家看看效果 （效果还是美美的） 二、要实现这个效果首先要去highcharts官网去下载你自己需要的图表简单的介绍下Highcharts，Highcharts是一个非">
 <meta name="keywords" content="java,easui">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于highcharts+easui+java生成饼图">
 <meta property="og:url" content="http://yoursite.com/2018/09/12/基于highcharts-easui-java生成饼图/index.html">
 <meta property="og:site_name" content="沙沙的博客">
-<meta property="og:description" content="前言：第一次接触饼图，刚开始没有思路，后面在网上找了一下对比了一下，发现用highcharts插件去生成图表特别简单，用起来还是非常简单的，只需要后台返回相应的数据前台用json接收一下，就可以完美的实现了。 一、先来个实体展示，让大家看看效果 （效果还是美美的） 二、要实现这个效果首先要去highcharts官网去下载你自己需要的图表简单的介绍下Highcharts，Highcharts是一个非">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/基于highcharts-easui-java生成饼图/1.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/基于highcharts-easui-java生成饼图/1143999-20171106170702075-58795943.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/基于highcharts-easui-java生成饼图/1143999-20171106171128778-1396954218.png">
-<meta property="og:updated_time" content="2018-09-12T12:05:56.004Z">
+<meta property="og:updated_time" content="2018-09-18T07:01:45.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于highcharts+easui+java生成饼图">
-<meta name="twitter:description" content="前言：第一次接触饼图，刚开始没有思路，后面在网上找了一下对比了一下，发现用highcharts插件去生成图表特别简单，用起来还是非常简单的，只需要后台返回相应的数据前台用json接收一下，就可以完美的实现了。 一、先来个实体展示，让大家看看效果 （效果还是美美的） 二、要实现这个效果首先要去highcharts官网去下载你自己需要的图表简单的介绍下Highcharts，Highcharts是一个非">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/12/基于highcharts-easui-java生成饼图/1143999-20171106170702075-58795943.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/12/基于highcharts-easui-java生成饼图/1.jpeg">
 
 
 
@@ -141,12 +144,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -191,7 +194,7 @@
 
 
 </head>
-
+undefined
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
@@ -379,6 +382,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java/" itemprop="url" rel="index">
+                    <span itemprop="name">java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -429,7 +454,7 @@
       
 
       
-        <p>前言：第一次接触饼图，刚开始没有思路，后面在网上找了一下对比了一下，发现用highcharts插件去生成图表特别简单，用起来还是非常简单的，只需要后台返回相应的数据前台用json接收一下，就可以完美的实现了。</p>
+        <p><img src="/2018/09/12/基于highcharts-easui-java生成饼图/1.jpeg" alt=""><br><a id="more"></a><br>前言：第一次接触饼图，刚开始没有思路，后面在网上找了一下对比了一下，发现用highcharts插件去生成图表特别简单，用起来还是非常简单的，只需要后台返回相应的数据前台用json接收一下，就可以完美的实现了。</p>
 <p>一、先来个实体展示，让大家看看效果<br><img src="/2018/09/12/基于highcharts-easui-java生成饼图/1143999-20171106170702075-58795943.png" alt=""></p>
 <p>（效果还是美美的）</p>
 <p>二、要实现这个效果首先要去highcharts官网去下载你自己需要的图表<br>简单的介绍下Highcharts，Highcharts是一个非常流行，界面美观的纯Javascript图表库。它主要包括两个部分：Highcharts和Highstock。Highcharts可以为您的网站或Web应用程序提供直观，互动式的图表。目前支持线，样条，面积，areaspline，柱形图，条形图，饼图和散点图类型。Highstock可以为您方便地建立股票或一般的时间轴图表。它包括先进的导航选项，预设的日期范围，日期选择器，滚动和平移等等。（下面是highcharts官网地址和demo）</p>
@@ -453,6 +478,11 @@
     
     
     
+	<div>
+      
+        
+      
+</div>
 <div>
   
     <div>
@@ -644,7 +674,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -655,7 +685,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -666,7 +696,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -837,8 +867,6 @@
   
 
 
-  
-
 
 
 
@@ -879,11 +907,6 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
 
   
 
@@ -896,13 +919,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
@@ -1429,6 +1445,6 @@
   <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
   
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":"wanko","bottom":-30,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>

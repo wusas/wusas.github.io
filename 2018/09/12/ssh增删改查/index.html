@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,6 +27,13 @@
 <meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -106,7 +111,7 @@
 
 
 
-  <meta name="keywords" content="ssh," />
+  <meta name="keywords" content="ssh框架整合," />
 
 
 
@@ -119,15 +124,13 @@
 
 
 
-<meta name="description" content="1.首先阐述一下我用得开发工具，myeclipse2017+oracle,所以我的基本配置步骤可能不一样，下面我用几张图来详解我的开发步骤。 —1先配置structs  (Target 选择apache Tomcat (我的版本是8.0))接下来next  依然next,勾选复选框，把Core里面得第一个antlr-2.7.2.jar，因为这个包可能会和hibernate里面得一些包冲突  去掉之">
-<meta name="keywords" content="ssh">
+<meta name="keywords" content="ssh框架整合">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ssh框架整合之登录以及增删改查">
 <meta property="og:url" content="http://yoursite.com/2018/09/12/ssh增删改查/index.html">
 <meta property="og:site_name" content="沙沙的博客">
-<meta property="og:description" content="1.首先阐述一下我用得开发工具，myeclipse2017+oracle,所以我的基本配置步骤可能不一样，下面我用几张图来详解我的开发步骤。 —1先配置structs  (Target 选择apache Tomcat (我的版本是8.0))接下来next  依然next,勾选复选框，把Core里面得第一个antlr-2.7.2.jar，因为这个包可能会和hibernate里面得一些包冲突  去掉之">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1143999-20170606103010434-1778377011.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1143999-20170606094055575-2006174539.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1143999-20170606094302559-1725906581.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1143999-20170606094408668-1864863121.png">
@@ -157,11 +160,10 @@
 <meta property="og:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1143999-20170606102234184-19105698.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1143999-20170606103010434-1778377011.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1143999-20170606103340856-2118343184.png">
-<meta property="og:updated_time" content="2018-09-12T11:56:20.843Z">
+<meta property="og:updated_time" content="2018-09-18T07:03:01.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh框架整合之登录以及增删改查">
-<meta name="twitter:description" content="1.首先阐述一下我用得开发工具，myeclipse2017+oracle,所以我的基本配置步骤可能不一样，下面我用几张图来详解我的开发步骤。 —1先配置structs  (Target 选择apache Tomcat (我的版本是8.0))接下来next  依然next,勾选复选框，把Core里面得第一个antlr-2.7.2.jar，因为这个包可能会和hibernate里面得一些包冲突  去掉之">
-<meta name="twitter:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1143999-20170606103010434-1778377011.png">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/12/ssh增删改查/1.jpeg">
 
 
 
@@ -169,12 +171,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -219,7 +221,7 @@
 
 
 </head>
-
+undefined
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
@@ -426,6 +428,17 @@
 
                 
                 
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/框架/ssh/" itemprop="url" rel="index">
+                    <span itemprop="name">ssh</span>
+                  </a>
+                </span>
+
+                
+                
               
             </span>
           
@@ -479,7 +492,7 @@
       
 
       
-        <p><img src="/2018/09/12/ssh增删改查/1143999-20170606103010434-1778377011.png" alt=""><br>1.首先阐述一下我用得开发工具，myeclipse2017+oracle,所以我的基本配置步骤可能不一样，下面我用几张图来详解我的开发步骤。</p>
+        <p><img src="/2018/09/12/ssh增删改查/1.jpeg" alt=""><br><a id="more"></a><br>1.首先阐述一下我用得开发工具，myeclipse2017+oracle,所以我的基本配置步骤可能不一样，下面我用几张图来详解我的开发步骤。</p>
 <p>—1先配置structs<br><img src="/2018/09/12/ssh增删改查/1143999-20170606094055575-2006174539.png" alt=""></p>
 <p><img src="/2018/09/12/ssh增删改查/1143999-20170606094302559-1725906581.png" alt=""></p>
 <p>(Target 选择apache Tomcat (我的版本是8.0))接下来next</p>
@@ -537,6 +550,11 @@
     
     
     
+	<div>
+      
+        
+      
+</div>
 <div>
   
     <div>
@@ -595,7 +613,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ssh/" rel="tag"><i class="fa fa-tag"></i> ssh</a>
+            <a href="/tags/ssh框架整合/" rel="tag"><i class="fa fa-tag"></i> ssh框架整合</a>
           
         </div>
       
@@ -608,8 +626,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/12/jsp/" rel="next" title="jsp+servlet实现模糊查询和分页效果">
-                <i class="fa fa-chevron-left"></i> jsp+servlet实现模糊查询和分页效果
+              <a href="/2018/09/12/Datatables复选框问题/" rel="next" title="Datatables复选框问题">
+                <i class="fa fa-chevron-left"></i> Datatables复选框问题
               </a>
             
           </div>
@@ -726,7 +744,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -737,7 +755,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -748,7 +766,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -919,8 +937,6 @@
   
 
 
-  
-
 
 
 
@@ -961,11 +977,6 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
 
   
 
@@ -978,13 +989,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
@@ -1511,6 +1515,6 @@
   <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
   
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":"wanko","bottom":-30,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>

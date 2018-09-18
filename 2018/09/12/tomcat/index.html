@@ -2,10 +2,8 @@
 
 
 
-  
 
-
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next muse" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,6 +27,13 @@
 <meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -125,13 +130,13 @@
 <meta property="og:url" content="http://yoursite.com/2018/09/12/tomcat/index.html">
 <meta property="og:site_name" content="沙沙的博客">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://chuantu.biz/t6/338/1530634640x-1404817868.jpg">
+<meta property="og:image" content="http://yoursite.com/2018/09/12/tomcat/1.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/tomcat/20180907162227878.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/12/tomcat/20180907162509143.png">
-<meta property="og:updated_time" content="2018-09-12T11:59:35.663Z">
+<meta property="og:updated_time" content="2018-09-18T06:47:30.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在服务器的tomcat上部署多个项目">
-<meta name="twitter:image" content="http://chuantu.biz/t6/338/1530634640x-1404817868.jpg">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/12/tomcat/1.jpeg">
 
 
 
@@ -139,12 +144,12 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
+    scheme: 'Muse',
     version: '5.1.4',
     sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: '博主'
@@ -189,7 +194,7 @@
 
 
 </head>
-
+undefined
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
@@ -449,7 +454,7 @@
       
 
       
-        <p><img src="http://chuantu.biz/t6/338/1530634640x-1404817868.jpg" alt="image"><br><a id="more"></a><br>第一步，找到服务器上tomcat的配置文件conf/server.xml文件。<br><img src="/2018/09/12/tomcat/20180907162227878.png" alt="这里写图片描述"><br>类似于我上面的这个文件，找到server.xml里面的<service name="Catalina">  </service>标签，在 标签后面加入如下配置</p>
+        <p><img src="/2018/09/12/tomcat/1.jpeg" alt="image"><br><a id="more"></a><br>第一步，找到服务器上tomcat的配置文件conf/server.xml文件。<br><img src="/2018/09/12/tomcat/20180907162227878.png" alt="这里写图片描述"><br>类似于我上面的这个文件，找到server.xml里面的<service name="Catalina">  </service>标签，在 标签后面加入如下配置</p>
 <figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Service</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Catalina2"</span>&gt;</span>  <br> <br>  <span class="hljs-comment">&lt;!-- service的名字要对应 --&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">Connector</span> <span class="hljs-attr">port</span>=<span class="hljs-string">"8099"</span> <span class="hljs-attr">protocol</span>=<span class="hljs-string">"HTTP/1.1"</span><br> &lt;!<span class="hljs-attr">--</span>端口号与上面一个<span class="hljs-attr">Service</span>的端口号不一样<span class="hljs-attr">--</span>&gt;</span><br>               connectionTimeout="20000"<br> <br>               redirectPort="8443" URIEncoding="UTF-8"/&gt;<br> <br> <br> <br>   <span class="hljs-tag">&lt;<span class="hljs-name">Engine</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"Catalina2"</span> <span class="hljs-attr">defaultHost</span>=<span class="hljs-string">"localhost"</span>&gt;</span>  <br> <br><span class="hljs-comment">&lt;!-- service的名字  --&gt;</span><br> <br>     <span class="hljs-tag">&lt;<span class="hljs-name">Realm</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"org.apache.catalina.realm.UserDatabaseRealm"</span>  <br> <br>            <span class="hljs-attr">resourceName</span>=<span class="hljs-string">"UserDatabase"</span>/&gt;</span>  <br> <br>  <br> <br>     <span class="hljs-tag">&lt;<span class="hljs-name">Host</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"localhost"</span>  <span class="hljs-attr">appBase</span>=<span class="hljs-string">"webapps2"</span>  <br> <br>           <span class="hljs-attr">unpackWARs</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">autoDeploy</span>=<span class="hljs-string">"true"</span>  <br> <br>           <span class="hljs-attr">xmlValidation</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">xmlNamespaceAware</span>=<span class="hljs-string">"false"</span>&gt;</span>  <br>		   <span class="hljs-tag">&lt;<span class="hljs-name">Context</span> <span class="hljs-attr">path</span>=<span class="hljs-string">""</span> <span class="hljs-attr">docBase</span>=<span class="hljs-string">"D:\devsoft\apache-tomcat-8.0.35\webapps2\xiaolumouth"</span> <span class="hljs-attr">reloadable</span>=<span class="hljs-string">"true"</span> <span class="hljs-attr">workDir</span>=<span class="hljs-string">"D:/temp/Tomcat/test"</span> <span class="hljs-attr">debug</span>=<span class="hljs-string">"0"</span>/&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">Host</span>&gt;</span>  <br> <span class="hljs-comment">&lt;!-- docBase 是第二个项目的路径--&gt;</span><br>   <span class="hljs-tag">&lt;/<span class="hljs-name">Engine</span>&gt;</span>  <br> <br> <span class="hljs-tag">&lt;/<span class="hljs-name">Service</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
 <p>第二步，复制webapps目录，复制后改变文件名例如webapps2<br><img src="/2018/09/12/tomcat/20180907162509143.png" alt="这里写图片描述"></p>
 <p>把另外一个你要跑的项目放在目录webapps2下，在servicexml里面吧docBase属性引向该目录，是你自己的tomcat里面webapps2里面项目的路径就可以了。</p>
@@ -459,6 +464,11 @@
     
     
     
+	<div>
+      
+        
+      
+</div>
 <div>
   
     <div>
@@ -530,8 +540,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/06/docker/" rel="next" title="docker安装和使用">
-                <i class="fa fa-chevron-left"></i> docker安装和使用
+              <a href="/2018/07/03/FirstBlog/" rel="next" title="五分钟搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 五分钟搭建个人博客
               </a>
             
           </div>
@@ -648,7 +658,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -659,7 +669,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -670,7 +680,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -841,8 +851,6 @@
   
 
 
-  
-
 
 
 
@@ -883,11 +891,6 @@
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
 
   
 
@@ -900,13 +903,6 @@
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
@@ -1433,6 +1429,6 @@
   <!--崩溃欺骗-->
 <script type="text/javascript" src="/js/src/crash_cheat.js"></script>
   
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":"wanko","bottom":-30,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
