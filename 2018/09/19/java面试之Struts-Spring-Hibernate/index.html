@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="沙沙的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="java面试之Struts Spring Hibernate">
+<meta property="og:url" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/index.html">
+<meta property="og:site_name" content="沙沙的博客">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/1.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/1.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/3.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/4.png">
+<meta property="og:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/5.png">
+<meta property="og:updated_time" content="2018-09-19T09:37:11.457Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java面试之Struts Spring Hibernate">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/1.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/"/>
+
+
+
+
+
+
+  <title>java面试之Struts Spring Hibernate | 沙沙的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a7af505fec0721f2d93dbbaaad431d35";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">沙沙的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你的努力，终将有所回报</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wusha">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沙沙的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java面试之Struts Spring Hibernate</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-19T17:09:14+08:00">
+                2018-09-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/09/19/java面试之Struts-Spring-Hibernate/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/09/19/java面试之Struts-Spring-Hibernate/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/09/19/java面试之Struts-Spring-Hibernate/" class="leancloud_visitors" data-flag-title="java面试之Struts Spring Hibernate">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span:>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/1.jpeg" alt="在这里插入图片描述"><br> <a id="more"></a></p>
+<blockquote>
+<p> 在面试中一般面试官会根据面试者的简历来提问题，如果你的项目有用到ssh的话那么这篇文章也许会对你有帮助。当然，面试题目并不是速成法，如果你对这方面不太了解，建议你看我的另外一篇博客<a href="https://blog.csdn.net/sha1024/article/details/79540528" target="_blank" rel="noopener">点我看基础</a>接下来是我自己总结的一些ssh的面试题集合。</p>
+</blockquote>
+<h1 id="Struts面试题"><a href="#Struts面试题" class="headerlink" title="Struts面试题"></a>Struts面试题</h1><h4 id="谈谈你对mvc的理解"><a href="#谈谈你对mvc的理解" class="headerlink" title="谈谈你对mvc的理解"></a>谈谈你对mvc的理解</h4><p>MVC是Model-View-Controler的简称。即模型-视图-控制器。MVC是一种设计模式，它强制性的把应用程序的输入.处理和输出分开。<br><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/1.png" alt="直接上图"></p>
+<p>MVC中的模型,视图.控制器他们分别担任着不同的任务。<br>视图：视图是用户看到并与之交互的界面。视图向用户显示相关的数据，并接受用户的输入。视图不进行任何业务逻辑处理。<br>模型： 模型表示业务数据和业务处理。相当于JavaBean。一个模型能为多个视图提供数据。这提高了应用程序的重用性。<br>控制器：当用户单击web页面中的提交按钮时，控制器接受请求并调用相应的模型去处理请求。然后根据处理的结果调用相应的视图来显示处理的结果。<br>MVC处理过程：首先控制器接受用户请求，调用相应的模型<br>来进行业务处理，并返回数据给控制器，控制器调用相应的视图来显示处理的结果。并通过视图呈现给用户</p>
+<h4 id="说下Struts的设计模式"><a href="#说下Struts的设计模式" class="headerlink" title="说下Struts的设计模式"></a>说下Struts的设计模式</h4><p>MVC模式: web应用程序启动时就会加载并初始化ActionServler。用户提交表单时，一个配置好的ActionForm对象被创建，并被填入表单相应的数据，ActionServler根据Struts-config.xml文件配置好的设置决定是否需要表单验证，如果需要就调用ActionForm的Validate（）验证后选择将请求发送到哪个Action，如果Action不存在，ActionServlet会先创建这个对象，然后调用Action的execute（）方法。Execute（）从ActionForm对象中获取数据，完成业务逻辑，返回一个ActionForward对象，ActionServlet再把客户请求转发给ActionForward对象指定的jsp组件，ActionForward对象指定的jsp生成动态的网页，返回给客户。<br><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/2.png" alt="struts2框架的运行结构"></p>
+<h4 id="Struts2-0常用标签"><a href="#Struts2-0常用标签" class="headerlink" title="Struts2.0常用标签"></a>Struts2.0常用标签</h4><ol>
+<li>往action里传值：<code>&lt;input name=&quot;userName&quot; type=&quot;text&quot; class=&quot;input6&quot; size=&quot;15&quot;&gt;</code></li>
+<li>显示标签 property 用于输出指定值：<code>&lt;s:property value=&quot;userName &quot;/&gt;</code> 2. 显示标签 property 用于输出指定值：<code>&lt;s:property value=&quot;userName &quot;/&gt;</code><ol start="3">
+<li>用于从页面往action中(user)的对象内传值：<code>&lt;s:text name=&quot;user.userName &quot; id=&quot;username&quot;/&gt;</code></li>
+</ol>
+</li>
+<li><p>判断&lt;s:if&gt; &lt;/s:if&gt; 用于在页面中判断指定数据 <code>&lt;s:if test=&quot;userName == admin&quot;&gt;…. &lt;/s:if&gt; &lt;s:else&gt;…. &lt;/s:else&gt;</code></p>
+<ol start="5">
+<li><p>迭代&lt;s:iterator&gt;用于将List、Map、ArrayList等集合进行循环遍<br>历</p>
+<p>&lt;s:iterator value=”userList” id=”user” status=”u”&gt;</p>
+<pre><code>   &lt;s:property value=&quot;userName&quot;/&gt;&lt;/a&gt;
+&lt;/s:iterator&gt;
+</code></pre></li>
+</ol>
+</li>
+<li><p>URL地址标签，&lt;s:url&gt;用于生成一个URL地址，可以通过URL标签指定的&lt;s:param&gt;子元素向URL地址发送请求参数 </p>
+</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-tag">&lt;<span class="hljs-name">s:url</span> <span class="hljs-attr">action</span>=<span class="hljs-string">" "</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">s:param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">" "</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">s:param</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-name">s:url</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<ol start="7">
+<li>超链接 <a href="">一般和&lt;s:url&gt;标签一起使用，用于带多个参数。</a></li>
+</ol>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;<span class="hljs-keyword">a</span> href=<span class="hljs-comment">"</span><br><br>      &lt;<span class="hljs-variable">s:url</span> action=<span class="hljs-string">" "</span>&gt;<br><br>         &lt;<span class="hljs-variable">s:param</span> name=<span class="hljs-string">" "</span> value=<span class="hljs-string">""</span>&gt;&lt;/<span class="hljs-variable">s:param</span>&gt;<br><br>         &lt;<span class="hljs-variable">s:param</span> name=<span class="hljs-string">" "</span> value=<span class="hljs-string">""</span>&gt;&lt;/<span class="hljs-variable">s:param</span>&gt;<br><br>         &lt;<span class="hljs-variable">s:param</span> name=<span class="hljs-string">" "</span> value=<span class="hljs-string">""</span>&gt;&lt;/<span class="hljs-variable">s:param</span>&gt;<br><br>      &lt;/<span class="hljs-variable">s:url</span>&gt;<br>      <span class="hljs-comment">"&gt;超链接&lt;/a&gt;</span><br></code></pre></td></tr></table></figure>
+<ol start="8">
+<li>set标签，用于将某个值放入指定的范围内。例如application,session等。</li>
+</ol>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;s:<span class="hljs-builtin-name">set</span> <span class="hljs-attribute">name</span>=<span class="hljs-string">"user"</span> <span class="hljs-attribute">value</span>=<span class="hljs-string">"userName"</span> <span class="hljs-attribute">scope</span>=”request”/&gt;<br></code></pre></td></tr></table></figure>
+<h4 id="Struts如何实现国际化"><a href="#Struts如何实现国际化" class="headerlink" title="Struts如何实现国际化"></a>Struts如何实现国际化</h4><p>  以下以两国语言(中文，英文)为例：</p>
+<pre><code>1. 在工程中加入Struts支持
+2. 编辑ApplicationResource.properties文件,在其中加入要使用国际化的信息, 例如： lable.welcome.china=Welcome!!!
+3. 创建英文资源文件ApplicationResource_en.properites
+4. 创建临时中文资源文件ApplicationResource_temp.properites 例如：lable.welcom.china=中国欢迎您!
+5. 对临时中文资源文件进行编码转换。可以使用myeclipse的插件,也可以在dos下执行:
+
+
+ native2ascii -encoding gb2312 ApplicationResource_temp.properties ApplicationResource_zh_CN.properties
+</code></pre><ol start="6">
+<li>在jsp中加入struts的bean标记库 &lt;%@ taglib uri=”/WEB-INF/struts-bean.tld” prefix=”bean”%&gt;<br>显示信息： &lt;bean:message key=”label.welcome.china”&gt;<br>可以在struts-config.xml文件中定义多个资源包，而每个资源包可使用key属性指定包的名称</li>
+</ol>
+<h4 id="Struts1-x工作机制？"><a href="#Struts1-x工作机制？" class="headerlink" title="Struts1.x工作机制？"></a>Struts1.x工作机制？</h4><p>工作机制：<br>Struts的工作流程:<br>在web应用启动时就会加载初始化ActionServlet,ActionServlet从<br>struts-config.xml文件中读取配置信息,把它们存放到各种配置对象<br>当ActionServlet接收到一个客户请求时,将执行如下流程.<br>-(1)检索和用户请求匹配的ActionMapping实例,如果不存在,就返回请求路径无效信息;<br>-(2)如果ActionForm实例不存在,就创建一个ActionForm对象,把客户提交的表单数据保存到ActionForm对象中;<br>-(3)根据配置信息决定是否需要表单验证.如果需要验证,就调用ActionForm的validate()方法;<br>-(4)如果ActionForm的validate()方法返回null或返回一个不包含ActionMessage的ActuibErrors对象, 就表示表单验证成功;<br>-(5)ActionServlet根据ActionMapping所包含的映射信息决定将请求转发给哪个Action,如果相应的 Action实例不存在,就先创建这个实例,然后调用Action的execute()方法;<br>-(6)Action的execute()方法返回一个ActionForward对象,ActionServlet在把客户请求转发给 ActionForward对象指向的JSP组件;<br>-(7)ActionForward对象指向JSP组件生成动态网页,返回给客户;</p>
+<h4 id="struts中怎么配置form-bean、action、tiles"><a href="#struts中怎么配置form-bean、action、tiles" class="headerlink" title="struts中怎么配置form-bean、action、tiles"></a>struts中怎么配置form-bean、action、tiles</h4><p>   此处配置的是struts1.2的</p>
+<pre><code>form-bean配置：(在配置文件struts-config.xml中)：
+
+    &lt;form-beans &gt;
+
+   &lt;form-bean name=&quot;&quot; type=&quot;&quot;&gt;&lt;/form-bean&gt;
+
+   &lt;/form-beans&gt;
+
+name: 指定form的名字; type指定form的类型：包名+类名；
+</code></pre><p>   action配置：(在配置文件struts-config.xml中)</p>
+<pre><code>&lt;action-mappings &gt;
+
+&lt;action path=&quot;&quot;
+
+        attribute=&quot;&quot;
+
+        input=&quot;&quot;
+
+        name=&quot;&quot;
+
+        parameter=&quot;&quot;
+
+        scope=&quot;request&quot;
+
+        type=&quot;&quot;
+
+        &gt;&lt;/action&gt;
+
+&lt;/action-mappings&gt;
+</code></pre><p>   path：请求Action的名字;   attribute：form的名字,与form-bean中的name对应;   input：输入页的路径;</p>
+<p>   name：如果配置了attribute,name不起作用,与attribute一样;   parameter：使用分发Action时,指定调用分发Action中的方法名;</p>
+<p>   scope：Action的范围;    type：Action的类型：包名+类名；</p>
+<p>   tites配置：</p>
+<ol>
+<li><p>新建一个 tiles-defs.xml文件,并在其中做如下配置：</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+
+&lt;!DOCTYPE tiles-definitions PUBLIC &quot;-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN&quot; &quot;http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd&quot;&gt;
+
+&lt;tiles-definitions&gt;
+
+  &lt;definition name=&quot;member-definition&quot; path=&quot;/Jsp/layout.jsp&quot;&gt;  
+
+    &lt;put name=&quot;top&quot; value=&quot;/mTop.do&quot;/&gt;  
+
+    &lt;put name=&quot;left&quot; value=&quot;/mLeft.do&quot;/&gt;
+
+    &lt;put name=&quot;main&quot; value=&quot;/defaultMmain.do&quot;/&gt;
+
+  &lt;/definition&gt;
+</code></pre><p>   </p>
+<ol start="2">
+<li><p>在web.xml和struts-config.xml和web.xml中做相应配置：</p>
+<p>在struts-config.xml中配置如下：</p>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<pre><code>&lt;plug-in className=&quot;org.apache.struts.tiles.TilesPlugin&quot;&gt;
+
+   &lt;set-property property=&quot;definitions-config&quot; value=&quot;/WEB-INF/tiles-defs.xml&quot;/&gt;   
+
+   &lt;set-property property=&quot;definitions-parser-validate&quot; value=&quot;true&quot;/&gt;
+
+&lt;/plug-in&gt;
+
+************
+
+在web.xml中配置如下：
+
+************
+
+&lt;init-param&gt;    
+
+   &lt;param-name&gt;definitions-config&lt;/param-name&gt;    
+
+   &lt;param-value&gt;/WEB-INF/tiles-defs.xml&lt;/param-value&gt;
+
+&lt;/init-param&gt;
+
+*************
+</code></pre><ol start="3">
+<li><p>调用Tiles组件</p>
+<p>Tiles组件是通过Struts Action来调用的，在struts-config.xml中做如下action配置</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;action<br><br>       <span class="hljs-attribute">path</span>=<span class="hljs-string">"/member"</span><br><br>       <span class="hljs-attribute">parameter</span>=<span class="hljs-string">"member-definition"</span><br><br>       <span class="hljs-attribute">type</span>=<span class="hljs-string">"org.apache.struts.actions.ForwardAction"</span>/&gt;<br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="action是单实例还是多实例，为什么？"><a href="#action是单实例还是多实例，为什么？" class="headerlink" title="action是单实例还是多实例，为什么？"></a>action是单实例还是多实例，为什么？</h4><p> action是单实例的。当多个用户访问一个请求的时候，服务器内存中只有一个与之对应的action类对象。<br>    因为当服务器第一次加载struts的配置文件的时候,创建了一个Action后,每发送一个请求,服务器都会先去检索相应的范围内(request,session)是否存在<br>    这样一个action实例,如果存在,则使用这个实例,如果不存在,则创建一个action实例。</p>
+<h4 id="struts2-0的mvc模式？与struts1-0的区别"><a href="#struts2-0的mvc模式？与struts1-0的区别" class="headerlink" title="struts2.0的mvc模式？与struts1.0的区别?"></a>struts2.0的mvc模式？与struts1.0的区别?</h4><p> struts2的mvc模式：当用户在页面提交用户请求时,该请求需要提交给struts2的控制器处理。struts2的控制器根据处理结果,<br> 决定将哪个页面呈现给客户端。<br> 与struts1最大的不同是：struts2的控制器。struts2的控制器不再像struts1的控制器,需要继承一个Action父类,甚至可以无需实现<br> 任何接口,struts2的Action就是一个普通的POJO。实际上，Struts2 的Action就是一个包含execute方法的普通Java类<br> 该类里包含的多个属性用于封装用户的请求参数。</p>
+<h4 id="struts的处理流程"><a href="#struts的处理流程" class="headerlink" title="struts的处理流程"></a>struts的处理流程</h4><p>一、ActionServlet的初始化<br>ActionServlet作为Struts组件的前端控制器，由于web.xml的相应配置：</p>
+<pre><code>&lt;load-on-startup&gt;0&lt;/load-on-startup&gt;
+</code></pre><p>在应用一加载时即会被实例化并调用其init方法，init方法所做的主要工作有二：</p>
+<ol>
+<li>加载struts配置文件，并创建用于封装配置信息的ModuleConfig对象</li>
+<li>加载资源文件，并创建用于封装资源文件的MessageResources对象需要注意两点：如果web.xml有多模块配置，将创建多个ModuleConfig对象和MessageResources对象分别用于封装各个模块的struts配置文件和资源文件。针对各个模块所创建的ModuleConfig对象和MessageResources对象将存储在ServletContext中，对应的属性名中有该模块名称的相应标识。<br>另外，如果有相应配置的话，init方法还将初始化数据源和PlugIn<br>二、ActionServlet的process<br>所有形如*.do的请求（根据web.xml中的相关配置）将提交给ActionServlet，最终将调用其process方法<br>。process方法的主要工作有三：<br>1.根据请求信息获知所请求的模块名称，从ServletContext中获得与请求模块对应的的ModuleConfig对象，并存储到request中。<br>2.根据模块信息获得相应的RequestProcessor对象，一个模块对应一个RequestProcessor对象，RequestProcessor对象将关联与所属模块对应的ModuleConfig对象。<br>3.调用RequestProcessor对象的process方法，将request和response作为参数传递给它。<br>三、RequestProcessor的process<br>RequestProcessor对象的process方法的主要工作有五步：<br>1.调用自己的 processPreprocess(request, response)方法，该方法不进行任何操作，用于子类重写扩展其功能。<br>2.获得与请求地址所匹配的ActionMapping对象，AcionMapping对象用于封装一个特定acion的配置信息。<br>3.根据ActionMapping中的配置信息获得ActionForm对象（该对象将缓存到request或session中），并将表单数据填充到ActionForm中，然后根据ActionMapping的配置决定是否验证ActionForm，如果验证，将调用ActionForm的 validate方法，若其返回的ActionErros对象中包含ActionMessage对象则表示验证<br>失败，将转向action配置信息 input属性所指示的地址。<br>4.如果ActionForm无需验证或验证通过将创建并缓存与请求地址匹配的Action对象，将ActionMapping对象、ActionForm对象、request和response作为参数调用其execute方法。<br>5.根据Action对象的execute方法返回的ActionForward对象，将请求转发或重定向到该ActionForward所封装的地址。<h4 id="Struts-webwork-的工作机制，它有哪些标签"><a href="#Struts-webwork-的工作机制，它有哪些标签" class="headerlink" title="Struts/webwork 的工作机制，它有哪些标签"></a>Struts/webwork 的工作机制，它有哪些标签</h4>Struts 2框架的大致处理流程如下：<br>浏览器发送请求，例如请求/mypage.action、/reports/myreport.pdf等。<br>核心控制器FilterDispatcher根据请求决定调用合适的Action。<br>WebWork的拦截器链自动对请求应用通用功能，例如workflow、validation或文件上传等功能。<br>回调Action的execute方法，该execute方法先获取用户请求参数，然后执行某种数据库操作，既可以是将数据保存到数据库，也可以从数据库中检索信息。实际上，因为Action只是一个控制器，它会调用业务逻辑组件来处理用户的请求。<br>Action的execute方法处理结果信息将被输出到浏览器中，可以是HTML页面、图像，也可以是PDF文档或者其他文档。此时支持的视图技术非常多，既支持JSP，也支持Velocity、FreeMarker等模板技术。</li>
+</ol>
+<h2 id="Spring部分"><a href="#Spring部分" class="headerlink" title="Spring部分"></a>Spring部分</h2><h4 id="Spring工作机制"><a href="#Spring工作机制" class="headerlink" title="Spring工作机制"></a>Spring工作机制</h4><p>1.spring mvc请所有的请求都提交给DispatcherServlet,它会委托应用系统的其他模块负责负责对请求进行真正的处理工作。<br>2.DispatcherServlet查询一个或多个HandlerMapping,找到处理请求的Controller.<br>3.DispatcherServlet请请求提交到目标Controller<br>4.Controller进行业务逻辑处理后，会返回一个ModelAndView<br>5.Dispathcher查询一个或多个ViewResolver视图解析器,找到ModelAndView对象指定的视图对象<br>6.视图对象负责渲染返回给客户端。</p>
+<p><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/3.png" alt="spring的流程图"></p>
+<h2 id="使用Spring的好处"><a href="#使用Spring的好处" class="headerlink" title="##使用Spring的好处"></a>##使用Spring的好处</h2><p>AOP 让开发人员可以创建非行为性的关注点，称为横切关注点，并将它们插入到应用程序代码中。使用 AOP 后，公共服务 （比 如日志、持久性、事务等）就可以分解成方面并应用到域对象上，同时不会增加域对象的对象模型的复杂性。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;bean <span class="hljs-built_in">id</span> = <span class="hljs-string">"proxy"</span> type = <span class="hljs-string">"org.spring.framework.aop.ProxyBeanFacory"</span>&gt;<br>&lt;<span class="hljs-keyword">property</span> <span class="hljs-built_in">name</span> = <span class="hljs-string">"target"</span> <span class="hljs-keyword">ref</span> = <span class="hljs-string">""</span>&gt;&lt;/<span class="hljs-keyword">property</span>&gt;<br>&lt;<span class="hljs-keyword">property</span> <span class="hljs-built_in">name</span> = <span class="hljs-string">"advisor"</span> <span class="hljs-keyword">ref</span> = <span class="hljs-string">""</span>&gt;&lt;/<span class="hljs-keyword">property</span>&gt;<br>&lt;/bean&gt;<br></code></pre></td></tr></table></figure>
+<p>IOC 允许创建一个可以构造对象的应用环境，然后向这些对象传递它们的协作对象。正如单词 倒置 所表明的，IOC 就像反 过来的 JNDI。没有使用一堆抽象工厂、服务定位器、单元素（singleton）和直接构造（straight construction），每一个对象都是用其协作对象构造的。因此是由容器管理协作对象（collaborator）。</p>
+<p>Spring即是一个AOP框架，也是一IOC容器。 Spring 最好的地方是它有助于您替换对象。有了 Spring，只要用 JavaBean 属性和配置文件加入依赖性（协作对象）。然后可以很容易地在需要时替换具有类似接口的协作对象。</p>
+<h4 id="Spring是什么-根据你的理解详细谈谈你的见解"><a href="#Spring是什么-根据你的理解详细谈谈你的见解" class="headerlink" title="Spring是什么?根据你的理解详细谈谈你的见解"></a>Spring是什么?根据你的理解详细谈谈你的见解</h4><p>◆目的：解决企业应用开发的复杂性</p>
+<p>　　◆功能：使用基本的JavaBean代替EJB，并提供了更多的企业应用功能</p>
+<p>　　◆范围：任何Java应用</p>
+<p>　　简单来说，Spring是一个轻量级的控制反转(IoC)和面向切面(AOP)的容器框架。</p>
+<p>　　◆轻量——从大小与开销两方面而言Spring都是轻量的。完整的Spring框架可以在一个大小只有1MB多的JAR文件里发布。并且Spring所需的处理开销也是微不足道的。此外，Spring是非侵入式的：典型地，Spring应用中的对象不依赖于Spring的特定类。</p>
+<p>　　◆控制反转——Spring通过一种称作控制反转（IoC）的技术促进了松耦合。当应用了IoC，一个对象依赖的其它对象会通过被动的方式传递进来，而不是这个对象自己创建或者查找依赖对象。你可以认为IoC与JNDI相反——不是对象从容器中查找依赖，而是容器在对象初始化时不等对象请求就主动将依赖传递给它。</p>
+<p>　　◆面向切面——Spring提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务（例如审计（auditing）和事务（）管理）进行内聚性的开发。应用对象只实现它们应该做的——完成业务逻辑——仅此而已。它们并不负责（甚至是意识）其它的系统级关注点，例如日志或事务支持。</p>
+<p>　　◆容器——Spring包含并管理应用对象的配置和生命周期，在这个意义上它是一种容器，你可以配置你的每个bean如何被创建——基于一个可配置原型（prototype），你的bean可以创建一个单独的实例或者每次需要时都生成一个新的实例——以及它们是如何相互关联的。然而，Spring不应该被混同于传统的重量级的EJB容器，它们经常是庞大与笨重的，难以使用。</p>
+<p>　　◆框架——Spring可以将简单的组件配置、组合成为复杂的应用。在Spring中，应用对象被声明式地组合，典型地是在一个XML文件里。Spring也提供了很多基础功能（事务管理、持久化框架集成等等），将应用逻辑的开发留给了你。</p>
+<p>　　所有Spring的这些特征使你能够编写更干净、更可管理、并且更易于测试的代码。它们也为Spring中的各种模块提供了基础支持。</p>
+<h4 id="spring在项目中如何充当粘合剂"><a href="#spring在项目中如何充当粘合剂" class="headerlink" title="spring在项目中如何充当粘合剂"></a>spring在项目中如何充当粘合剂</h4><p> 1、在项目中利用spring的IOC(控制反转或依赖注入),明确地定义组件接口(如UserDAO)，开发者可以独立开发各个组件, 然后根据组件间的依赖关系组装(UserAction依赖于UserBiz,UserBiz依赖于UserDAO)运行，很好的把Struts(Action)和hibernate(DAO的实现)结合起来了。<br>    2、spring的事务管理把hibernate对数据库的操作进行了事务配置。</p>
+<h2 id="spring的事务如何配置"><a href="#spring的事务如何配置" class="headerlink" title="spring的事务如何配置"></a>spring的事务如何配置</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs undefined">   spring的声明式事务配置：<br><br>    1. <span class="hljs-comment">&lt;!-- 配置sessionFactory --&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"sessionFactory"</span><br><br><span class="hljs-attr">class</span>=<span class="hljs-string">"org.springframework.orm.hibernate3.LocalSessionFactoryBean"</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"configLocation"</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>/WEB-INF/classes/hibernate.cfg.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>  <br><br>    2. 配置事务管理器<br><br>       <span class="hljs-comment">&lt;!-- 配置事务管理器 --&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"transactionManager"</span><br><br><span class="hljs-attr">class</span>=<span class="hljs-string">"org.springframework.orm.hibernate3.HibernateTransactionManager"</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"sessionFactory"</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">ref</span> <span class="hljs-attr">local</span>=<span class="hljs-string">"sessionFactory"</span> /&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><br>    3. 配置事务特性<br><br>       <span class="hljs-tag">&lt;<span class="hljs-name">tx:advice</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"txAdvice"</span>  <span class="hljs-attr">transaction-manager</span>=<span class="hljs-string">"transactionManager"</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">tx:attributes</span>&gt;</span><br><br> 	           <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"add*"</span> <span class="hljs-attr">propagation</span>=<span class="hljs-string">"REQUIRED"</span>/&gt;</span><br><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"update*"</span> <span class="hljs-attr">propagation</span>=<span class="hljs-string">"REQUIRED"</span>/&gt;</span><br><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"del*"</span> <span class="hljs-attr">propagation</span>=<span class="hljs-string">"REQUIRED"</span>/&gt;</span><br><br>                    <span class="hljs-tag">&lt;<span class="hljs-name">tx:method</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"*"</span> <span class="hljs-attr">read-only</span>=<span class="hljs-string">"true"</span>/&gt;</span><br><br>                <span class="hljs-tag">&lt;/<span class="hljs-name">tx:attributes</span>&gt;</span><br><br>       <span class="hljs-tag">&lt;/<span class="hljs-name">tx:advice</span>&gt;</span><br><br>    4. 配置哪些类的哪些方法配置事务<br><br>       <span class="hljs-tag">&lt;<span class="hljs-name">aop:config</span>&gt;</span><br><br>           <span class="hljs-tag">&lt;<span class="hljs-name">aop:pointcut</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"allManagerMethod"</span> <span class="hljs-attr">ession</span>=<span class="hljs-string">"execution(* com.yyaccp.service.impl.*.*(..))"</span>/&gt;</span><br><br>           <span class="hljs-tag">&lt;<span class="hljs-name">aop:advisor</span> <span class="hljs-attr">advice-ref</span>=<span class="hljs-string">"txAdvice"</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">"allManagerMethod"</span>&gt;</span><br><br>       <span class="hljs-tag">&lt;/<span class="hljs-name">aop:config</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<h4 id="transaction有那几种实现"><a href="#transaction有那几种实现" class="headerlink" title="transaction有那几种实现"></a>transaction有那几种实现</h4><p>在Spring中，事务处理主要有两种方式<br>(1)    代码控制事务<br>在程序中引入新的模版类，这个类封装了事务管理的功能<br>(2)    参数配置控制事务,在Application-Context.xml增加一个事务代理（UserDAOProxy）配置<br>IBATIS中的事物属性怎么配置<br>SQL MAP XML配置文件中的transactionManager</p>
+<h2 id="Hibernate面试题"><a href="#Hibernate面试题" class="headerlink" title="Hibernate面试题"></a>Hibernate面试题</h2><h4 id="Hibernate工作原理"><a href="#Hibernate工作原理" class="headerlink" title="Hibernate工作原理"></a>Hibernate工作原理</h4><p>1.读取并解析配置文件</p>
+<p>2.读取并解析映射信息，创建SessionFactory</p>
+<p>3.打开Sesssion</p>
+<p>4.创建事务Transation</p>
+<p>5.持久化操作</p>
+<p>6.提交事务</p>
+<p>7.关闭Session</p>
+<p>8.关闭SesstionFactory</p>
+<p><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/4.png" alt="hibernate的核心构成和执行流程图"><br><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/5.png" alt=""></p>
+<h4 id="什么是Hibernate的并发机制？怎么处理并发问题？"><a href="#什么是Hibernate的并发机制？怎么处理并发问题？" class="headerlink" title="什么是Hibernate的并发机制？怎么处理并发问题？"></a>什么是Hibernate的并发机制？怎么处理并发问题？</h4><p>Hibernate并发机制：<br>   a、Hibernate的Session对象是非线程安全的,对于单个请求,单个会话,单个的工作单元(即单个事务,单个线程),它通常只使用一次,然后就丢弃。如果一个Session 实例允许共享的话，那些支持并发运行的,例如Http request,session beans将会导致出现资源争用。如果在Http Session中有hibernate的Session的话,就可能会出现同步访问Http Session。只要用户足够快的点击浏览器的“刷新”,就会导致两个并发运行的线程使用同一个Session。</p>
+<p>   b、多个事务并发访问同一块资源,可能会引发第一类丢失更新，脏读，幻读，不可重复读，第二类丢失更新一系列的问题。</p>
+<p> 解决方案：设置事务隔离级别。<br>    Serializable：串行化。隔离级别最高</p>
+<p>Repeatable Read：可重复读</p>
+<p>   Read Committed：已提交数据读</p>
+<p>  Read Uncommitted：未提交数据读。隔离级别最差</p>
+<p>  设置锁：乐观锁和悲观锁。</p>
+<p>   乐观锁：使用版本号或时间戳来检测更新丢失,在<class>的映射中设置 optimistic-lock=”all”可以在没有版本或者时间戳属性映射的情况下实现 版本检查，此时Hibernate将比较一行记录的每个字段的状态<br>   行级悲观锁：Hibernate总是使用数据库的锁定机制，从不在内存中锁定对象！只要为JDBC连接指定一下隔 离级别，然后让数据库去搞定一切就够了。类LockMode 定义了Hibernate所需的不同的锁定级别：<code>LockMode.UPGRADE,LockMode.UPGRADE_NOWAIT,LockMode.READ;</code></class></p>
+<h4 id="Hibernate自带的分页机制是什么？如果不使用Hibernate自带的分页，则采用什么方式分页？"><a href="#Hibernate自带的分页机制是什么？如果不使用Hibernate自带的分页，则采用什么方式分页？" class="headerlink" title="Hibernate自带的分页机制是什么？如果不使用Hibernate自带的分页，则采用什么方式分页？"></a>Hibernate自带的分页机制是什么？如果不使用Hibernate自带的分页，则采用什么方式分页？</h4><p> 1、hibernate自带的分页机制：获得Session对象后，从Session中获得Query对象。用Query.setFirstResult()：设置要显示的第一行数据Query.setMaxResults()：设置要显示的最后一行数据。</p>
+<p>  2、不使用hibernate自带的分页,可采用sql语句分页，<br> 如：5:为每页显示的记录,2为当前页： <code>select * top 5 from table where tabId not in (select tabId top (2-1)*5 from table);</code></p>
+<h4 id="hibernate的三种状态之间如何转换"><a href="#hibernate的三种状态之间如何转换" class="headerlink" title="hibernate的三种状态之间如何转换"></a>hibernate的三种状态之间如何转换</h4><p>   当对象由瞬时状态(Transient)一save()时，就变成了持久化状态。 当我们在Session里存储对象的时候，实际是在Session的Map里存了一份， 也就是它的缓存里放了一份，然后，又到数据库里存了一份，在缓存里这一份叫持久对象(Persistent)。<br> Session 一 Close()了，它的缓存也都关闭了，整个Session也就失效了， 这个时候，这个对象变成了游离状态(Detached)，但数据库中还是存在的。当游离状态(Detached)update()时，又变为了持久状态(Persistent)。当持久状态(Persistent)delete()时，又变为了瞬时状态(Transient),此时，数据库中没有与之对应的记录。</p>
+<h4 id="update（）和saveOrUpdate（）的区别？"><a href="#update（）和saveOrUpdate（）的区别？" class="headerlink" title="update（）和saveOrUpdate（）的区别？"></a>update（）和saveOrUpdate（）的区别？</h4><p>  update()和saveOrUpdate()是用来对跨Session的PO进行状态管理的,update()方法操作的对象必须是持久化了的对象。也就是说，如果此对象在数据库中不存在的话，就不能使用update()方法。<br>   saveOrUpdate()方法操作的对象既可以使持久化了的，也可以使没有持久化的对象。如果是持久化了的对象调用saveOrUpdate()则会 更新数据库中的对象；如果是未持久化的对象使用此方法,则save到数据库中。</p>
+<h4 id="hibernate拒绝连接、服务器崩溃的原因？最少写5个"><a href="#hibernate拒绝连接、服务器崩溃的原因？最少写5个" class="headerlink" title="hibernate拒绝连接、服务器崩溃的原因？最少写5个"></a>hibernate拒绝连接、服务器崩溃的原因？最少写5个</h4><ol>
+<li><p>db没有打开  </p>
+</li>
+<li><p>网络连接可能出了问题</p>
+</li>
+<li><p>连接配置错了</p>
+</li>
+<li><p>驱动的driver，url是否都写对了</p>
+</li>
+<li><p>LIB下加入相应驱动，数据连接代码是否有误</p>
+</li>
+<li><p>数据库配置可能有问题</p>
+</li>
+<li><p>当前联接太多了，服务器都有访问人数限制的</p>
+</li>
+<li><p>服务器的相应端口没有开，即它不提供相应的服务</p>
+</li>
+<li><p>hibernate有哪些缓存，分别怎么使用?</p>
+</li>
+<li><p>你对hibernate的了解到了一个什么样的程度？</p>
+</li>
+<li><p>写出一个sql语句体现hibernate中一对多的关系</p>
+</li>
+</ol>
+<h4 id="hibernate如何管理缓存"><a href="#hibernate如何管理缓存" class="headerlink" title="hibernate如何管理缓存"></a>hibernate如何管理缓存</h4><p>　Hibernate 中提供了两级Cache，第一级别的缓存是Session级别的缓存，它是属于事务范围的缓存。这一级别的缓存由hibernate管理的，一般情况下无需进行干预；第二级别的缓存是SessionFactory级别的缓存，它是属于进程范围或群集范围的缓存。这一级别的缓存可以进行配置和更改，并且可以动态加载和卸载。 Hibernate还为查询结果提供了一个查询缓存，它依赖于第二级缓存。</p>
+<p>　　1. 一级缓存和二级缓存的比较：第一级缓存 第二级缓存 存放数据的形式 相互关联的持久化对象 对象的散装数据 缓存的范围 事务范围，每个事务都有单独的第一级缓存进程范围或集群范围，缓存被同一个进程或集群范围内的所有事务共享 并发访问策略由于每个事务都拥有单独的第一级缓存，不会出现并发问题，无需提供并发访问策略由于多个事务会同时访问第二级缓存中相同数据，因此必须提供适当的并发访问策略，来保证特定的事务隔离级别 数据过期策略没有提供数据过期策略。处于一级缓存中的对象永远不会过期，除非应用程序显式清空缓存或者清除特定的对象必须提供数据过期策略，如基于内存的缓存中的对象的最大数目，允许对象处于缓存中的最长时间，以及允许对象处于缓存中的最长空闲时间 物理存储介质内存内存和硬盘。对象的散装数据首先存放在基于内在的缓存中，当内存中对象的数目达到数据过期策略中指定上限时，就会把其余的对象写入基于硬盘的缓存中。缓存的软件实现 在Hibernate的Session的实现中包含了缓存的实现由第三方提供，Hibernate仅提供了缓存适配器(CacheProvider)。用于把特定的缓存插件集成到Hibernate中。启用缓存的方式只要应用程序通过Session接口来执行保存、更新、删除、加载和查询数据库数据的操作，Hibernate就会启用第一级缓存，把数据库中的数据以对象的形式拷贝到缓存中，对于批量更新和批量删除操作，如果不希望启用第一级缓存，可以绕过Hibernate API，直接通过JDBC　API来执行指操作。用户可以在单个类或类的单个集合的粒度上配置第二级缓存。如果类的实例被经常读但很少被修改，就可以考虑使用第二级缓存。只有为某个类或集合配置了第二级缓存，Hibernate在运行时才会把它的实例加入到第二级缓存中。 用户管理缓存的方式第一级缓存的物理介质为内存，由于内存容量有限，必须通过恰当的检索策略和检索方式来限制加载对象的数目。Session的evit()方法可以显式清空缓存中特定对象，但这种方法不值得推荐。 第二级缓存的物理介质可以是内存和硬盘，因此第二级缓存可以存放大量的数据，数据过期策略的maxElementsInMemory属性值可以控制内存中的对象数目。管理第二级缓存主要包括两个方面：选择需要使用第二级缓存的持久类，设置合适的并发访问策略：选择缓存适配器，设置合适的数据过期策略。</p>
+<p>　　2. 一级缓存的管理： 当应用程序调用Session的save()、update()、savaeOrUpdate()、get()或load()，以及调用查询接口的 list()、iterate()或filter()方法时，如果在Session缓存中还不存在相应的对象，Hibernate就会把该对象加入到第一级缓存中。当清理缓存时，Hibernate会根据缓存中对象的状态变化来同步更新数据库。 Session为应用程序提供了两个管理缓存的方法： evict(Object obj)：从缓存中清除参数指定的持久化对象。 clear()：清空缓存中所有持久化对象。</p>
+<p>　　3. 二级缓存的管理：</p>
+<p>　　3.1. Hibernate的二级缓存策略的一般过程如下：</p>
+<p>　　1) 条件查询的时候，总是发出一条select * from table_name where …. （选择所有字段）这样的SQL语句查询数据库，一次获得所有的数据对象。</p>
+<p>　　2) 把获得的所有数据对象根据ID放入到第二级缓存中。</p>
+<p>　　3) 当Hibernate根据ID访问数据对象的时候，首先从Session一级缓存中查；查不到，如果配置了二级缓存，那么从二级缓存中查；查不到，再查询数据库，把结果按照ID放入到缓存。</p>
+<p>　　4) 删除、更新、增加数据的时候，同时更新缓存。</p>
+<p>　　Hibernate的二级缓存策略，是针对于ID查询的缓存策略，对于条件查询则毫无作用。为此，Hibernate提供了针对条件查询的Query Cache。</p>
+<p>　　3.2. 什么样的数据适合存放到第二级缓存中？ 1 很少被修改的数据 2 不是很重要的数据，允许出现偶尔并发的数据 3 不会被并发访问的数据 4 参考数据,指的是供应用参考的常量数据，它的实例数目有限，它的实例会被许多其他类的实例引用，实例极少或者从来不会被修改。</p>
+<p>　　3.3. 不适合存放到第二级缓存的数据？ 1 经常被修改的数据 2 财务数据，绝对不允许出现并发 3 与其他应用共享的数据。</p>
+<p>　　3.4. 常用的缓存插件 Hibernater 的二级缓存是一个插件，下面是几种常用的缓存插件：</p>
+<p>　　EhCache：可作为进程范围的缓存，存放数据的物理介质可以是内存或硬盘，对Hibernate的查询缓存提供了支持。</p>
+<p>　　OSCache：可作为进程范围的缓存，存放数据的物理介质可以是内存或硬盘，提供了丰富的缓存数据过期策略，对Hibernate的查询缓存提供了支持。</p>
+<p>　　SwarmCache：可作为群集范围内的缓存，但不支持Hibernate的查询缓存。</p>
+<p>　　JBossCache：可作为群集范围内的缓存，支持事务型并发访问策略，对Hibernate的查询缓存提供了支持。</p>
+<p>　　3.5. 配置二级缓存的主要步骤：</p>
+<p>　　1) 选择需要使用二级缓存的持久化类，设置它的命名缓存的并发访问策略。这是最值得认真考虑的步骤。</p>
+<p>　　2) 选择合适的缓存插件，然后编辑该插件的配置文件。</p>
+<h4 id="使用Hibernate的优点："><a href="#使用Hibernate的优点：" class="headerlink" title="使用Hibernate的优点："></a>使用Hibernate的优点：</h4><ol>
+<li><p>对JDBC访问数据库的代码做了封装，大大简化了数据访问层繁琐的重复性代码。</p>
+</li>
+<li><p>Hibernate是一个基于JDBC的主流持久化框架，是一个优秀的ORM实现。他很大程度的简化DAO层的编码工作</p>
+</li>
+<li><p>hibernate使用Java反射机制，而不是字节码增强程序来实现透明性。</p>
+</li>
+<li><p>hibernate的性能非常好，因为它是个轻量级框架。映射的灵活性很出色。它支持各种关系数据库，从一对一到多对多的各种复杂关系。</p>
+<h4 id="Hibernate是如何延迟加载"><a href="#Hibernate是如何延迟加载" class="headerlink" title="Hibernate是如何延迟加载?"></a>Hibernate是如何延迟加载?</h4></li>
+<li><p>Hibernate2延迟加载实现：a)实体对象 b)集合（Collection）</p>
+</li>
+<li><p>Hibernate3 提供了属性的延迟加载功能<br>当Hibernate在查询数据的时候，数据并没有存在与内存中，当程序真正对数据的操作时，对象才存在与内存中，就实现了延迟加载，他节省了服务器的内存开销，从而提高了服务器的性能。</p>
+<h4 id="如何优化Hibernate？"><a href="#如何优化Hibernate？" class="headerlink" title="如何优化Hibernate？"></a>如何优化Hibernate？</h4><p>1.使用双向一对多关联，不使用单向一对多</p>
+</li>
+</ol>
+<p>2.灵活使用单向一对多关联</p>
+<p>3.不用一对一，用多对一取代</p>
+<p>4.配置对象缓存，不使用集合缓存</p>
+<p>5.一对多集合使用Bag,多对多集合使用Set</p>
+<ol start="6">
+<li><p>继承类使用显式多态</p>
+</li>
+<li><p>表字段要少，表关联不要怕多，有二级缓存撑腰</p>
+<h1 id="综合考察"><a href="#综合考察" class="headerlink" title="综合考察"></a>综合考察</h1><h3 id="Hibernate和spring中常出现的几个异常"><a href="#Hibernate和spring中常出现的几个异常" class="headerlink" title="Hibernate和spring中常出现的几个异常"></a>Hibernate和spring中常出现的几个异常</h3><p>o</p>
+<p> rg.springframework.beans.factory.BeanCreationException:</p>
+<pre><code> Error creating bean with name &apos;sessionFactory&apos; defined in ServletContext resource [/WEB-INF/applicationContext.xml]:
+
+ Initialization of bean failed; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.xindeco.myregister.pojo.MyRegisterInfo column:
+
+ password (should be mapped with insert=&quot;false&quot; update=&quot;false&quot;)
+
+ 出错原因：password 和repassword同时对应数据库表中的password一列，同时password里面的update和insert都设为true。xml文件如下：
+
+&lt;property name=&quot;password&quot;
+
+                    type=&quot;java.lang.String&quot;
+
+                    update=&quot;true&quot;
+
+                    insert=&quot;true&quot;
+
+                    access=&quot;property&quot;
+
+                    column=&quot;password&quot;
+
+                    length = &quot;32&quot;
+
+                    /&gt;
+</code></pre></li>
+</ol>
+<pre><code>                      &lt;property name=&quot;repassword&quot;
+
+                       type=&quot;java.lang.String&quot;
+
+                       update=&quot;false&quot;
+
+                       insert=&quot;false&quot;
+
+                       access=&quot;property&quot;
+
+                       column=&quot;password&quot;
+
+                       length = &quot;32&quot;
+
+                       /&gt;
+
+    解决方法：将repassword的insert和update设为false。
+
+
+
+org.springframework.beans.factory.BeanCreationException:
+
+    Error creating bean with name &apos;sessionFactory&apos; defined in ServletContext resource [/WEB-INF/applicationContext.xml]:
+
+    Initialization of bean failed;nested exception is org.hibernate.PropertyNotFoundException: Could not find a getter for ID in class
+
+   错误原因：hibernate的映射文件中ID是大写的，而pojo的类中id是小写的
+
+   解决方法：要么将pojo类中的id改称大写，要么把hibernate的映射文件中的ID改称小写。
+</code></pre><h4 id="Hibernate与jdbc的联系"><a href="#Hibernate与jdbc的联系" class="headerlink" title="Hibernate与jdbc的联系"></a>Hibernate与jdbc的联系</h4><p> hibernate是jdbc的轻量级封装，包括jdbc的与数据库的连接（用hibernate.property的配置文件实现当然本质是封装了jdbc的forname），和查询，删除等代码，都用面向对象的思想用代码联系起来，hibernate通过hbm 配置文件把po类的字段和数据库的字段关联起来比如数据库的id,  在po类中就是pravite Long id; public Long getId() ;public setId(Long id);然后hql语句也是面向对象的，它的查询语句不是查询数据库而是查询类的,这些实现的魔法就是xml文件，其实hibernate=封装的jdbc+xml文件。</p>
+<h4 id="Hibernate与spring的联系"><a href="#Hibernate与spring的联系" class="headerlink" title="Hibernate与spring的联系"></a>Hibernate与spring的联系</h4><p>  hibernate中的一些对象可以给Spring来管理,让Spring容器来创建hibernate中一些对象实例化。例如：SessionFactory，HibernateTemplate等。<br>Hibernate本来是对数据库的一些操作,放在DAO层,而Spring给业务层的方法定义了事务,业务层调用DAO层的方法,很好的将Hibernate的操作也加入到事务中来了。</p>
+<h4 id="项目中为什么使用SSH"><a href="#项目中为什么使用SSH" class="headerlink" title="项目中为什么使用SSH"></a>项目中为什么使用SSH</h4><ol>
+<li><p>使用Struts是因为struts是基于MVC模式的,很好的将应用程序进行了分层，使开发者更关注于业务逻辑的实现；第二，struts有着丰富的taglib,如能灵活运用，则能大大提高开发效率。</p>
+<ol start="2">
+<li><p>使用Hibernate：因为hibernate为Java应用提供了一个易用的、高效率的对象关系映射框架。hibernate是个轻量级的持久性框架，功能丰富。</p>
+</li>
+<li><p>使用Spring：因为spring基于IoC(Inversion of Control，反向控制)和AOP构架多层j2ee系统的框架，但它不强迫你必须在每一层中必须使用Spring，因为它模块化的很好，允许你根据自己的需要选择使用它的某一个模块；</p>
+</li>
+<li><p>采用IoC使得可以很容易的实现bean的装配，提供了简洁的AOP并据此实现事务管理(Transcation Managment),等等</p>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="wusha wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wusha 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wusha 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/18/java基础面试之语法之一/" rel="next" title="java基础面试之语法之一">
+                <i class="fa fa-chevron-left"></i> java基础面试之语法之一
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+ 
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzc1Ni8xNDI4Nw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="wusha" />
+            
+              <p class="site-author-name" itemprop="name">wusha</p>
+              <p class="site-description motion-element" itemprop="description">你的努力，终将有所回报</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.uisdc.com/" title="个人简历" target="_blank">个人简历</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.zhangxinxu.com/" title="csdn" target="_blank">csdn</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="博客园" target="_blank">博客园</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="简书" target="_blank">简书</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Struts面试题"><span class="nav-number">1.</span> <span class="nav-text">Struts面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#谈谈你对mvc的理解"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">谈谈你对mvc的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说下Struts的设计模式"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">说下Struts的设计模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Struts2-0常用标签"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">Struts2.0常用标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Struts如何实现国际化"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">Struts如何实现国际化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Struts1-x工作机制？"><span class="nav-number">1.0.0.5.</span> <span class="nav-text">Struts1.x工作机制？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#struts中怎么配置form-bean、action、tiles"><span class="nav-number">1.0.0.6.</span> <span class="nav-text">struts中怎么配置form-bean、action、tiles</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#action是单实例还是多实例，为什么？"><span class="nav-number">1.0.0.7.</span> <span class="nav-text">action是单实例还是多实例，为什么？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#struts2-0的mvc模式？与struts1-0的区别"><span class="nav-number">1.0.0.8.</span> <span class="nav-text">struts2.0的mvc模式？与struts1.0的区别?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#struts的处理流程"><span class="nav-number">1.0.0.9.</span> <span class="nav-text">struts的处理流程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Struts-webwork-的工作机制，它有哪些标签"><span class="nav-number">1.0.0.10.</span> <span class="nav-text">Struts/webwork 的工作机制，它有哪些标签</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring部分"><span class="nav-number">1.1.</span> <span class="nav-text">Spring部分</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring工作机制"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">Spring工作机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用Spring的好处"><span class="nav-number">1.2.</span> <span class="nav-text">##使用Spring的好处</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring是什么-根据你的理解详细谈谈你的见解"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">Spring是什么?根据你的理解详细谈谈你的见解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spring在项目中如何充当粘合剂"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">spring在项目中如何充当粘合剂</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring的事务如何配置"><span class="nav-number">1.3.</span> <span class="nav-text">spring的事务如何配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#transaction有那几种实现"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">transaction有那几种实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hibernate面试题"><span class="nav-number">1.4.</span> <span class="nav-text">Hibernate面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hibernate工作原理"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">Hibernate工作原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是Hibernate的并发机制？怎么处理并发问题？"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">什么是Hibernate的并发机制？怎么处理并发问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hibernate自带的分页机制是什么？如果不使用Hibernate自带的分页，则采用什么方式分页？"><span class="nav-number">1.4.0.3.</span> <span class="nav-text">Hibernate自带的分页机制是什么？如果不使用Hibernate自带的分页，则采用什么方式分页？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hibernate的三种状态之间如何转换"><span class="nav-number">1.4.0.4.</span> <span class="nav-text">hibernate的三种状态之间如何转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#update（）和saveOrUpdate（）的区别？"><span class="nav-number">1.4.0.5.</span> <span class="nav-text">update（）和saveOrUpdate（）的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hibernate拒绝连接、服务器崩溃的原因？最少写5个"><span class="nav-number">1.4.0.6.</span> <span class="nav-text">hibernate拒绝连接、服务器崩溃的原因？最少写5个</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hibernate如何管理缓存"><span class="nav-number">1.4.0.7.</span> <span class="nav-text">hibernate如何管理缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Hibernate的优点："><span class="nav-number">1.4.0.8.</span> <span class="nav-text">使用Hibernate的优点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hibernate是如何延迟加载"><span class="nav-number">1.4.0.9.</span> <span class="nav-text">Hibernate是如何延迟加载?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何优化Hibernate？"><span class="nav-number">1.4.0.10.</span> <span class="nav-text">如何优化Hibernate？</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#综合考察"><span class="nav-number">2.</span> <span class="nav-text">综合考察</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hibernate和spring中常出现的几个异常"><span class="nav-number">2.0.1.</span> <span class="nav-text">Hibernate和spring中常出现的几个异常</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hibernate与jdbc的联系"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">Hibernate与jdbc的联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hibernate与spring的联系"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">Hibernate与spring的联系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目中为什么使用SSH"><span class="nav-number">2.0.1.3.</span> <span class="nav-text">项目中为什么使用SSH</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wusha</span>
+
+  
+</div>
+
+
+  <div class="powered-by">  个人专属</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">IT原创   因为热爱所以专注  </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+ 
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytH9K9lD';
+      var conf = 'c8a38acb7e2a30278f87488542dfc0bc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("p7qmsjjKNxNoT9Tu7Xab9DOU-gzGzoHsz", "COi8vpjU93nghYJnFRDkmmhy");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+  
+   undefined
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+  <!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+ 
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":"wanko","bottom":-30,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
