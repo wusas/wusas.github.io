@@ -135,7 +135,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/3.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/4.png">
 <meta property="og:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/5.png">
-<meta property="og:updated_time" content="2018-09-19T09:37:11.457Z">
+<meta property="og:updated_time" content="2018-09-20T08:43:02.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java面试之Struts Spring Hibernate">
 <meta name="twitter:image" content="http://yoursite.com/2018/09/19/java面试之Struts-Spring-Hibernate/1.jpeg">
@@ -433,7 +433,7 @@
       
 
       
-        <p><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/1.jpeg" alt="在这里插入图片描述"><br> <a id="more"></a></p>
+        <p>  <img src="/2018/09/19/java面试之Struts-Spring-Hibernate/1.jpeg" alt="在这里插入图片描述"><br> <a id="more"></a></p>
 <blockquote>
 <p> 在面试中一般面试官会根据面试者的简历来提问题，如果你的项目有用到ssh的话那么这篇文章也许会对你有帮助。当然，面试题目并不是速成法，如果你对这方面不太了解，建议你看我的另外一篇博客<a href="https://blog.csdn.net/sha1024/article/details/79540528" target="_blank" rel="noopener">点我看基础</a>接下来是我自己总结的一些ssh的面试题集合。</p>
 </blockquote>
@@ -442,21 +442,14 @@
 <h4 id="说下Struts的设计模式"><a href="#说下Struts的设计模式" class="headerlink" title="说下Struts的设计模式"></a>说下Struts的设计模式</h4><p>MVC模式: web应用程序启动时就会加载并初始化ActionServler。用户提交表单时，一个配置好的ActionForm对象被创建，并被填入表单相应的数据，ActionServler根据Struts-config.xml文件配置好的设置决定是否需要表单验证，如果需要就调用ActionForm的Validate（）验证后选择将请求发送到哪个Action，如果Action不存在，ActionServlet会先创建这个对象，然后调用Action的execute（）方法。Execute（）从ActionForm对象中获取数据，完成业务逻辑，返回一个ActionForward对象，ActionServlet再把客户请求转发给ActionForward对象指定的jsp组件，ActionForward对象指定的jsp生成动态的网页，返回给客户。<br><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/2.png" alt="struts2框架的运行结构"></p>
 <h4 id="Struts2-0常用标签"><a href="#Struts2-0常用标签" class="headerlink" title="Struts2.0常用标签"></a>Struts2.0常用标签</h4><ol>
 <li>往action里传值：<code>&lt;input name=&quot;userName&quot; type=&quot;text&quot; class=&quot;input6&quot; size=&quot;15&quot;&gt;</code></li>
-<li>显示标签 property 用于输出指定值：<code>&lt;s:property value=&quot;userName &quot;/&gt;</code> 2. 显示标签 property 用于输出指定值：<code>&lt;s:property value=&quot;userName &quot;/&gt;</code><ol start="3">
+<li>显示标签 property 用于输出指定值：<code>&lt;s:property value=&quot;userName &quot;/&gt;</code></li>
 <li>用于从页面往action中(user)的对象内传值：<code>&lt;s:text name=&quot;user.userName &quot; id=&quot;username&quot;/&gt;</code></li>
+<li>判断&lt;s:if&gt; &lt;/s:if&gt; 用于在页面中判断指定数据 <code>&lt;s:if test=&quot;userName == admin&quot;&gt;…. &lt;/s:if&gt; &lt;s:else&gt;…. &lt;/s:else&gt;</code></li>
+<li>迭代&lt;s:iterator&gt;用于将List、Map、ArrayList等集合进行循环遍<br>历</li>
 </ol>
-</li>
-<li><p>判断&lt;s:if&gt; &lt;/s:if&gt; 用于在页面中判断指定数据 <code>&lt;s:if test=&quot;userName == admin&quot;&gt;…. &lt;/s:if&gt; &lt;s:else&gt;…. &lt;/s:else&gt;</code></p>
-<ol start="5">
-<li><p>迭代&lt;s:iterator&gt;用于将List、Map、ArrayList等集合进行循环遍<br>历</p>
-<p>&lt;s:iterator value=”userList” id=”user” status=”u”&gt;</p>
-<pre><code>   &lt;s:property value=&quot;userName&quot;/&gt;&lt;/a&gt;
-&lt;/s:iterator&gt;
-</code></pre></li>
-</ol>
-</li>
-<li><p>URL地址标签，&lt;s:url&gt;用于生成一个URL地址，可以通过URL标签指定的&lt;s:param&gt;子元素向URL地址发送请求参数 </p>
-</li>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-tag">&lt;<span class="hljs-name">s:iterator</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"userList"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"user"</span> <span class="hljs-attr">status</span>=<span class="hljs-string">"u"</span>&gt;</span><br>                  <span class="hljs-tag">&lt;<span class="hljs-name">s:property</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"userName"</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><br>               <span class="hljs-tag">&lt;/<span class="hljs-name">s:iterator</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<ol start="6">
+<li>URL地址标签，&lt;s:url&gt;用于生成一个URL地址，可以通过URL标签指定的&lt;s:param&gt;子元素向URL地址发送请求参数 </li>
 </ol>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-tag">&lt;<span class="hljs-name">s:url</span> <span class="hljs-attr">action</span>=<span class="hljs-string">" "</span>&gt;</span><br>         <span class="hljs-tag">&lt;<span class="hljs-name">s:param</span> <span class="hljs-attr">name</span>=<span class="hljs-string">" "</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">s:param</span>&gt;</span><br> <span class="hljs-tag">&lt;/<span class="hljs-name">s:url</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <ol start="7">
@@ -473,97 +466,29 @@
 3. 创建英文资源文件ApplicationResource_en.properites
 4. 创建临时中文资源文件ApplicationResource_temp.properites 例如：lable.welcom.china=中国欢迎您!
 5. 对临时中文资源文件进行编码转换。可以使用myeclipse的插件,也可以在dos下执行:
-
-
- native2ascii -encoding gb2312 ApplicationResource_temp.properties ApplicationResource_zh_CN.properties
-</code></pre><ol start="6">
-<li>在jsp中加入struts的bean标记库 &lt;%@ taglib uri=”/WEB-INF/struts-bean.tld” prefix=”bean”%&gt;<br>显示信息： &lt;bean:message key=”label.welcome.china”&gt;<br>可以在struts-config.xml文件中定义多个资源包，而每个资源包可使用key属性指定包的名称</li>
-</ol>
+</code></pre><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-selector-tag">native2ascii</span> <span class="hljs-selector-tag">-encoding</span> <span class="hljs-selector-tag">gb2312</span> <span class="hljs-selector-tag">ApplicationResource_temp</span><span class="hljs-selector-class">.properties</span> <span class="hljs-selector-tag">ApplicationResource_zh_CN</span><span class="hljs-selector-class">.properties</span><br></code></pre></td></tr></table></figure>
+<p>   6.在jsp中加入struts的bean标记库 &lt;%@ taglib uri=”/WEB-INF/struts-bean.tld” prefix=”bean”%&gt;<br>显示信息： &lt;bean:message key=”label.welcome.china”&gt;<br>可以在struts-config.xml文件中定义多个资源包，而每个资源包可使用key属性指定包的名称</p>
 <h4 id="Struts1-x工作机制？"><a href="#Struts1-x工作机制？" class="headerlink" title="Struts1.x工作机制？"></a>Struts1.x工作机制？</h4><p>工作机制：<br>Struts的工作流程:<br>在web应用启动时就会加载初始化ActionServlet,ActionServlet从<br>struts-config.xml文件中读取配置信息,把它们存放到各种配置对象<br>当ActionServlet接收到一个客户请求时,将执行如下流程.<br>-(1)检索和用户请求匹配的ActionMapping实例,如果不存在,就返回请求路径无效信息;<br>-(2)如果ActionForm实例不存在,就创建一个ActionForm对象,把客户提交的表单数据保存到ActionForm对象中;<br>-(3)根据配置信息决定是否需要表单验证.如果需要验证,就调用ActionForm的validate()方法;<br>-(4)如果ActionForm的validate()方法返回null或返回一个不包含ActionMessage的ActuibErrors对象, 就表示表单验证成功;<br>-(5)ActionServlet根据ActionMapping所包含的映射信息决定将请求转发给哪个Action,如果相应的 Action实例不存在,就先创建这个实例,然后调用Action的execute()方法;<br>-(6)Action的execute()方法返回一个ActionForward对象,ActionServlet在把客户请求转发给 ActionForward对象指向的JSP组件;<br>-(7)ActionForward对象指向JSP组件生成动态网页,返回给客户;</p>
-<h4 id="struts中怎么配置form-bean、action、tiles"><a href="#struts中怎么配置form-bean、action、tiles" class="headerlink" title="struts中怎么配置form-bean、action、tiles"></a>struts中怎么配置form-bean、action、tiles</h4><p>   此处配置的是struts1.2的</p>
-<pre><code>form-bean配置：(在配置文件struts-config.xml中)：
-
-    &lt;form-beans &gt;
-
-   &lt;form-bean name=&quot;&quot; type=&quot;&quot;&gt;&lt;/form-bean&gt;
-
-   &lt;/form-beans&gt;
-
-name: 指定form的名字; type指定form的类型：包名+类名；
-</code></pre><p>   action配置：(在配置文件struts-config.xml中)</p>
-<pre><code>&lt;action-mappings &gt;
-
-&lt;action path=&quot;&quot;
-
-        attribute=&quot;&quot;
-
-        input=&quot;&quot;
-
-        name=&quot;&quot;
-
-        parameter=&quot;&quot;
-
-        scope=&quot;request&quot;
-
-        type=&quot;&quot;
-
-        &gt;&lt;/action&gt;
-
-&lt;/action-mappings&gt;
-</code></pre><p>   path：请求Action的名字;   attribute：form的名字,与form-bean中的name对应;   input：输入页的路径;</p>
-<p>   name：如果配置了attribute,name不起作用,与attribute一样;   parameter：使用分发Action时,指定调用分发Action中的方法名;</p>
-<p>   scope：Action的范围;    type：Action的类型：包名+类名；</p>
-<p>   tites配置：</p>
+<h4 id="struts中怎么配置form-bean、action、tiles"><a href="#struts中怎么配置form-bean、action、tiles" class="headerlink" title="struts中怎么配置form-bean、action、tiles"></a>struts中怎么配置form-bean、action、tiles</h4><p>此处配置的是struts1.2的</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">form</span>-bean配置：(在配置文件struts-config.xml中)：<br><br>       &lt;<span class="hljs-keyword">form</span>-beans &gt;<br>   <br>      &lt;<span class="hljs-keyword">form</span>-bean <span class="hljs-keyword">name</span>=<span class="hljs-string">""</span> <span class="hljs-keyword">type</span>=<span class="hljs-string">""</span>&gt;&lt;/<span class="hljs-keyword">form</span>-bean&gt;<br>   <br>      &lt;/<span class="hljs-keyword">form</span>-beans&gt;<br><br>   <span class="hljs-keyword">name</span>: 指定<span class="hljs-keyword">form</span>的名字; <span class="hljs-keyword">type</span>指定<span class="hljs-keyword">form</span>的类型：包名+类名；<br></code></pre></td></tr></table></figure>
+<p>action配置：(在配置文件struts-config.xml中)</p>
+<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;<span class="hljs-built_in">action</span>-mappings &gt;<br> <br>    &lt;<span class="hljs-built_in">action</span> path=<span class="hljs-string">""</span><br> <br>            attribute=<span class="hljs-string">""</span><br> <br>            input=<span class="hljs-string">""</span><br> <br>            <span class="hljs-built_in">name</span>=<span class="hljs-string">""</span><br> <br>            parameter=<span class="hljs-string">""</span><br> <br>            scope=<span class="hljs-string">"request"</span><br> <br>            <span class="hljs-built_in">type</span>=<span class="hljs-string">""</span><br> <br>            &gt;&lt;/<span class="hljs-built_in">action</span>&gt;<br> <br>    &lt;/<span class="hljs-built_in">action</span>-mappings&gt;<br></code></pre></td></tr></table></figure>
+<p>path：请求Action的名字;   attribute：form的名字,与form-bean中的name对应;   input：输入页的路径;</p>
+<p>name：如果配置了attribute,name不起作用,与attribute一样;   parameter：使用分发Action时,指定调用分发Action中的     方法名;</p>
+<p>scope：Action的范围;    type：Action的类型：包名+类名；</p>
+<p>tites配置：</p>
 <ol>
-<li><p>新建一个 tiles-defs.xml文件,并在其中做如下配置：</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-
-&lt;!DOCTYPE tiles-definitions PUBLIC &quot;-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN&quot; &quot;http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd&quot;&gt;
-
-&lt;tiles-definitions&gt;
-
-  &lt;definition name=&quot;member-definition&quot; path=&quot;/Jsp/layout.jsp&quot;&gt;  
-
-    &lt;put name=&quot;top&quot; value=&quot;/mTop.do&quot;/&gt;  
-
-    &lt;put name=&quot;left&quot; value=&quot;/mLeft.do&quot;/&gt;
-
-    &lt;put name=&quot;main&quot; value=&quot;/defaultMmain.do&quot;/&gt;
-
-  &lt;/definition&gt;
-</code></pre><p>   </p>
+<li>新建一个 tiles-defs.xml文件,并在其中做如下配置：</li>
+</ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"UTF-8"</span><span class="hljs-meta">?&gt;</span></span><br> <br>       <span class="hljs-meta">&lt;!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd"&gt;</span><br> <br>       <span class="hljs-tag">&lt;<span class="hljs-name">tiles-definitions</span>&gt;</span><br> <br>         <span class="hljs-tag">&lt;<span class="hljs-name">definition</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"member-definition"</span> <span class="hljs-attr">path</span>=<span class="hljs-string">"/Jsp/layout.jsp"</span>&gt;</span>  <br> <br>           <span class="hljs-tag">&lt;<span class="hljs-name">put</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"top"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"/mTop.do"</span>/&gt;</span>  <br> <br>           <span class="hljs-tag">&lt;<span class="hljs-name">put</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"left"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"/mLeft.do"</span>/&gt;</span><br> <br>           <span class="hljs-tag">&lt;<span class="hljs-name">put</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"main"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"/defaultMmain.do"</span>/&gt;</span><br> <br>         <span class="hljs-tag">&lt;/<span class="hljs-name">definition</span>&gt;</span><br> <br>      <span class="hljs-tag">&lt;/<span class="hljs-name">tiles-definitions</span>&gt;</span><br></code></pre></td></tr></table></figure>
 <ol start="2">
 <li><p>在web.xml和struts-config.xml和web.xml中做相应配置：</p>
-<p>在struts-config.xml中配置如下：</p>
+<pre><code>在struts-config.xml中配置如下
+</code></pre><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;<span class="hljs-string">plug-in </span><span class="hljs-string">className=</span><span class="hljs-string">"org.apache.struts.tiles.TilesPlugin"</span>&gt;<br><br>     &lt;<span class="hljs-built_in">set-property</span> <span class="hljs-string">property=</span><span class="hljs-string">"definitions-config"</span> <span class="hljs-string">value=</span><span class="hljs-string">"/WEB-INF/tiles-defs.xml"</span>/&gt;   <br><br>     &lt;<span class="hljs-built_in">set-property</span> <span class="hljs-string">property=</span><span class="hljs-string">"definitions-parser-validate"</span> <span class="hljs-string">value=</span><span class="hljs-string">"true"</span>/&gt;<br><br>  &lt;/<span class="hljs-string">plug-in&gt;</span><br></code></pre></td></tr></table></figure>
 </li>
 </ol>
-</li>
-</ol>
-<hr>
-<pre><code>&lt;plug-in className=&quot;org.apache.struts.tiles.TilesPlugin&quot;&gt;
-
-   &lt;set-property property=&quot;definitions-config&quot; value=&quot;/WEB-INF/tiles-defs.xml&quot;/&gt;   
-
-   &lt;set-property property=&quot;definitions-parser-validate&quot; value=&quot;true&quot;/&gt;
-
-&lt;/plug-in&gt;
-
-************
-
-在web.xml中配置如下：
-
-************
-
-&lt;init-param&gt;    
-
-   &lt;param-name&gt;definitions-config&lt;/param-name&gt;    
-
-   &lt;param-value&gt;/WEB-INF/tiles-defs.xml&lt;/param-value&gt;
-
-&lt;/init-param&gt;
-
-*************
-</code></pre><ol start="3">
+<p>在web.xml中配置如下：<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;init-<span class="hljs-built_in">param</span>&gt;    <br><br>         &lt;<span class="hljs-built_in">param</span>-name&gt;definitions-config&lt;/<span class="hljs-built_in">param</span>-name&gt;    <br><br>         &lt;<span class="hljs-built_in">param</span>-<span class="hljs-built_in">value</span>&gt;/WEB-INF/tiles-defs.xml&lt;/<span class="hljs-built_in">param</span>-<span class="hljs-built_in">value</span>&gt;<br><br>      &lt;/init-<span class="hljs-built_in">param</span>&gt;<br></code></pre></td></tr></table></figure></p>
+<ol start="3">
 <li><p>调用Tiles组件</p>
 <p>Tiles组件是通过Struts Action来调用的，在struts-config.xml中做如下action配置</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;action<br><br>       <span class="hljs-attribute">path</span>=<span class="hljs-string">"/member"</span><br><br>       <span class="hljs-attribute">parameter</span>=<span class="hljs-string">"member-definition"</span><br><br>       <span class="hljs-attribute">type</span>=<span class="hljs-string">"org.apache.struts.actions.ForwardAction"</span>/&gt;<br></code></pre></td></tr></table></figure>
@@ -572,8 +497,8 @@ name: 指定form的名字; type指定form的类型：包名+类名；
 <h4 id="action是单实例还是多实例，为什么？"><a href="#action是单实例还是多实例，为什么？" class="headerlink" title="action是单实例还是多实例，为什么？"></a>action是单实例还是多实例，为什么？</h4><p> action是单实例的。当多个用户访问一个请求的时候，服务器内存中只有一个与之对应的action类对象。<br>    因为当服务器第一次加载struts的配置文件的时候,创建了一个Action后,每发送一个请求,服务器都会先去检索相应的范围内(request,session)是否存在<br>    这样一个action实例,如果存在,则使用这个实例,如果不存在,则创建一个action实例。</p>
 <h4 id="struts2-0的mvc模式？与struts1-0的区别"><a href="#struts2-0的mvc模式？与struts1-0的区别" class="headerlink" title="struts2.0的mvc模式？与struts1.0的区别?"></a>struts2.0的mvc模式？与struts1.0的区别?</h4><p> struts2的mvc模式：当用户在页面提交用户请求时,该请求需要提交给struts2的控制器处理。struts2的控制器根据处理结果,<br> 决定将哪个页面呈现给客户端。<br> 与struts1最大的不同是：struts2的控制器。struts2的控制器不再像struts1的控制器,需要继承一个Action父类,甚至可以无需实现<br> 任何接口,struts2的Action就是一个普通的POJO。实际上，Struts2 的Action就是一个包含execute方法的普通Java类<br> 该类里包含的多个属性用于封装用户的请求参数。</p>
 <h4 id="struts的处理流程"><a href="#struts的处理流程" class="headerlink" title="struts的处理流程"></a>struts的处理流程</h4><p>一、ActionServlet的初始化<br>ActionServlet作为Struts组件的前端控制器，由于web.xml的相应配置：</p>
-<pre><code>&lt;load-on-startup&gt;0&lt;/load-on-startup&gt;
-</code></pre><p>在应用一加载时即会被实例化并调用其init方法，init方法所做的主要工作有二：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">&lt;load-<span class="hljs-keyword">on</span>-startup&gt;<span class="hljs-number">0</span>&lt;/load-<span class="hljs-keyword">on</span>-startup&gt;<br></code></pre></td></tr></table></figure>
+<p>在应用一加载时即会被实例化并调用其init方法，init方法所做的主要工作有二：</p>
 <ol>
 <li>加载struts配置文件，并创建用于封装配置信息的ModuleConfig对象</li>
 <li>加载资源文件，并创建用于封装资源文件的MessageResources对象需要注意两点：如果web.xml有多模块配置，将创建多个ModuleConfig对象和MessageResources对象分别用于封装各个模块的struts配置文件和资源文件。针对各个模块所创建的ModuleConfig对象和MessageResources对象将存储在ServletContext中，对应的属性名中有该模块名称的相应标识。<br>另外，如果有相应配置的话，init方法还将初始化数据源和PlugIn<br>二、ActionServlet的process<br>所有形如*.do的请求（根据web.xml中的相关配置）将提交给ActionServlet，最终将调用其process方法<br>。process方法的主要工作有三：<br>1.根据请求信息获知所请求的模块名称，从ServletContext中获得与请求模块对应的的ModuleConfig对象，并存储到request中。<br>2.根据模块信息获得相应的RequestProcessor对象，一个模块对应一个RequestProcessor对象，RequestProcessor对象将关联与所属模块对应的ModuleConfig对象。<br>3.调用RequestProcessor对象的process方法，将request和response作为参数传递给它。<br>三、RequestProcessor的process<br>RequestProcessor对象的process方法的主要工作有五步：<br>1.调用自己的 processPreprocess(request, response)方法，该方法不进行任何操作，用于子类重写扩展其功能。<br>2.获得与请求地址所匹配的ActionMapping对象，AcionMapping对象用于封装一个特定acion的配置信息。<br>3.根据ActionMapping中的配置信息获得ActionForm对象（该对象将缓存到request或session中），并将表单数据填充到ActionForm中，然后根据ActionMapping的配置决定是否验证ActionForm，如果验证，将调用ActionForm的 validate方法，若其返回的ActionErros对象中包含ActionMessage对象则表示验证<br>失败，将转向action配置信息 input属性所指示的地址。<br>4.如果ActionForm无需验证或验证通过将创建并缓存与请求地址匹配的Action对象，将ActionMapping对象、ActionForm对象、request和response作为参数调用其execute方法。<br>5.根据Action对象的execute方法返回的ActionForward对象，将请求转发或重定向到该ActionForward所封装的地址。<h4 id="Struts-webwork-的工作机制，它有哪些标签"><a href="#Struts-webwork-的工作机制，它有哪些标签" class="headerlink" title="Struts/webwork 的工作机制，它有哪些标签"></a>Struts/webwork 的工作机制，它有哪些标签</h4>Struts 2框架的大致处理流程如下：<br>浏览器发送请求，例如请求/mypage.action、/reports/myreport.pdf等。<br>核心控制器FilterDispatcher根据请求决定调用合适的Action。<br>WebWork的拦截器链自动对请求应用通用功能，例如workflow、validation或文件上传等功能。<br>回调Action的execute方法，该execute方法先获取用户请求参数，然后执行某种数据库操作，既可以是将数据保存到数据库，也可以从数据库中检索信息。实际上，因为Action只是一个控制器，它会调用业务逻辑组件来处理用户的请求。<br>Action的execute方法处理结果信息将被输出到浏览器中，可以是HTML页面、图像，也可以是PDF文档或者其他文档。此时支持的视图技术非常多，既支持JSP，也支持Velocity、FreeMarker等模板技术。</li>
@@ -605,7 +530,7 @@ name: 指定form的名字; type指定form的类型：包名+类名；
 <p>6.提交事务</p>
 <p>7.关闭Session</p>
 <p>8.关闭SesstionFactory</p>
-<p><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/4.png" alt="hibernate的核心构成和执行流程图"><br><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/5.png" alt=""></p>
+<p><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/4.png" alt="hibernate的核心构成和执行流程图"><br><img src="/2018/09/19/java面试之Struts-Spring-Hibernate/5.png" alt="hibernate的核心构成和执行流程图"></p>
 <h4 id="什么是Hibernate的并发机制？怎么处理并发问题？"><a href="#什么是Hibernate的并发机制？怎么处理并发问题？" class="headerlink" title="什么是Hibernate的并发机制？怎么处理并发问题？"></a>什么是Hibernate的并发机制？怎么处理并发问题？</h4><p>Hibernate并发机制：<br>   a、Hibernate的Session对象是非线程安全的,对于单个请求,单个会话,单个的工作单元(即单个事务,单个线程),它通常只使用一次,然后就丢弃。如果一个Session 实例允许共享的话，那些支持并发运行的,例如Http request,session beans将会导致出现资源争用。如果在Http Session中有hibernate的Session的话,就可能会出现同步访问Http Session。只要用户足够快的点击浏览器的“刷新”,就会导致两个并发运行的线程使用同一个Session。</p>
 <p>   b、多个事务并发访问同一块资源,可能会引发第一类丢失更新，脏读，幻读，不可重复读，第二类丢失更新一系列的问题。</p>
 <p> 解决方案：设置事务隔离级别。<br>    Serializable：串行化。隔离级别最高</p>
@@ -685,74 +610,20 @@ name: 指定form的名字; type指定form的类型：包名+类名；
 <li><p>继承类使用显式多态</p>
 </li>
 <li><p>表字段要少，表关联不要怕多，有二级缓存撑腰</p>
-<h1 id="综合考察"><a href="#综合考察" class="headerlink" title="综合考察"></a>综合考察</h1><h3 id="Hibernate和spring中常出现的几个异常"><a href="#Hibernate和spring中常出现的几个异常" class="headerlink" title="Hibernate和spring中常出现的几个异常"></a>Hibernate和spring中常出现的几个异常</h3><p>o</p>
-<p> rg.springframework.beans.factory.BeanCreationException:</p>
-<pre><code> Error creating bean with name &apos;sessionFactory&apos; defined in ServletContext resource [/WEB-INF/applicationContext.xml]:
-
- Initialization of bean failed; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.xindeco.myregister.pojo.MyRegisterInfo column:
-
- password (should be mapped with insert=&quot;false&quot; update=&quot;false&quot;)
-
- 出错原因：password 和repassword同时对应数据库表中的password一列，同时password里面的update和insert都设为true。xml文件如下：
-
-&lt;property name=&quot;password&quot;
-
-                    type=&quot;java.lang.String&quot;
-
-                    update=&quot;true&quot;
-
-                    insert=&quot;true&quot;
-
-                    access=&quot;property&quot;
-
-                    column=&quot;password&quot;
-
-                    length = &quot;32&quot;
-
-                    /&gt;
-</code></pre></li>
+</li>
 </ol>
-<pre><code>                      &lt;property name=&quot;repassword&quot;
-
-                       type=&quot;java.lang.String&quot;
-
-                       update=&quot;false&quot;
-
-                       insert=&quot;false&quot;
-
-                       access=&quot;property&quot;
-
-                       column=&quot;password&quot;
-
-                       length = &quot;32&quot;
-
-                       /&gt;
-
-    解决方法：将repassword的insert和update设为false。
-
-
-
-org.springframework.beans.factory.BeanCreationException:
-
-    Error creating bean with name &apos;sessionFactory&apos; defined in ServletContext resource [/WEB-INF/applicationContext.xml]:
-
-    Initialization of bean failed;nested exception is org.hibernate.PropertyNotFoundException: Could not find a getter for ID in class
-
-   错误原因：hibernate的映射文件中ID是大写的，而pojo的类中id是小写的
-
-   解决方法：要么将pojo类中的id改称大写，要么把hibernate的映射文件中的ID改称小写。
-</code></pre><h4 id="Hibernate与jdbc的联系"><a href="#Hibernate与jdbc的联系" class="headerlink" title="Hibernate与jdbc的联系"></a>Hibernate与jdbc的联系</h4><p> hibernate是jdbc的轻量级封装，包括jdbc的与数据库的连接（用hibernate.property的配置文件实现当然本质是封装了jdbc的forname），和查询，删除等代码，都用面向对象的思想用代码联系起来，hibernate通过hbm 配置文件把po类的字段和数据库的字段关联起来比如数据库的id,  在po类中就是pravite Long id; public Long getId() ;public setId(Long id);然后hql语句也是面向对象的，它的查询语句不是查询数据库而是查询类的,这些实现的魔法就是xml文件，其实hibernate=封装的jdbc+xml文件。</p>
-<h4 id="Hibernate与spring的联系"><a href="#Hibernate与spring的联系" class="headerlink" title="Hibernate与spring的联系"></a>Hibernate与spring的联系</h4><p>  hibernate中的一些对象可以给Spring来管理,让Spring容器来创建hibernate中一些对象实例化。例如：SessionFactory，HibernateTemplate等。<br>Hibernate本来是对数据库的一些操作,放在DAO层,而Spring给业务层的方法定义了事务,业务层调用DAO层的方法,很好的将Hibernate的操作也加入到事务中来了。</p>
+<h1 id="综合考察"><a href="#综合考察" class="headerlink" title="综合考察"></a>综合考察</h1><h3 id="Hibernate和spring中常出现的几个异常"><a href="#Hibernate和spring中常出现的几个异常" class="headerlink" title="Hibernate和spring中常出现的几个异常"></a>Hibernate和spring中常出现的几个异常</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><code class="hljs undefined">org.springframework.beans.factory.BeanCreationException:<br>   <br>          Error creating bean with name 'sessionFactory' defined in ServletContext resource [/WEB-INF/applicationContext.xml]:<br>   <br>          Initialization of bean failed; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.xindeco.myregister.pojo.MyRegisterInfo column:<br>   <br>          password (should be mapped with <span class="hljs-keyword">insert</span>=<span class="hljs-string">"false"</span> <span class="hljs-keyword">update</span>=<span class="hljs-string">"false"</span>)<br>   <br>          出错原因：<span class="hljs-keyword">password</span> 和repassword同时对应数据库表中的<span class="hljs-keyword">password</span>一列，同时<span class="hljs-keyword">password</span>里面的<span class="hljs-keyword">update</span>和<span class="hljs-keyword">insert</span>都设为<span class="hljs-literal">true</span>。<span class="hljs-keyword">xml</span>文件如下：<br>   <br>         &lt;property <span class="hljs-keyword">name</span>=<span class="hljs-string">"password"</span><br>   <br>                             <span class="hljs-keyword">type</span>=<span class="hljs-string">"java.lang.String"</span><br>   <br>                             <span class="hljs-keyword">update</span>=<span class="hljs-string">"true"</span><br>   <br>                             <span class="hljs-keyword">insert</span>=<span class="hljs-string">"true"</span><br>   <br>                             <span class="hljs-keyword">access</span>=<span class="hljs-string">"property"</span><br>   <br>                             <span class="hljs-keyword">column</span>=<span class="hljs-string">"password"</span><br>   <br>                             <span class="hljs-keyword">length</span> = <span class="hljs-string">"32"</span><br>   <br>                             /&gt;<br>   <br>    <br>   <br>                            &lt;property <span class="hljs-keyword">name</span>=<span class="hljs-string">"repassword"</span><br>   <br>                             <span class="hljs-keyword">type</span>=<span class="hljs-string">"java.lang.String"</span><br>   <br>                             <span class="hljs-keyword">update</span>=<span class="hljs-string">"false"</span><br>   <br>                             <span class="hljs-keyword">insert</span>=<span class="hljs-string">"false"</span><br>   <br>                             <span class="hljs-keyword">access</span>=<span class="hljs-string">"property"</span><br>   <br>                             <span class="hljs-keyword">column</span>=<span class="hljs-string">"password"</span><br>   <br>                             <span class="hljs-keyword">length</span> = <span class="hljs-string">"32"</span><br>   <br>                             /&gt;<br>   <br>          解决方法：将repassword的<span class="hljs-keyword">insert</span>和<span class="hljs-keyword">update</span>设为<span class="hljs-literal">false</span>。<br>   <br>    <br>   <br>      org.springframework.beans.factory.BeanCreationException:<br>   <br>          <span class="hljs-keyword">Error</span> creating bean <span class="hljs-keyword">with</span> <span class="hljs-keyword">name</span> <span class="hljs-string">'sessionFactory'</span> defined <span class="hljs-keyword">in</span> ServletContext <span class="hljs-keyword">resource</span> [/WEB-INF/applicationContext.xml]:<br>   <br>          Initialization <span class="hljs-keyword">of</span> bean <span class="hljs-keyword">failed</span>;nested exception is org.hibernate.PropertyNotFoundException: Could not find a getter for ID in class<br></code></pre></td></tr></table></figure>
+<p>   错误原因：hibernate的映射文件中ID是大写的，而pojo的类中id是小写的<br>    解决方法：要么将pojo类中的id改称大写，要么把hibernate的映射文件中的ID改称小写。</p>
+<h4 id="Hibernate与jdbc的联系"><a href="#Hibernate与jdbc的联系" class="headerlink" title="Hibernate与jdbc的联系"></a>Hibernate与jdbc的联系</h4><p>hibernate是jdbc的轻量级封装，包括jdbc的与数据库的连接（用hibernate.property的配置文件实现当然本质是封装了jdbc的forname），和查询，删除等代码，都用面向对象的思想用代码联系起来，hibernate通过hbm 配置文件把po类的字段和数据库的字段关联起来比如数据库的id,  在po类中就是pravite Long id; public Long getId() ;public setId(Long id);然后hql语句也是面向对象的，它的查询语句不是查询数据库而是查询类的,这些实现的魔法就是xml文件，其实hibernate=封装的jdbc+xml文件。</p>
+<h4 id="Hibernate与spring的联系"><a href="#Hibernate与spring的联系" class="headerlink" title="Hibernate与spring的联系"></a>Hibernate与spring的联系</h4><p>hibernate中的一些对象可以给Spring来管理,让Spring容器来创建hibernate中一些对象实例化。例如：SessionFactory，HibernateTemplate等。<br>Hibernate本来是对数据库的一些操作,放在DAO层,而Spring给业务层的方法定义了事务,业务层调用DAO层的方法,很好的将Hibernate的操作也加入到事务中来了。</p>
 <h4 id="项目中为什么使用SSH"><a href="#项目中为什么使用SSH" class="headerlink" title="项目中为什么使用SSH"></a>项目中为什么使用SSH</h4><ol>
 <li><p>使用Struts是因为struts是基于MVC模式的,很好的将应用程序进行了分层，使开发者更关注于业务逻辑的实现；第二，struts有着丰富的taglib,如能灵活运用，则能大大提高开发效率。</p>
-<ol start="2">
+</li>
 <li><p>使用Hibernate：因为hibernate为Java应用提供了一个易用的、高效率的对象关系映射框架。hibernate是个轻量级的持久性框架，功能丰富。</p>
 </li>
 <li><p>使用Spring：因为spring基于IoC(Inversion of Control，反向控制)和AOP构架多层j2ee系统的框架，但它不强迫你必须在每一层中必须使用Spring，因为它模块化的很好，允许你根据自己的需要选择使用它的某一个模块；</p>
 </li>
 <li><p>采用IoC使得可以很容易的实现bean的装配，提供了简洁的AOP并据此实现事务管理(Transcation Managment),等等</p>
-</li>
-</ol>
 </li>
 </ol>
 
