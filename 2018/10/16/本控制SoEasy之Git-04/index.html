@@ -155,7 +155,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/10/16/本控制SoEasy之Git-04/23.png">
 <meta property="og:image" content="http://yoursite.com/2018/10/16/本控制SoEasy之Git-04/24.png">
 <meta property="og:image" content="http://yoursite.com/2018/10/16/本控制SoEasy之Git-04/25.png">
-<meta property="og:updated_time" content="2018-10-16T08:09:51.159Z">
+<meta property="og:updated_time" content="2018-10-16T08:14:48.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="版本控制SoEasy之Git-04">
 <meta name="twitter:image" content="http://yoursite.com/2018/10/16/本控制SoEasy之Git-04/1.jpeg">
@@ -486,12 +486,13 @@
 <p>场景七：盖茨获取艾伦提交的分支</p>
 <p>场景八：盖茨把分支合并到主干</p>
 <p>下面来看以上各场景在IDEA中对应的操作。</p>
-<p>场景一：盖茨创建项目并提交到远程Git仓库<br>在IDEA中配置Git<br>如果是IDEA，直接使用快捷键，CTRL+alt+s，打开设置窗口。<br><img src="/2018/10/16/本控制SoEasy之Git-04/2.png" alt="在这里插入图片描述"><br>然后创建一个项目</p>
+<h3 id="场景一：盖茨创建项目并提交到远程Git仓库"><a href="#场景一：盖茨创建项目并提交到远程Git仓库" class="headerlink" title="场景一：盖茨创建项目并提交到远程Git仓库"></a>场景一：盖茨创建项目并提交到远程Git仓库</h3><p>在IDEA中配置Git<br>如果是IDEA，直接使用快捷键，CTRL+alt+s，打开设置窗口。<br><img src="/2018/10/16/本控制SoEasy之Git-04/2.png" alt="在这里插入图片描述"><br>然后创建一个项目</p>
 <p>选择VCS - &gt; Enable Version Control Integration，允许将项目集成到版本控制器中<br><img src="/2018/10/16/本控制SoEasy之Git-04/3.png" alt="在这里插入图片描述"><br>如果没有出现Enable Version Control Integration这个，说明你的项目已经集成了其他的版本控制，需要先删除其他的版本控制，加入git就可以了<br><img src="/2018/10/16/本控制SoEasy之Git-04/4.png" alt="在这里插入图片描述"><br>选择版本控制器类型<br><img src="/2018/10/16/本控制SoEasy之Git-04/5.png" alt="在这里插入图片描述"><br>完成后当前项目就变成一个Git项目，是工作空间</p>
 <p>点击OK后创建完成本地仓库，注意，这里仅仅是本地的。下面把项目源码添加到本地仓库。</p>
 <p>下图是Git与提交有关的三个命令对应的操作，Add命令是把文件从IDE的工作目录添加到本地仓库的stage区，Commit命令把stage区的暂存文件提交到当前分支的仓库，并清空stage区。Push命令把本地仓库的提交同步到远程仓库。</p>
 <p>IDEA中对操作做了一定的简化，Commit和Push可以在一步中完成。</p>
-<p>具体操作，在项目上点击右键，选择Git菜单，如果使用Add则将文件从工作空间提交到暂存库，Commit Directory则是同时完成提交到暂存与本地仓库。<br><img src="/2018/10/16/本控制SoEasy之Git-04/6.png" alt="在这里插入图片描述"><br> 选择要提交的文件，填写消息<br><img src="/2018/10/16/本控制SoEasy之Git-04/7.png" alt="在这里插入图片描述"><br>将本地仓库的内容提交到远程仓库<br><img src="/2018/10/16/本控制SoEasy之Git-04/8.png" alt="在这里插入图片描述"><br> 定义远程地址的别名，以及地址url，然后就出现下图<br> <img src="/2018/10/16/本控制SoEasy之Git-04/9.png" alt="在这里插入图片描述"><br> 提示Push Successful就成功了<br><img src="/2018/10/16/本控制SoEasy之Git-04/10.png" alt="在这里插入图片描述"><br><img src="/2018/10/16/本控制SoEasy之Git-04/11.png" alt="在这里插入图片描述"><br>场景二：艾伦从远程Git仓库上获取项目源码<br>即克隆项目，操作如下<br><img src="/2018/10/16/本控制SoEasy之Git-04/12.png" alt="在这里插入图片描述"><br>输入盖茨Push时填写的远程仓库地址<br>填写仓库地址、要克隆到的父目录与项目目录</p>
+<p>具体操作，在项目上点击右键，选择Git菜单，如果使用Add则将文件从工作空间提交到暂存库，Commit Directory则是同时完成提交到暂存与本地仓库。<br><img src="/2018/10/16/本控制SoEasy之Git-04/6.png" alt="在这里插入图片描述"><br> 选择要提交的文件，填写消息<br><img src="/2018/10/16/本控制SoEasy之Git-04/7.png" alt="在这里插入图片描述"><br>将本地仓库的内容提交到远程仓库<br><img src="/2018/10/16/本控制SoEasy之Git-04/8.png" alt="在这里插入图片描述"><br> 定义远程地址的别名，以及地址url，然后就出现下图<br> <img src="/2018/10/16/本控制SoEasy之Git-04/9.png" alt="在这里插入图片描述"><br> 提示Push Successful就成功了<br><img src="/2018/10/16/本控制SoEasy之Git-04/10.png" alt="在这里插入图片描述"><br><img src="/2018/10/16/本控制SoEasy之Git-04/11.png" alt="在这里插入图片描述"></p>
+<h3 id="场景二：艾伦从远程Git仓库上获取项目源码"><a href="#场景二：艾伦从远程Git仓库上获取项目源码" class="headerlink" title="场景二：艾伦从远程Git仓库上获取项目源码"></a>场景二：艾伦从远程Git仓库上获取项目源码</h3><p>即克隆项目，操作如下<br><img src="/2018/10/16/本控制SoEasy之Git-04/12.png" alt="在这里插入图片描述"><br>输入盖茨Push时填写的远程仓库地址<br>填写仓库地址、要克隆到的父目录与项目目录</p>
 <p>接下来按向导操作，即可把项目从远程仓艾伦隆到本地仓库和IDE工作区。</p>
 <p>当提示签出成功点击打开就可以看到项目了</p>
 <h3 id="场景三：艾伦修改了部分源码，提交到远程仓库"><a href="#场景三：艾伦修改了部分源码，提交到远程仓库" class="headerlink" title="场景三：艾伦修改了部分源码，提交到远程仓库"></a>场景三：艾伦修改了部分源码，提交到远程仓库</h3><p>这个操作和首次提交的流程基本一致，分别是 Add -&gt; Commit -&gt; Push。请参考场景一</p>
@@ -509,7 +510,7 @@
 <h3 id="场景七：盖茨获取艾伦提交的分支"><a href="#场景七：盖茨获取艾伦提交的分支" class="headerlink" title="场景七：盖茨获取艾伦提交的分支"></a>场景七：盖茨获取艾伦提交的分支</h3><p>使用Pull功能打开更新窗口，点击Remote栏后面的刷新按钮，会在Branches to merge栏中刷新出新的分支。这里并不想做合并，所以不要选中任何分支，直接点击Pull按钮完成操作。<br><img src="/2018/10/16/本控制SoEasy之Git-04/22.png" alt="在这里插入图片描述"></p>
 <p>更新后，再点击右下角，可以看到在Remote Branches区已经有了新的分支，点击后在弹出的子菜单中选择Checkout as new local branch，在本地仓库中创建该分支。完成后在Local Branches区也会出现该分支的选项，可以按上面的方法，点击后选择Checkout切换。</p>
 <p>切换远程分支：(dev1是我自己创建的分支，点击可以切换分支）<br><img src="/2018/10/16/本控制SoEasy之Git-04/23.png" alt="在这里插入图片描述"></p>
-<p>场景八：盖茨把分支合并到主干<br>新功能开发完成，体验很好，项目组决定把该功能合并到主干上。</p>
+<h3 id="场景八：盖茨把分支合并到主干"><a href="#场景八：盖茨把分支合并到主干" class="headerlink" title="场景八：盖茨把分支合并到主干"></a>场景八：盖茨把分支合并到主干</h3><p>新功能开发完成，体验很好，项目组决定把该功能合并到主干上。</p>
 <p>切换到master分支，选择Merge Changes<br><img src="/2018/10/16/本控制SoEasy之Git-04/24.png" alt="在这里插入图片描述"><br>选择要合并的分支，点击Merge完成<br><img src="/2018/10/16/本控制SoEasy之Git-04/25.png" alt="在这里插入图片描述"></p>
 <p>以上就是Git在项目中的基本应用，关于基本应用如有遇到问题，欢迎留言。</p>
 
@@ -826,7 +827,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#场景三：艾伦修改了部分源码，提交到远程仓库"><span class="nav-number">1.</span> <span class="nav-text">场景三：艾伦修改了部分源码，提交到远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景四：盖茨从远程仓库获取艾伦的提交"><span class="nav-number">2.</span> <span class="nav-text">场景四：盖茨从远程仓库获取艾伦的提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景五：艾伦接受了一个新功能的任务，创建了一个分支并在分支上开发"><span class="nav-number">3.</span> <span class="nav-text">场景五：艾伦接受了一个新功能的任务，创建了一个分支并在分支上开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景六：艾伦把分支提交到远程Git仓库"><span class="nav-number">4.</span> <span class="nav-text">场景六：艾伦把分支提交到远程Git仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景七：盖茨获取艾伦提交的分支"><span class="nav-number">5.</span> <span class="nav-text">场景七：盖茨获取艾伦提交的分支</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#场景一：盖茨创建项目并提交到远程Git仓库"><span class="nav-number">1.</span> <span class="nav-text">场景一：盖茨创建项目并提交到远程Git仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景二：艾伦从远程Git仓库上获取项目源码"><span class="nav-number">2.</span> <span class="nav-text">场景二：艾伦从远程Git仓库上获取项目源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景三：艾伦修改了部分源码，提交到远程仓库"><span class="nav-number">3.</span> <span class="nav-text">场景三：艾伦修改了部分源码，提交到远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景四：盖茨从远程仓库获取艾伦的提交"><span class="nav-number">4.</span> <span class="nav-text">场景四：盖茨从远程仓库获取艾伦的提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景五：艾伦接受了一个新功能的任务，创建了一个分支并在分支上开发"><span class="nav-number">5.</span> <span class="nav-text">场景五：艾伦接受了一个新功能的任务，创建了一个分支并在分支上开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景六：艾伦把分支提交到远程Git仓库"><span class="nav-number">6.</span> <span class="nav-text">场景六：艾伦把分支提交到远程Git仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景七：盖茨获取艾伦提交的分支"><span class="nav-number">7.</span> <span class="nav-text">场景七：盖茨获取艾伦提交的分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景八：盖茨把分支合并到主干"><span class="nav-number">8.</span> <span class="nav-text">场景八：盖茨把分支合并到主干</span></a></li></ol></div>
             
 
           </div>
