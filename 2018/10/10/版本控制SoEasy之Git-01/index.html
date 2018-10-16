@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next muse" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="版本控制,git," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="沙沙的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="keywords" content="版本控制,git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="版本控制SoEasy之Git-01">
+<meta property="og:url" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/index.html">
+<meta property="og:site_name" content="沙沙的博客">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/1.jpeg">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/2.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/3.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/4.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/5.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/6.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/7.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/8.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/9.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/10.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/11.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/12.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/13.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/14.png">
+<meta property="og:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/15.png">
+<meta property="og:updated_time" content="2018-10-16T07:17:11.083Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="版本控制SoEasy之Git-01">
+<meta name="twitter:image" content="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/1.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"Sidebar Position, available value":"left | right (only for Pisces | Gemini).","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/"/>
+
+
+
+
+
+
+  <title>版本控制SoEasy之Git-01 | 沙沙的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a7af505fec0721f2d93dbbaaad431d35";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container  page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">沙沙的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">你的努力，终将有所回报</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/10/版本控制SoEasy之Git-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wusha">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="沙沙的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">版本控制SoEasy之Git-01</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-10T09:21:00+08:00">
+                2018-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/10/10/版本控制SoEasy之Git-01/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/10/10/版本控制SoEasy之Git-01/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/10/10/版本控制SoEasy之Git-01/" class="leancloud_visitors" data-flag-title="版本控制SoEasy之Git-01">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span:>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2018/10/10/版本控制SoEasy之Git-01/1.jpeg" alt="在这里插入图片描述"><br> <a id="more"></a></p>
+<h1 id="Git是什么？"><a href="#Git是什么？" class="headerlink" title="Git是什么？"></a>Git是什么？</h1><p>Git是一种常用的版本控制系统，我们常见的版本控制系统有git和svn。    要知道怎么使用首先要了解它的概念。</p>
+<h3 id="什么是版本控制"><a href="#什么是版本控制" class="headerlink" title="什么是版本控制"></a>什么是版本控制</h3><p>版本控制是指对软件开发过程中各种程序代码、配置文件及说明文档等文件变更的管理，是软件配置管理的核心思想之一。    </p>
+<ul>
+<li>实现跨区域多人协同开发</li>
+<li>追踪和记载一个或者多个文件的历史记录</li>
+<li>组织和保护你的源代码和文档</li>
+<li>统计工作量</li>
+<li>并行开发、提高开发效率</li>
+<li>跟踪记录整个软件的开发过程</li>
+<li>减轻开发人员的负担，节省时间，同时降低人为错误<h3 id="Git常用术语"><a href="#Git常用术语" class="headerlink" title="Git常用术语"></a>Git常用术语</h3></li>
+</ul>
+<blockquote>
+<p>记住git的常用术语对后续理解git的基本操作有着至关重要的作用</p>
+</blockquote>
+<ul>
+<li>仓库（Repository）<br>受版本控制的所有文件修订历史的共享数据库</li>
+<li>工作空间（WorkSpace）<br>本地硬盘或Unix 用户帐户上编辑的文件副本</li>
+<li><p>工作树/区（Working tree)<br>工作区包含了仓库的工作文件。您可以修改和提交更改然后提交到仓库。</p>
+</li>
+<li><p>暂存区（Staging area)<br>暂存区是工作区提交之后的地方。<br><img src="/2018/10/10/版本控制SoEasy之Git-01/2.png" alt="git提交到本地版本库的一个过程"></p>
+</li>
+<li>索引（index）<br>索引是暂存区的另一种术语</li>
+<li>签入（Checkin)<br>将新版本签入回仓库</li>
+<li>签出（checkout）</li>
+<li>从仓库中将文件的最新修订版本复制到工作空间</li>
+<li>提交（Commit)<br>对各自文件的工作副本做了更改，并将这些更改提交到仓库</li>
+<li>冲突（Conflict)<br>多人对同一文件的工作副本进行更改，并将这些更改提交到仓库</li>
+<li>合并（Merge)<br>将某分支上的更改联接到此主干或同为主干的另一个分支</li>
+<li>分支（Branch)<br>从主线上分离开的副本，默认分支叫master</li>
+<li>锁（Lock）<br>获得修改文件的专有权限。</li>
+<li>头（HEAD)<br>头是一个象征性的参考，最常用以指向当前选择的分支。</li>
+<li>修订（Revision)<br>表示代码的一个版本状态。Git通过用SHA1 hash算法表示的ID来标识不同的版本。</li>
+<li><p>标记（Tags）<br>标记指的是某个分支某个特定时间点的状态。通过标记，可以很方便的切换到标记时的状态。</p>
+<h3 id="Git和SVN"><a href="#Git和SVN" class="headerlink" title="Git和SVN"></a>Git和SVN</h3><p>SVN是集中式版本控制系统，版本库是集中放在中央服务器的，而工作的时候，用的都是自己的电脑，所以首先要从中央服务器得到最新的版本，然后工作，完成工作后，需要把自己做完的活推送到中央服务器。集中式版本控制系统是必须联网才能工作，对网络带宽要求较高。<br><img src="/2018/10/10/版本控制SoEasy之Git-01/3.png" alt="在这里插入图片描述"><br>Git是分布式版本控制系统，没有中央服务器，每个人的电脑就是一个完整的版本库，工作的时候不需要联网了，因为版本都在自己电脑上。协同的方法是这样的：比如说自己在电脑上改了文件A，其他人也在电脑上改了文件A，这时，你们两之间只需把各自的修改推送给对方，就可以互相看到对方的修改了。<br> <img src="/2018/10/10/版本控制SoEasy之Git-01/4.png" alt="在这里插入图片描述"></p>
+<h1 id="GitBash常用命令"><a href="#GitBash常用命令" class="headerlink" title="GitBash常用命令"></a>GitBash常用命令</h1><p> cd ~    回home</p>
+<p> cd ..回退到上一个目录，直接cd进入默认目录</p>
+<p> pwd：显示当前所在目录路径</p>
+<p> ls(ll): 都是列出当前目录中的所有文件，只不过ll列出的内容更为详细</p>
+<p> touch： 新建一个文件    </p>
+<p> rm :删除一个文件</p>
+<p> mkdir：新建一个文件</p>
+<p> rm -r ：删除一个文件夹，rm -r     src删除src目录</p>
+<p> mv ：移动文件，mv index.</p>
+<p> reset： 清屏</p>
+<p> history： 查看命令历史</p>
+<p> help 帮助</p>
+<p> exit 推出</p>
+<p> #表示注释</p>
+<p> 显示文件内容 cat</p>
+</li>
+</ul>
+<h1 id="Git常用命令"><a href="#Git常用命令" class="headerlink" title="Git常用命令"></a>Git常用命令</h1><p>查看配置,可以查看现在git环境配置</p>
+<pre><code>git config -l
+</code></pre><p>查看系统</p>
+<pre><code>config git config --system --list
+</code></pre><p>查看当前用户global的配置</p>
+<pre><code>git config --global --list
+</code></pre><p>查看当前仓库配置</p>
+<pre><code>git config --local --list
+</code></pre><p>设置用户名和邮箱</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">$ git<span class="hljs-built_in"> config </span>--global user.name <span class="hljs-string">"guogugo"</span>  #名称<br>$ git<span class="hljs-built_in"> config </span>--global user.email gguo@qq.com   #邮箱<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p> 总之–global为全局配置，不加则为某个项目的特定配置。</p>
+</blockquote>
+<p>添加配置项</p>
+<pre><code>git config [--local|--global|--system]  section.key value
+
+[--local|--global|--system]  #可选的，对应本地，全局，系统不同级别的设置
+
+section.key #区域下的键
+
+value #对应的值
+</code></pre><p>删除配置项</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined">git<span class="hljs-built_in"> config </span>[--local|--global|--system] --unset section.key<br></code></pre></td></tr></table></figure>
+<h1 id="git-理论基础"><a href="#git-理论基础" class="headerlink" title="git 理论基础"></a>git 理论基础</h1><h3 id="工作区域"><a href="#工作区域" class="headerlink" title="工作区域"></a>工作区域</h3><p>Git本地有三个工作区域：工作目录（Working Directory）、暂存区(Stage/Index)、资源库(Repository或Git Directory)。如果在加上远程的git仓库(Remote Directory)就可以分为四个工作区域。文件在这四个区域之间的转换关系如下：<br><img src="/2018/10/10/版本控制SoEasy之Git-01/5.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>Workspace：工作区，就是你平时存放项目代码的地方</li>
+<li>Index / Stage：暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息</li>
+<li>Repository：仓库区（或本地仓库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本</li>
+<li>Remote：远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换<br>下面这张图能更好的说明<br><img src="/2018/10/10/版本控制SoEasy之Git-01/6.png" alt="在这里插入图片描述"></li>
+<li>Directory：使用Git管理的一个目录，也就是一个仓库，包含我们的工作空间和Git的管理空间。</li>
+<li>WorkSpace：需要通过Git进行版本控制的目录和文件，这些目录和文件组成了工作空间。</li>
+<li>.git：存放Git管理信息的目录，初始化仓库的时候自动创建。<br>Index/Stage：暂存区，或者叫待提交更新区，在提交进入repo之前，我们可以把所有的更新放在暂存区。</li>
+<li>Local Repo：本地仓库，一个存放在本地的版本库；HEAD会只是当前的开发分支（branch）。</li>
+<li>Stash：隐藏，是一个工作状态保存栈，用于保存/恢复WorkSpace中的临时状态。<h3 id="git-的工作流程"><a href="#git-的工作流程" class="headerlink" title="git 的工作流程"></a>git 的工作流程</h3></li>
+</ul>
+<p>Git基本git的工作流程一般是这样的：</p>
+<ol>
+<li>在工作目录中添加、修改文件；</li>
+<li>将需要进行版本管理的文件放入暂存区域；</li>
+<li>将暂存区域的文件提交到git仓库。（这里是本地仓库）    </li>
+</ol>
+<p>因此，git管理的文件有三种状态：已修改（modified）,已暂存（staged）,已提交(committed)操作<br><img src="/2018/10/10/版本控制SoEasy之Git-01/7.png" alt="在这里插入图片描述"><br>图解教程<br>直接看图理解本地git的提交过程<br><img src="/2018/10/10/版本控制SoEasy之Git-01/8.png" alt="在这里插入图片描述"></p>
+<h1 id="Git的基本操作"><a href="#Git的基本操作" class="headerlink" title="Git的基本操作"></a>Git的基本操作</h1><h3 id="创建工作目录与常用指令"><a href="#创建工作目录与常用指令" class="headerlink" title="创建工作目录与常用指令"></a>创建工作目录与常用指令</h3><p>工作目录（WorkSpace)一般就是你希望Git帮助你管理的文件夹，可以是你项目的目录，也可以是一个空目录，建议不要有中文。</p>
+<p>日常使用只要记住下图6个命令：<br><img src="/2018/10/10/版本控制SoEasy之Git-01/9.png" alt="在这里插入图片描述"></p>
+<h3 id="获得git仓库"><a href="#获得git仓库" class="headerlink" title="获得git仓库"></a>获得git仓库</h3><p>需要用GIT管理的项目的根目录执行（注意自己当前目录的位置):</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash"> 在当前目录新建一个Git代码库</span><br><span class="hljs-meta">$</span><span class="bash"> git init</span><br></code></pre></td></tr></table></figure>
+<p>执行后项目目录会多出一个.git文件夹，关于版本等信息都在这里面，如果没有看到可以百度怎么查看隐藏文件</p>
+<p>使用如下命令，可以把创建目录与仓库一起完成</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash"> 新建一个目录，将其初始化为Git代码库</span><br><span class="hljs-meta">$</span><span class="bash"> git init [project-name]</span><br></code></pre></td></tr></table></figure>
+<h3 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h3><p>另一种方式是克隆远程目录，由于是将远程服务器上的仓库完全镜像一份至本地，而不是取某一个特定版本，所以用clone而不是checkout，语法格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash"> 克隆一个项目和它的整个代码历史(版本信息)</span><br><span class="hljs-meta">$</span><span class="bash"> git <span class="hljs-built_in">clone</span> [url]</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>注意url为https……的地址</p>
+</blockquote>
+<h2 id="git-文件操作"><a href="#git-文件操作" class="headerlink" title="git 文件操作"></a>git 文件操作</h2><p>版本控制就是对文件的版本控制，要对文件进行修改、提交等操作，首先要知道文件当前在什么状态，不然可能会提交了现在还不想提交的文件，或者要提交的文件没提交上。GIT不关心文件两个版本之间的具体差别，而是关心文件的整体是否有改变，若文件被改变，在添加提交时就生成文件新版本的快照，而判断文件整体是否改变的方法就是用SHA-1算法计算文件的校验和。</p>
+<h3 id="文件四种状态"><a href="#文件四种状态" class="headerlink" title="文件四种状态"></a>文件四种状态</h3><p><img src="/2018/10/10/版本控制SoEasy之Git-01/10.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过git add 状态变为Staged.</li>
+<li>Unmodify: 文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致. 这种类型的文件有两种去处, 如果它被修改,<br>而变为Modified. 如果使用git rm移出版本库, 则成为Untracked文件</li>
+<li>Modified: 文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过git<br>add可进入暂存staged状态, 使用git checkout 则丢弃修改过, 返回到unmodify状态, 这个git<br>checkout即从库中取出文件, 覆盖当前修改</li>
+<li>Staged: 暂存状态. 执行git commit则将修改同步到库中, 这时库中的文件和本地文件又变为一致,<br>文件为Unmodify状态. 执行git reset HEAD filename取消暂存, 文件状态为Modified<br><img src="/2018/10/10/版本控制SoEasy之Git-01/11.png" alt="在这里插入图片描述"><h3 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h3></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash">查看指定文件状态</span><br>git status [filename]<br><span class="hljs-meta"><br>#</span><span class="bash">查看所有文件状态</span><br>git status<br></code></pre></td></tr></table></figure>
+<h3 id="添加文件和目录"><a href="#添加文件和目录" class="headerlink" title="添加文件和目录"></a>添加文件和目录</h3><p><img src="/2018/10/10/版本控制SoEasy之Git-01/12.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>工作区（Working Directory）就是你在电脑里能看到的目录。</li>
+<li>版本库（Repository）工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+<li>Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。</li>
+</ul>
+<p>将untracked状态的文件添加到暂存区，语法格式如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash"> 添加指定文件到暂存区</span><br><span class="hljs-meta">$</span><span class="bash"> git add [file1] [file2] ...</span><br><span class="hljs-meta"><br>#</span><span class="bash"> 添加指定目录到暂存区，包括子目录</span><br><span class="hljs-meta">$</span><span class="bash"> git add [dir]</span><br><span class="hljs-meta"><br>#</span><span class="bash"> 添加当前目录的所有文件到暂存区</span><br><span class="hljs-meta">$</span><span class="bash"> git add .</span><br></code></pre></td></tr></table></figure>
+<h3 id="移除文件与目录"><a href="#移除文件与目录" class="headerlink" title="移除文件与目录"></a>移除文件与目录</h3><p><img src="/2018/10/10/版本控制SoEasy之Git-01/13.png" alt="在这里插入图片描述"></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">#直接从暂存区删除文件，工作区则不做出改变</span><br>git rm <span class="hljs-comment">--cached &lt;file&gt;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">#如果已经用add 命令把文件加入stage了，就先需要从stage中撤销</span><br>git reset HEAD &lt;<span class="hljs-built_in">file</span>&gt;...<br></code></pre></td></tr></table></figure>
+<p>当执行 “git reset HEAD” 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash">移除所有未跟踪文件</span><br><span class="hljs-meta">#</span><span class="bash">一般会加上参数-df，-d表示包含目录，-f表示强制清除。</span><br>git clean [options]<br></code></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#只从stage中删除，保留物理文件<br>git rm --cached readme<span class="hljs-selector-class">.txt</span> <br><br>#不但从stage中删除，同时删除物理文件<br>git rm readme<span class="hljs-selector-class">.txt</span> <br><br>#把<span class="hljs-selector-tag">a</span>.txt改名为<span class="hljs-selector-tag">b</span><span class="hljs-selector-class">.txt</span><br>git mv <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.txt</span> <span class="hljs-selector-tag">b</span>.txt<br></code></pre></td></tr></table></figure>
+<ul>
+<li>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master<br>指向的目录树就是提交时暂存区的目录树。</li>
+<li>当执行 “git reset HEAD” 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</li>
+<li>当执行 “git rm –cached <file>” 命令时，会直接从暂存区删除文件，工作区则不做出改变。</file></li>
+<li>当执行 “git checkout .” 或者 “git checkout — <file>”<br>命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。</file></li>
+<li>当执行 “git checkout HEAD .” 或者 “git checkout HEAD <file>” 命令时，会用 HEAD指向的 master分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。<h3 id="查看文件修改后的差异"><a href="#查看文件修改后的差异" class="headerlink" title="查看文件修改后的差异"></a>查看文件修改后的差异</h3>git diff用于显示WorkSpace中的文件和暂存区文件的差异</file></li>
+</ul>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">#查看文件修改后的差异</span><br><span class="hljs-attribute">git</span> diff<span class="hljs-meta"> [files]</span><br></code></pre></td></tr></table></figure>
+<p>-a表示修改之前的文件，+++b表示修改后的文件</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">#比较暂存区的文件与之前已经提交过的文件</span><br>git diff <span class="hljs-comment">--cached</span><br></code></pre></td></tr></table></figure>
+<p>也可以把WorkSpace中的状态和repo中的状态进行diff，命令如下:</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">#比较repo与工作空间中的文件差异</span><br>git <span class="hljs-keyword">diff </span>HEAD~n<br></code></pre></td></tr></table></figure>
+<p><img src="/2018/10/10/版本控制SoEasy之Git-01/14.png" alt="在这里插入图片描述"></p>
+<h3 id="签出"><a href="#签出" class="headerlink" title="签出"></a>签出</h3><p>如果仓库中已经存在文件f4.txt，在工作区中对f4修改了，如果想撤销可以使用checkout，签出覆盖</p>
+<p>检出命令git checkout是git最常用的命令之一，同时也是一个很危险的命令，因为这条命令会重写工作区</p>
+<p>语法：</p>
+<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#用法一<br>git checkout [-q] <span class="hljs-meta">[&lt;commit&gt;]</span> [--] &lt;paths&gt;...<br>#用法二<br>git checkout <span class="hljs-meta">[&lt;branch&gt;]</span><br>#用法三<br>git checkout [-m] [[-b]--orphan] &lt;new_branch&gt;] <span class="hljs-meta">[&lt;start_point&gt;]</span><br></code></pre></td></tr></table></figure>
+<p><img src="/2018/10/10/版本控制SoEasy之Git-01/15.png" alt="在这里插入图片描述"><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">$</span><span class="bash"> git checkout branch</span><br><span class="hljs-meta">#</span><span class="bash">检出branch分支。要完成图中的三个步骤，更新HEAD以指向branch分支，以及用branch  指向的树更新暂存区和工作区。</span><br><span class="hljs-meta"><br>$</span><span class="bash"> git checkout</span><br><span class="hljs-meta">#</span><span class="bash">汇总显示工作区、暂存区与HEAD的差异。</span><br><span class="hljs-meta"><br>$</span><span class="bash"> git checkout HEAD</span><br><span class="hljs-meta">#</span><span class="bash">同上</span><br><span class="hljs-meta"><br>$</span><span class="bash"> git checkout -- filename</span><br><span class="hljs-meta">#</span><span class="bash">用暂存区中filename文件来覆盖工作区中的filename文件。相当于取消自上次执行git add filename以来（如果执行过）的本地修改。</span><br><span class="hljs-meta"><br>$</span><span class="bash"> git checkout branch -- filename</span><br><span class="hljs-meta">#</span><span class="bash">维持HEAD的指向不变。用branch所指向的提交中filename替换暂存区和工作区中相   应的文件。注意会将暂存区和工作区中的filename文件直接覆盖。</span><br><span class="hljs-meta"><br>$</span><span class="bash"> git checkout -- . 或写作 git checkout .</span><br><span class="hljs-meta">#</span><span class="bash">注意git checkout 命令后的参数为一个点（“.”）。这条命令最危险！会取消所有本地的  <span class="hljs-comment">#修改（相对于暂存区）。相当于用暂存区的所有文件直接覆盖本地文件，不给用户任何确认的机会！</span></span><br><span class="hljs-meta"><br>$</span><span class="bash"> git checkout commit_id -- file_name</span><br><span class="hljs-meta">#</span><span class="bash">如果不加commit_id，那么git checkout -- file_name 表示恢复文件到本地版本库中最新的状态。</span><br></code></pre></td></tr></table></figure></p>
+<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><p>通过add只是将文件或目录添加到了index暂存区，使用commit可以实现将暂存区的文件提交到本地仓库。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-meta">#</span><span class="bash"> 提交暂存区到仓库区</span><br><span class="hljs-meta">$</span><span class="bash"> git commit -m [message]</span><br><span class="hljs-meta"><br>#</span><span class="bash"> 提交暂存区的指定文件到仓库区</span><br><span class="hljs-meta">$</span><span class="bash"> git commit [file1] [file2] ... -m [message]</span><br><span class="hljs-meta"><br>#</span><span class="bash"> 提交工作区自上次commit之后的变化，直接到仓库区，跳过了add,对新文件无效</span><br><span class="hljs-meta">$</span><span class="bash"> git commit -a</span><br><span class="hljs-meta"><br>#</span><span class="bash"> 提交时显示所有diff信息</span><br><span class="hljs-meta">$</span><span class="bash"> git commit -v</span><br><span class="hljs-meta"><br>#</span><span class="bash"> 使用一次新的commit，替代上一次提交</span><br><span class="hljs-meta">#</span><span class="bash"> 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="hljs-meta">$</span><span class="bash"> git commit --amend -m [message]</span><br><span class="hljs-meta"><br>#</span><span class="bash"> 重做上一次commit，并包括指定文件的新变化</span><br><span class="hljs-meta">$</span><span class="bash"> git commit --amend [file1] [file2] ...</span><br></code></pre></td></tr></table></figure>
+<h3 id="修订提交"><a href="#修订提交" class="headerlink" title="修订提交"></a>修订提交</h3><p>如果我们提交过后发现有个文件改错了，或者只是想修改提交说明，这时可以对相应文件做出修改，将修改过的文件通过”git add”添加到暂存区，然后执行以下命令：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment"># 修订提交</span><br>git commit <span class="hljs-comment">--amend</span><br></code></pre></td></tr></table></figure>
+<h3 id="撤销提交（commit）"><a href="#撤销提交（commit）" class="headerlink" title="撤销提交（commit）"></a>撤销提交（commit）</h3><p>原理就是放弃工作区和index的改动，同时HEAD指针指向前一个commit对象</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-comment">#撤销上一次的提交</span><br>git reset <span class="hljs-comment">--hard HEAD~1</span><br></code></pre></td></tr></table></figure>
+<p>查看日志与历史</p>
+<p>查看提交日志可以使用git log指令，语法格式如下：</p>
+<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs undefined">#查看提交日志<br>git log <span class="hljs-meta">[&lt;options&gt;]</span> <span class="hljs-meta">[&lt;revision range&gt;]</span> [[\--] &lt;path&gt;…?]<br></code></pre></td></tr></table></figure>
+<h4 id="撤销暂存区跟新"><a href="#撤销暂存区跟新" class="headerlink" title="撤销暂存区跟新"></a>撤销暂存区跟新</h4><p>使用”git add”把更新提交到了暂存区。这时”git status”的输出中提示我们可以通过”git reset HEAD <file>…”把暂存区的更新移出到WorkSpace中</file></p>
+<h4 id="撤销本地库更新"><a href="#撤销本地库更新" class="headerlink" title="撤销本地库更新"></a>撤销本地库更新</h4><p>在Git中，有一个HEAD指针指向当前分支中最新的提交。当前版本，我们使用”HEAD^”，那么再钱一个版本可以使用”HEAD^^”，如果想回退到更早的提交，可以使用”HEAD~n”。（也就是，HEAD^=HEAD~1，HEAD^^=HEAD~2）</p>
+<h1 id="优质参考"><a href="#优质参考" class="headerlink" title="优质参考"></a>优质参考</h1><p><a href="https://www.cnblogs.com/best/p/7474442.html#_label0" target="_blank" rel="noopener">张果教你用git</a></p>
+
+      
+    </div>
+    
+    
+    
+<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+  
+</div>
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/mmqrcode1538286289336.png" alt="wusha wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信二维码，加我的微信！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="wusha 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="wusha 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/版本控制/" rel="tag"><i class="fa fa-tag"></i> 版本控制</a>
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/29/SQL基础/" rel="next" title="SQL基础">
+                <i class="fa fa-chevron-left"></i> SQL基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/16/版本控制SoEasy之Git-02/" rel="prev" title="版本控制SoEasy之Git-02">
+                版本控制SoEasy之Git-02 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "1",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      },
+      "slide": {
+        "bdImg": "5",
+        "bdPos": "left",
+        "bdTop": "100"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+
+ 
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzc1Ni8xNDI4Nw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="wusha" />
+            
+              <p class="site-author-name" itemprop="name">wusha</p>
+              <p class="site-description motion-element" itemprop="description">你的努力，终将有所回报</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-globe"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/sha1024" title="csdn" target="_blank">csdn</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.cnblogs.com/wusha/" title="博客园" target="_blank">博客园</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="/resume/" title="简历" target="_blank">简历</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git是什么？"><span class="nav-number">1.</span> <span class="nav-text">Git是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是版本控制"><span class="nav-number">1.0.1.</span> <span class="nav-text">什么是版本控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git常用术语"><span class="nav-number">1.0.2.</span> <span class="nav-text">Git常用术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git和SVN"><span class="nav-number">1.0.3.</span> <span class="nav-text">Git和SVN</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GitBash常用命令"><span class="nav-number">2.</span> <span class="nav-text">GitBash常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git常用命令"><span class="nav-number">3.</span> <span class="nav-text">Git常用命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git-理论基础"><span class="nav-number">4.</span> <span class="nav-text">git 理论基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作区域"><span class="nav-number">4.0.1.</span> <span class="nav-text">工作区域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-的工作流程"><span class="nav-number">4.0.2.</span> <span class="nav-text">git 的工作流程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git的基本操作"><span class="nav-number">5.</span> <span class="nav-text">Git的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建工作目录与常用指令"><span class="nav-number">5.0.1.</span> <span class="nav-text">创建工作目录与常用指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获得git仓库"><span class="nav-number">5.0.2.</span> <span class="nav-text">获得git仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#克隆远程仓库"><span class="nav-number">5.0.3.</span> <span class="nav-text">克隆远程仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-文件操作"><span class="nav-number">5.1.</span> <span class="nav-text">git 文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件四种状态"><span class="nav-number">5.1.1.</span> <span class="nav-text">文件四种状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看文件状态"><span class="nav-number">5.1.2.</span> <span class="nav-text">查看文件状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加文件和目录"><span class="nav-number">5.1.3.</span> <span class="nav-text">添加文件和目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移除文件与目录"><span class="nav-number">5.1.4.</span> <span class="nav-text">移除文件与目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看文件修改后的差异"><span class="nav-number">5.1.5.</span> <span class="nav-text">查看文件修改后的差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#签出"><span class="nav-number">5.1.6.</span> <span class="nav-text">签出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交"><span class="nav-number">5.1.7.</span> <span class="nav-text">提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修订提交"><span class="nav-number">5.1.8.</span> <span class="nav-text">修订提交</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销提交（commit）"><span class="nav-number">5.1.9.</span> <span class="nav-text">撤销提交（commit）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销暂存区跟新"><span class="nav-number">5.1.9.1.</span> <span class="nav-text">撤销暂存区跟新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#撤销本地库更新"><span class="nav-number">5.1.9.2.</span> <span class="nav-text">撤销本地库更新</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优质参考"><span class="nav-number">6.</span> <span class="nav-text">优质参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wusha</span>
+
+  
+</div>
+
+
+  <div class="powered-by">  个人专属</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">IT原创   因为热爱所以专注  </div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+ 
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+  
+    <script type="text/javascript">
+    (function(){
+      var appid = 'cytH9K9lD';
+      var conf = 'c8a38acb7e2a30278f87488542dfc0bc';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      if (width < 960) {
+      window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){
+        window.changyan.api.config({appid:appid,conf:conf})});
+      }
+    })();
+    </script>
+    <script type="text/javascript" src="https://assets.changyan.sohu.com/upload/plugins/plugins.count.js"></script>
+  
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("p7qmsjjKNxNoT9Tu7Xab9DOU-gzGzoHsz", "COi8vpjU93nghYJnFRDkmmhy");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+
+  
+
+  
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+  <!--崩溃欺骗-->
+<script type="text/javascript" src="/js/src/crash_cheat.js"></script>
+ 
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":"wanko","bottom":-30,"mobileShow":false,"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
