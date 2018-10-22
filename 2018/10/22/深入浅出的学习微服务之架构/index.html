@@ -124,23 +124,21 @@
 
 
 
-<meta name="description" content="微服务架构到底是怎么样的？ 服务提供者按照一定的格式的服务描述，向注册中心注册服务，声明自己能够提供哪些服务，以及服务地址是什么，完成服务发布。 服务消费者请求注册中心，查询所需要调用的服务地址，然后以约定的通信协议向服务提供者发起请求，得到请求结果后再按照约定的协议解析结果  而且在服务调用过程中，服务的请求耗时，调用量，以及成功率等指标都会被记录下来用作监控，调用经过的链路信息会记录下来，用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入浅出的学习微服务之架构">
 <meta property="og:url" content="http://yoursite.com/2018/10/22/深入浅出的学习微服务之架构/index.html">
 <meta property="og:site_name" content="沙沙的博客">
-<meta property="og:description" content="微服务架构到底是怎么样的？ 服务提供者按照一定的格式的服务描述，向注册中心注册服务，声明自己能够提供哪些服务，以及服务地址是什么，完成服务发布。 服务消费者请求注册中心，查询所需要调用的服务地址，然后以约定的通信协议向服务提供者发起请求，得到请求结果后再按照约定的协议解析结果  而且在服务调用过程中，服务的请求耗时，调用量，以及成功率等指标都会被记录下来用作监控，调用经过的链路信息会记录下来，用">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/10/22/深入浅出的学习微服务之架构/1.jpeg">
 <meta property="og:image" content="https://img-blog.csdn.net/20181022164938834?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYTEwMjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20181022165013524?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYTEwMjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20181022165114742?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYTEwMjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20181022165436865?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYTEwMjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/2018102216551375?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYTEwMjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-10-22T09:03:57.732Z">
+<meta property="og:updated_time" content="2018-10-22T09:09:12.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入浅出的学习微服务之架构">
-<meta name="twitter:description" content="微服务架构到底是怎么样的？ 服务提供者按照一定的格式的服务描述，向注册中心注册服务，声明自己能够提供哪些服务，以及服务地址是什么，完成服务发布。 服务消费者请求注册中心，查询所需要调用的服务地址，然后以约定的通信协议向服务提供者发起请求，得到请求结果后再按照约定的协议解析结果  而且在服务调用过程中，服务的请求耗时，调用量，以及成功率等指标都会被记录下来用作监控，调用经过的链路信息会记录下来，用">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20181022164938834?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYTEwMjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:image" content="http://yoursite.com/2018/10/22/深入浅出的学习微服务之架构/1.jpeg">
 
 
 
@@ -435,7 +433,7 @@
       
 
       
-        <p><img src="https://img-blog.csdn.net/20181022164938834?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYTEwMjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="微服务架构"></p>
+        <p><img src="/2018/10/22/深入浅出的学习微服务之架构/1.jpeg" alt="在这里插入图片描述"><br> <a id="more"></a><br><img src="https://img-blog.csdn.net/20181022164938834?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NoYTEwMjQ=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="微服务架构"></p>
 <h2 id="微服务架构到底是怎么样的？"><a href="#微服务架构到底是怎么样的？" class="headerlink" title="微服务架构到底是怎么样的？"></a>微服务架构到底是怎么样的？</h2><ul>
 <li>服务提供者按照一定的格式的服务描述，向注册中心注册服务，声明自己能够提供哪些服务，以及服务地址是什么，完成服务发布。</li>
 <li>服务消费者请求注册中心，查询所需要调用的服务地址，然后以约定的通信协议向服务提供者发起请求，得到请求结果后再按照约定的协议解析结果</li>
