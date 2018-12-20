@@ -124,12 +124,10 @@
 
 
 
-<meta name="description" content="### 一，数据库准备1）创建数据库 1CREATE DATABASE springbootdb; 2）创建表 12345678DROP TABLE IF EXISTS  `city`;CREATE TABLE `city` (  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT &apos;城市编号&apos;,  `province_id` int(10)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot实现Restful服务，基于HTTP-JSON传输">
 <meta property="og:url" content="http://yoursite.com/2018/12/19/SpringBoot实现Restful服务，基于HTTP-JSON传输/index.html">
 <meta property="og:site_name" content="沙沙的博客">
-<meta property="og:description" content="### 一，数据库准备1）创建数据库 1CREATE DATABASE springbootdb; 2）创建表 12345678DROP TABLE IF EXISTS  `city`;CREATE TABLE `city` (  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT &apos;城市编号&apos;,  `province_id` int(10)">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/12/19/SpringBoot实现Restful服务，基于HTTP-JSON传输/1.jpeg">
 <meta property="og:image" content="http://yoursite.com/2018/12/19/SpringBoot实现Restful服务，基于HTTP-JSON传输/1.png">
@@ -138,10 +136,9 @@
 <meta property="og:image" content="http://yoursite.com/2018/12/19/SpringBoot实现Restful服务，基于HTTP-JSON传输/4.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/19/SpringBoot实现Restful服务，基于HTTP-JSON传输/5.png">
 <meta property="og:image" content="http://yoursite.com/2018/12/19/SpringBoot实现Restful服务，基于HTTP-JSON传输/6.png">
-<meta property="og:updated_time" content="2018-12-19T09:09:57.577Z">
+<meta property="og:updated_time" content="2018-12-20T01:10:37.857Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot实现Restful服务，基于HTTP-JSON传输">
-<meta name="twitter:description" content="### 一，数据库准备1）创建数据库 1CREATE DATABASE springbootdb; 2）创建表 12345678DROP TABLE IF EXISTS  `city`;CREATE TABLE `city` (  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT &apos;城市编号&apos;,  `province_id` int(10)">
 <meta name="twitter:image" content="http://yoursite.com/2018/12/19/SpringBoot实现Restful服务，基于HTTP-JSON传输/1.jpeg">
 
 
@@ -437,7 +434,8 @@
       
 
       
-        <p><img src="/2018/12/19/SpringBoot实现Restful服务，基于HTTP-JSON传输/1.jpeg" alt="在这里插入图片描述">### 一，数据库准备<br>1）创建数据库</p>
+        <p><img src="/2018/12/19/SpringBoot实现Restful服务，基于HTTP-JSON传输/1.jpeg" alt="在这里插入图片描述"><br> <a id="more"></a></p>
+<h3 id="一，数据库准备"><a href="#一，数据库准备" class="headerlink" title="一，数据库准备"></a>一，数据库准备</h3><p>1）创建数据库</p>
 <figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DATABASE</span> springbootdb;<br></code></pre></td></tr></table></figure>
 <p>2）创建表</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs undefined"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-keyword">IF</span> <span class="hljs-keyword">EXISTS</span>  <span class="hljs-string">`city`</span>;<br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`city`</span> (<br>  <span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">'城市编号'</span>,<br>  <span class="hljs-string">`province_id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">10</span>) <span class="hljs-keyword">unsigned</span>  <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">'省份编号'</span>,<br>  <span class="hljs-string">`city_name`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">25</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">'城市名称'</span>,<br>  <span class="hljs-string">`description`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">25</span>) <span class="hljs-keyword">DEFAULT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">COMMENT</span> <span class="hljs-string">'描述'</span>,<br>  PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>)<br>) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> AUTO_INCREMENT=<span class="hljs-number">1</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8;<br></code></pre></td></tr></table></figure>
@@ -712,7 +710,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -723,7 +721,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -813,7 +811,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#二，项目结构"><span class="nav-number">1.</span> <span class="nav-text">二，项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三，利用postman进行前端请求"><span class="nav-number">2.</span> <span class="nav-text">三，利用postman进行前端请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四，更多信息"><span class="nav-number">3.</span> <span class="nav-text">四，更多信息</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一，数据库准备"><span class="nav-number">1.</span> <span class="nav-text">一，数据库准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二，项目结构"><span class="nav-number">2.</span> <span class="nav-text">二，项目结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三，利用postman进行前端请求"><span class="nav-number">3.</span> <span class="nav-text">三，利用postman进行前端请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四，更多信息"><span class="nav-number">4.</span> <span class="nav-text">四，更多信息</span></a></li></ol></div>
             
 
           </div>
